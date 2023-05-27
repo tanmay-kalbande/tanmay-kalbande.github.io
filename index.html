@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>My Resume</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap">
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      margin: 0;
+      padding: 0;
+      color: #333333;
+      background-color: #f7f7f7;
+    }
+    .container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 50px;
+    }
+    .sidebar {
+      width: 150px;
+      padding: 20px;
+      text-align: center;
+      background-color: #ffffff;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      border-radius: 5px;
+    }
+    .sidebar ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    .sidebar li {
+      margin-bottom: 15px;
+    }
+    .sidebar a {
+      color: #333333;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 18px;
+      transition: color 0.3s ease;
+    }
+    .sidebar a:hover {
+      color: #ff3366;
+    }
+    .content {
+      padding: 50px;
+      width: 800px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      text-align: left;
+      background-color: #ffffff;
+      border-radius: 5px;
+    }
+    h1 {
+      font-size: 36px;
+      margin-bottom: 20px;
+      font-weight: 700;
+      color: #FC2947;
+    }
+    h2 {
+      font-size: 24px;
+      margin-top: 30px;
+      margin-bottom: 10px;
+      font-weight: 700;
+      color: #ff3366;
+    }
+    p {
+      margin-bottom: 10px;
+    }
+    ul {
+      list-style-type: disc;
+      padding-left: 20px;
+      margin-top: 5px;
+      margin-bottom: 10px;
+    }
+    li {
+      margin-bottom: 5px;
+    }
+    a {
+      color: #ff3366;
+      text-decoration: none;
+    }
+    a:hover {
+      color: #ff0055;
+    }
+    .section-divider {
+      margin-top: 40px;
+      margin-bottom: 20px;
+      border-top: 2px dashed #555555;
+      text-align: center;
+    }
+    .project {
+      margin-bottom: 20px;
+    }
+    .project-title {
+      font-size: 20px;
+      margin-top: 10px;
+      font-weight: 700;
+      color: #ff3366;
+    }
+    .project-description {
+      margin-top: 5px;
+      color: #666666;
+    }
+    .skill-badge {
+      display: inline-block;
+      padding: 6px 12px;
+      border-radius: 16px;
+      background-color: #f2f2f2;
+      margin-right: 10px;
+      margin-bottom: 10px;
+      font-weight: 700;
+      font-size: 14px;
+      color: #333333;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="sidebar">
+      <ul>
+        <li><a href="#summary">Summary</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#education">Education</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#certifications">Certifications</a></li>
+      </ul>
+    </div>
+    <div class="content">
+      <h1>Tanmay Kalbande</h1>
+      <p>Email: tanmaykalbande@gmail.com</p>
+      <p>Phone: 737-838-1494</p>
+      
+      <h2 id="summary">Summary</h2>
+      <p>As a data science enthusiast with a solid foundation in statistical analysis, machine learning, and data visualization, I am eager to apply my skills and knowledge to contribute to meaningful insights and data-driven decision-making.</p>
+      
+      <h2 id="experience">Experience</h2>
+      <h3>Data Science Consultant, Rubixe</h3>
+      <p><em>Dec 2022 - Present</em></p>
+      <ul>
+        <li>Extracted, cleaned, and transformed data from various sources for analysis</li>
+        <li>Performed exploratory data analysis to identify trends and patterns</li>
+        <li>Created interactive dashboards and reports to communicate insights to stakeholders</li>
+      </ul>
+      
+      <h2 id="education">Education</h2>
+      <h3>The Certified Data Scientist Bootcamp</h3>
+      <p>DataMites™, 2022 - 2023</p>
+      <h3>B.E. - Mechanical Engineering</h3>
+      <p>Amravati University, 2019 - 2022</p>
+      
+      <h2 id="skills">Skills</h2>
+      <div class="skill-badge" style="background-color: #ff3366; color: #ffffff;">Python</div>
+      <div class="skill-badge" style="background-color: #ffdd99; color: #333333;">R</div>
+      <div class="skill-badge" style="background-color: #99ccff; color: #333333;">SQL</div>
+      <div class="skill-badge" style="background-color: #66cc99; color: #ffffff;">Machine Learning</div>
+      <div class="skill-badge" style="background-color: #ff99cc; color: #ffffff;">Statistical Analysis</div>
+      <div class="skill-badge" style="background-color: #cccccc; color: #333333;">Data Visualization</div>
+      <div class="skill-badge" style="background-color: #666666; color: #ffffff;">Data Cleaning and Preprocessing</div>
+      
+      <div class="section-divider"></div>
+      
+      <h2 id="projects">Projects</h2>
+      <div class="project">
+        <div class="project-title" style="color: #ff3366;">Customer Churn Prediction</div>
+        <div class="project-description">
+          Built a machine learning model to predict customer churn using a telecom dataset. Implemented feature engineering, model training, and evaluation. Achieved 85% accuracy and provided actionable insights to reduce customer churn.
+        </div>
+      </div>
+      <div class="project">
+        <div class="project-title" style="color: #ff3366;">Sentiment Analysis on Social Media Data</div>
+        <div class="project-description">
+          Conducted sentiment analysis on a large Twitter dataset to analyze public opinion about a brand. Used natural language processing techniques to classify tweets as positive, negative, or neutral. Visualized sentiment trends and performed sentiment correlation analysis.
+        </div>
+      </div>
+      
+      <div class="section-divider"></div>
+      
+      <h2 id="certifications">Certifications</h2>
+      <ul>
+        <li>Certified Data Scientist - IABAC™ - International Association of Business Analytics Certifications</li>
+        <li>The Data Science Course Complete Data Science Bootcamp - 365 Data Science - Udemy</li>
+        <li>100 Days of Code: The Complete Python Pro Bootcamp - Udemy</li>
+      </ul>
+    </div>
+  </div>
+</body>
+</html>
