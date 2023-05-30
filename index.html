@@ -12,7 +12,7 @@
 </script>
   <title>My Resume</title>
   <meta name="description" content="Data science enthusiast with a solid foundation in statistical analysis, machine learning, and data visualization. Ready to contribute to meaningful insights and data-driven decision-making.">
-  <link rel="icon" href="images/favicon.jpg" type="image/x-icon" alt="Website Favicon">
+  <link rel="icon" href="images/profile.jpg" type="image/x-icon" alt="Website Favicon">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap">
   <style>
     body {
@@ -61,6 +61,7 @@
       text-align: left;
       background-color: #ffffff;
       border-radius: 5px;
+      position: relative; /* Added */
     }
     h1 {
       font-size: 36px;
@@ -125,6 +126,23 @@
       color: #333333;
       box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     }
+    .profile-picture-container {
+      position: absolute;
+      top: 80px; /* Updated */
+      right: 80px; /* Updated */
+      width: 150px;
+      height: 160px;
+      background-color: #ffffff;
+      border-radius: 15px;
+      border: 3px solid #FFB18C;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+      overflow: hidden;
+     }
+      .profile-picture {
+         width: 100%;
+	 height: 100%;
+	 object-fit: cover;
+   }
   </style>
 </head>
 <body>
@@ -140,9 +158,15 @@
       </ul>
     </div>
     <div class="content">
-      <h1>Tanmay Kalbande - Data Science Enthusiast</h1>
-      <p>Email: tanmaykalbande@gmail.com</p>
-      <p>Phone: 737-838-1494</p>
+      <div class="profile-picture-container">
+        <img class="profile-picture" src="images/profile.jpg" alt="Profile Picture">
+      </div>
+      <h1>Tanmay Kalbande</h1>
+      <p class="subtitle">Data Science Enthusiast</p>
+      <div class="contact-info">
+        <p><strong>Email:</strong> tanmaykalbande@gmail.com</p>
+        <p><strong>Phone:</strong> 737-838-1494</p>
+      </div>
       
       <h2 id="summary">Summary</h2>
       <p>As a data science enthusiast with a solid foundation in statistical analysis, machine learning, and data visualization, I am eager to apply my skills and knowledge to contribute to meaningful insights and data-driven decision-making.</p>
