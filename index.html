@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<!-- Google tag (gtag.js) -->
+		<!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-E80V04H6MD"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
@@ -9,11 +9,11 @@
   gtag('js', new Date());
 
   gtag('config', 'G-E80V04H6MD');
-</script>
+
   <title>My Resume</title>
   <meta name="description" content="Data science enthusiast with a solid foundation in statistical analysis, machine learning, and data visualization. Ready to contribute to meaningful insights and data-driven decision-making.">
-  <link rel="icon" href="images/profile.jpg" type="image/x-icon" alt="Website Favicon">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap">
+  <link rel="icon" href="images/favicon.jpg" type="image/x-icon" alt="Website Favicon">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
   <style>
     body {
       font-family: 'Poppins', sans-serif;
@@ -27,54 +27,30 @@
       justify-content: center;
       align-items: center;
       padding: 50px;
-    }
-    .sidebar {
-      width: 150px;
-      padding: 20px;
-      text-align: center;
-      background-color: #ffffff;
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-      border-radius: 5px;
-    }
-    .sidebar ul {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-    }
-    .sidebar li {
-      margin-bottom: 15px;
-    }
-    .sidebar a {
-      color: #333333;
-      text-decoration: none;
-      font-weight: 700;
-      font-size: 18px;
-      transition: color 0.3s ease;
-    }
-    .sidebar a:hover {
-      color: #ff3366;
+      background-color: #e9ecef;
+      min-height: 100vh;
+      position: relative; 
     }
     .content {
-      padding: 50px;
-      width: 800px;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-      text-align: left;
+      max-width: 800px;
       background-color: #ffffff;
-      border-radius: 5px;
+      border-radius: 10px;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+      padding: 50px;
       position: relative; /* Added */
     }
     h1 {
       font-size: 36px;
       margin-bottom: 20px;
       font-weight: 700;
-      color: #FC2947;
+      color: #FF6862;
     }
     h2 {
       font-size: 24px;
       margin-top: 30px;
       margin-bottom: 10px;
       font-weight: 700;
-      color: #ff3366;
+      color: #FF8E62;
     }
     p {
       margin-bottom: 10px;
@@ -89,11 +65,11 @@
       margin-bottom: 5px;
     }
     a {
-      color: #ff3366;
+      color: #FF8E62;
       text-decoration: none;
     }
     a:hover {
-      color: #ff0055;
+      color: #FF6F62;
     }
     .section-divider {
       margin-top: 40px;
@@ -105,10 +81,11 @@
       margin-bottom: 20px;
     }
     .project-title {
-      font-size: 20px;
+      font-size: 18px;
       margin-top: 10px;
+      margin-bottom:;
       font-weight: 700;
-      color: #ff3366;
+      color: #333333;
     }
     .project-description {
       margin-top: 5px;
@@ -118,7 +95,7 @@
       display: inline-block;
       padding: 6px 12px;
       border-radius: 16px;
-      background-color: #f2f2f2;
+      background-color: #FFDAB6;
       margin-right: 10px;
       margin-bottom: 10px;
       font-weight: 700;
@@ -126,7 +103,14 @@
       color: #333333;
       box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     }
-    .profile-picture-container {
+  h3#contact {
+    margin-bottom: 0;
+  }
+
+  p.text-center {
+    margin-top: 0;
+  }
+  .profile-picture-container {
       position: absolute;
       top: 80px; /* Updated */
       right: 80px; /* Updated */
@@ -137,36 +121,19 @@
       border: 3px solid #FFB18C;
       box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
       overflow: hidden;
-     }
-      .profile-picture {
-         width: 100%;
-	 height: 100%;
-	 object-fit: cover;
-   }
-    @media (max-width: 768px) {
-    /* Existing media query CSS code */
-	    
-    .profile-picture-container {
-      width: 100px; /* Adjust the width as needed */
-      height: auto; /* Change height to auto */
+}
+
+    .profile-picture {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
     }
-  }
   </style>
 </head>
 <body>
   <div class="container">
-    <div class="sidebar">
-      <ul>
-        <li><a href="#summary">Summary</a></li>
-        <li><a href="#experience">Experience</a></li>
-        <li><a href="#education">Education</a></li>
-        <li><a href="#skills">Skills</a></li>
-        <li><a href="#projects">Projects</a></li>
-        <li><a href="#certifications">Certifications</a></li>
-      </ul>
-    </div>
     <div class="content">
-      <div class="profile-picture-container">
+        <div class="profile-picture-container">
         <img class="profile-picture" src="images/profile.jpg" alt="Profile Picture">
       </div>
       <h1>Tanmay Kalbande</h1>
@@ -176,54 +143,81 @@
         <p><strong>Phone:</strong> 737-838-1494</p>
       </div>
       
-      <h2 id="summary">Summary</h2>
-      <p>As a data science enthusiast with a solid foundation in statistical analysis, machine learning, and data visualization, I am eager to apply my skills and knowledge to contribute to meaningful insights and data-driven decision-making.</p>
-      
-      <h2 id="experience">Experience</h2>
-      <h3>Data Science Consultant, Rubixe</h3>
-      <p><em>Dec 2022 - Present</em></p>
-      <ul>
-        <li>Extracted, cleaned, and transformed data from various sources for analysis</li>
-        <li>Performed exploratory data analysis to identify trends and patterns</li>
-        <li>Created interactive dashboards and reports to communicate insights to stakeholders</li>
-      </ul>
-      
-      <h2 id="education">Education</h2>
-      <h3>The Certified Data Scientist Bootcamp</h3>
-      <p>DataMites™, 2022 - 2023</p>
-      <h3>B.E. - Mechanical Engineering</h3>
-      <p>Amravati University, 2019 - 2022</p>
-      
-      <h2 id="skills">Skills</h2>
-      <div class="skill-badge" style="background-color: #ff3366; color: #ffffff;">Python</div>
-      <div class="skill-badge" style="background-color: #ffdd99; color: #333333;">R</div>
-      <div class="skill-badge" style="background-color: #99ccff; color: #333333;">SQL</div>
-      <div class="skill-badge" style="background-color: #66cc99; color: #ffffff;">Machine Learning</div>
-      <div class="skill-badge" style="background-color: #ff99cc; color: #ffffff;">Statistical Analysis</div>
-      <div class="skill-badge" style="background-color: #cccccc; color: #333333;">Data Visualization</div>
-      <div class="skill-badge" style="background-color: #666666; color: #ffffff;">Data Cleaning and Preprocessing</div>
-      
-      <div class="section-divider"></div>
-      
-      <h2 id="projects">Projects</h2>
-      <div class="project">
-        <div class="project-title" style="color: #ff3366;">Movie Recommendation System</div>
-        <p class="project-description">Built a collaborative filtering-based movie recommendation system using Python and the MovieLens dataset.</p>
-      </div>
-      <div class="project">
-        <div class="project-title" style="color: #ff3366;">Customer Segmentation</div>
-        <p class="project-description">Performed clustering analysis on customer data to identify distinct segments and develop targeted marketing strategies.</p>
+      <div class="section">
+        <h2 id="summary">Summary</h2>
+        <p>As a data science enthusiast with a solid foundation in statistical analysis, machine learning, and data visualization, I am eager to apply my skills and knowledge to contribute to meaningful insights and data-driven decision-making.</p>
       </div>
       
-      <div class="section-divider"></div>
+      <div class="section">
+        <h2 id="experience">Experience</h2>
+        <div class="job">
+          <h3>Data Science Consultant, Rubixe</h3>
+          <p class="job-dates"><em>Dec 2022 - Present</em></p>
+          <ul>
+            <li>Extracted, cleaned, and transformed data from various sources for analysis</li>
+            <li>Performed exploratory data analysis to identify trends and patterns</li>
+            <li>Created interactive dashboards and reports to communicate insights to stakeholders</li>
+          </ul>
+        </div>
+      </div>
       
-      <h2 id="certifications">Certifications</h2>
-      <ul>
-        <li><a href="https://www.coursera.org/">Python for Data Science</a> - Issued by Coursera, 2021</li>
+      <div class="section">
+        <h2 id="education">Education</h2>
+        <div class="education">
+          <h3>The Certified Data Scientist Bootcamp</h3>
+          <p class="education-dates">DataMites™, 2022 - 2023</p>
+        </div>
+        <div class="education">
+          <h3>B.E. - Mechanical Engineering</h3>
+          <p class="education-dates">Amravati University, 2019 - 2022</p>
+        </div>
+      </div>
+      
+      <div class="section">
+        <h2 id="skills">Skills</h2>
+        <div class="skills">
+          <span class="skill-badge" style="background-color: #FFDAB6; color: #333333;">Python</span>
+          <span class="skill-badge" style="background-color: #FFC5A1; color: #333333;">R</span>
+          <span class="skill-badge" style="background-color: #FFB18C; color: #333333;">SQL</span>
+          <span class="skill-badge" style="background-color: #FFC5A1; color: #333333;">Machine Learning</span>
+          <span class="skill-badge" style="background-color: #FFB18C; color: #333333;">Statistical Analysis</span>
+          <span class="skill-badge" style="background-color: #FFC5A1; color: #333333;">Data Visualization</span>
+          <span class="skill-badge" style="background-color: #FFB18C; color: #333333;">Data Cleaning and Preprocessing</span>
+        </div>
+      </div>
+      
+      <div class="section">
+        <h2 id="projects">Projects</h2>
+        <div class="project">
+          <div class="project-title">Movie Recommendation System</div>
+          <p class="project-description">Built a collaborative filtering-based movie recommendation system using Python and the MovieLens dataset.</p>
+        </div>
+        <div class="project">
+          <div class="project-title">Customer Segmentation</div>
+          <p class="project-description">Performed clustering analysis on customer data to identify distinct segments and develop targeted marketing strategies.</p>
+        </div>
+      </div>
+      
+      <div class="section">
+        <h2 id="certifications">Certifications</h2>
+        <ul>
+          <li><a href="https://www.coursera.org/">Python for Data Science</a> - Issued by Coursera, 2021</li>
         <li><a href="https://365datascience.com/one-of-two-hundred/">The Data Science Course Complete Data Science Bootcamp</a> - Issued by 365 Data Science, 2022</li>
 	      <li><a href="https://iabac.org/">Certified Data Scientist</a> - Issued by IABAC™, 2023</li>
-      </ul>
-      <div class="section-divider"></div>
+        </ul>
+      </div>
+      <h2 id="interests">Interests</h2>
+        <ul>
+          <li>Data Science</li>
+          <li>Machine Learning</li>
+          <li>Data Visualization</li>
+          <li>Artificial Intelligence</li>
+        </ul>
+      
+      <div class="section">
+        
+        <div class="section-divider"></div>
+                <h3 id="contact">Contact</h3>
         <p class="text-center">For more information, please visit my <a href="https://www.linkedin.com/in/tanmay-kalbande">LinkedIn</a> profile. © 2023 Tanmay Kalbande. All rights reserved. </p>
       </div>
     </div>
