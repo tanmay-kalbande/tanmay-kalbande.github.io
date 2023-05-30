@@ -16,7 +16,7 @@
   <meta name="description" content="Data science enthusiast with a solid foundation in statistical analysis, machine learning, and data visualization. Ready to contribute to meaningful insights and data-driven decision-making.">
   <link rel="icon" href="images/favicon.jpg" type="image/x-icon" alt="Website Favicon">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
-  <style>
+    <style>
     body {
       font-family: 'Poppins', sans-serif;
       margin: 0;
@@ -28,34 +28,36 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      padding: 50px;
+      padding: 20px; /* Adjust padding for smaller screens */
       background-color: #e9ecef;
       min-height: 100vh;
       position: relative; 
     }
     .content {
-      max-width: 800px;
+      max-width: 100%; /* Adjust max-width for smaller screens */
       background-color: #ffffff;
       border-radius: 10px;
       box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
-      padding: 50px;
+      padding: 20px; /* Adjust padding for smaller screens */
       position: relative; /* Added */
+      margin: 35px; /* Add margin for desktop */
     }
     h1 {
-      font-size: 36px;
-      margin-bottom: 20px;
+      font-size: 28px; /* Adjust font-size for smaller screens */
+      margin-bottom: 10px; /* Adjust margin for smaller screens */
       font-weight: 700;
       color: #FF6862;
     }
     h2 {
-      font-size: 24px;
-      margin-top: 30px;
-      margin-bottom: 10px;
+      font-size: 22px; /* Adjust font-size for smaller screens */
+      margin-top: 20px; /* Adjust margin for smaller screens */
+      margin-bottom: 10px; /* Adjust margin for smaller screens */
       font-weight: 700;
       color: #FF8E62;
     }
     p {
       margin-bottom: 10px;
+      font-size: 16px; /* Adjust font-size for smaller screens */
     }
     ul {
       list-style-type: disc;
@@ -74,24 +76,22 @@
       color: #FF6F62;
     }
     .section-divider {
-      margin-top: 40px;
-      margin-bottom: 20px;
+      margin-top: 30px; /* Adjust margin for smaller screens */
+      margin-bottom: 10px; /* Adjust margin for smaller screens */
       border-top: 2px dashed #555555;
       text-align: center;
     }
-    .project {
-      margin-bottom: 20px;
-    }
     .project-title {
-      font-size: 18px;
+      font-size: 16px; /* Adjust font-size for smaller screens */
       margin-top: 10px;
-      margin-bottom:;
+      margin-bottom: 5px; /* Adjust margin for smaller screens */
       font-weight: 700;
       color: #333333;
     }
     .project-description {
       margin-top: 5px;
       color: #666666;
+      font-size: 14px; /* Adjust font-size for smaller screens */
     }
     .skill-badge {
       display: inline-block;
@@ -105,45 +105,61 @@
       color: #333333;
       box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     }
-  h3#contact {
-    margin-bottom: 0;
-  }
-
-  p.text-center {
-    margin-top: 0;
-  }
-  .profile-picture-container {
+    h3#contact {
+      margin-bottom: 0;
+    }
+    p.text-center {
+      margin-top: 0;
+    }
+    .profile-picture-container {
       position: absolute;
-      top: 80px; /* Updated */
-      right: 80px; /* Updated */
-      width: 150px;
-      height: 160px;
+      top: 40px; /* Adjust top position for smaller screens */
+      right: 40px; /* Adjust right position for smaller screens */
+      width: 120px; /* Adjust width for smaller screens */
+      height: 130px; /* Adjust height for smaller screens */
       background-color: #ffffff;
       border-radius: 15px;
       border: 3px solid #FFB18C;
       box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
       overflow: hidden;
-}
-
+    }
     .profile-picture {
       width: 100%;
       height: 100%;
       object-fit: cover;
     }
-@media (max-width: 768px) {
-    /* Existing media query CSS code */
-.profile-picture-container {
-    width: 100px; /* Adjust the width as needed */
-     height: auto; /* Change height to auto */
-}
-
-    .profile-picture {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
+    @media (max-width: 768px) {
+      .container {
+        padding: 10px; /* Adjust padding for smaller screens */
+      }
+      .content {
+        padding: 10px; /* Adjust padding for smaller screens */
+      }
+      h1 {
+        font-size: 24px; /* Adjust font-size for smaller screens */
+      }
+      h2 {
+        font-size: 18px; /* Adjust font-size for smaller screens */
+      }
+      p {
+        font-size: 14px; /* Adjust font-size for smaller screens */
+      }
+      .section-divider {
+        margin-top: 20px; /* Adjust margin for smaller screens */
+      }
+      .project-title {
+        font-size: 14px; /* Adjust font-size for smaller screens */
+      }
+      .project-description {
+        font-size: 12px; /* Adjust font-size for smaller screens */
+      }
+      .profile-picture-container {
+        top: 20px; /* Adjust top position for smaller screens */
+        right: 20px; /* Adjust right position for smaller screens */
+        width: 80px; /* Adjust width for smaller screens */
+        height: 90px; /* Adjust height for smaller screens */
+      }
     }
-  }
-	  
   </style>
 </head>
 <body>
