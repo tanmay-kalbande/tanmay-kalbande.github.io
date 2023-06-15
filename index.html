@@ -1,7 +1,7 @@
 <!DOCTYPE html>
-<html>
-<head>	
-	<!-- Google tag (gtag.js) -->
+<html lang="en">
+<head>
+		<!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-E80V04H6MD"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
@@ -11,248 +11,268 @@
   gtag('config', 'G-E80V04H6MD');
 </script>
 	
-  <title>My Resume</title>
+  <meta charset="UTF-8">
   <meta name="description" content="Data science enthusiast with a solid foundation in statistical analysis, machine learning, and data visualization. Ready to contribute to meaningful insights and data-driven decision-making.">
-  <link rel="icon" href="images/favicon.jpg" type="image/x-icon" alt="Website Favicon">
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
-    <style>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tanmay Kalbande - Resume</title>
+    <link rel="icon" href="images/favicon.jpg" type="image/x-icon" alt="Website Favicon">
+  <style>
     body {
-      font-family: 'Poppins', sans-serif;
+      font-family: Arial, sans-serif;
+      background-color: #f0f0f0;
       margin: 0;
       padding: 0;
-      color: #333333;
-      background-color: #f7f7f7;
     }
+
     .container {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      padding: 20px; /* Adjust padding for smaller screens */
-      background-color: #e9ecef;
-      min-height: 100vh;
-      position: relative; 
+      max-width: 800px;
+      margin: 30px auto;
+      padding: 20px;
     }
+
     .content {
-      max-width: 100%; /* Adjust max-width for smaller screens */
       background-color: #ffffff;
-      border-radius: 10px;
-      box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
-      padding: 20px; /* Adjust padding for smaller screens */
-      position: relative; /* Added */
-      margin: 70px; /* Add margin for desktop */
+      padding: 20px;
+      border-radius: 5px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     }
-    h1 {
-      font-size: 28px; /* Adjust font-size for smaller screens */
-      margin-bottom: 10px; /* Adjust margin for smaller screens */
-      font-weight: 700;
-      color: #FF6862;
-    }
-    h2 {
-      font-size: 22px; /* Adjust font-size for smaller screens */
-      margin-top: 20px; /* Adjust margin for smaller screens */
-      margin-bottom: 10px; /* Adjust margin for smaller screens */
-      font-weight: 700;
-      color: #FF8E62;
-    }
-    p {
-      margin-bottom: 10px;
-      font-size: 16px; /* Adjust font-size for smaller screens */
-    }
-    ul {
-      list-style-type: disc;
-      padding-left: 20px;
-      margin-top: 5px;
-      margin-bottom: 10px;
-    }
-    li {
+
+    .section {
       margin-bottom: 5px;
     }
-    a {
-      color: #FF8E62;
-      text-decoration: none;
-    }
-    a:hover {
-      color: #FF6F62;
-    }
-    .section-divider {
-      margin-top: 30px; /* Adjust margin for smaller screens */
-      margin-bottom: 10px; /* Adjust margin for smaller screens */
-      border-top: 2px dashed #555555;
-      text-align: center;
-    }
-    .project-title {
-      font-size: 16px; /* Adjust font-size for smaller screens */
-      margin-top: 10px;
-      margin-bottom: 5px; /* Adjust margin for smaller screens */
+
+    .section h2 {
+      font-size: 20px;
       font-weight: 700;
-      color: #333333;
+      color: #444444;
+      margin-bottom: 5px;
     }
-    .project-description {
-      margin-top: 5px;
-      color: #666666;
-      font-size: 14px; /* Adjust font-size for smaller screens */
+    .section p {
+      margin-bottom: 5px;
     }
+    
     .skill-badge {
       display: inline-block;
       padding: 6px 12px;
       border-radius: 16px;
-      background-color: #FFDAB6;
+      background-color: #8cc63e;
       margin-right: 10px;
       margin-bottom: 10px;
-      font-weight: 700;
       font-size: 14px;
-      color: #333333;
-      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+      color: #ffffff;
+      font-weight: 700;
     }
-    h3#contact {
-      margin-bottom: 0;
+
+    .interest-badge {
+      display: inline-block;
+      padding: 6px 12px;
+      border-radius: 16px;
+      background-color: #f2851c;
+      margin-right: 10px;
+      margin-bottom: 10px;
+      font-size: 14px;
+      color: #ffffff;
+      font-weight: 700;
     }
-    p.text-center {
-      margin-top: 0;
+ 
+    .contact-details {
+      margin-top: 5px;
+      margin-bottom: 5px;
+      font-size: 16px;
     }
-    .profile-picture-container {
-      position: absolute;
-      top: 40px; /* Adjust top position for smaller screens */
-      right: 40px; /* Adjust right position for smaller screens */
-      width: 120px; /* Adjust width for smaller screens */
-      height: 130px; /* Adjust height for smaller screens */
-      background-color: #ffffff;
-      border-radius: 18px;
-      border: 4px solid #FFB18C;
-      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
-      overflow: hidden;
-    }
+
     .profile-picture {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      overflow: hidden;
+      margin: 0 auto;
+      border: 4px solid #e9ecef;
     }
-    @media (max-width: 768px) {
-      .container {
-        padding: 10px; /* Adjust padding for smaller screens */
-      }
-      .content {
-        padding: 10px; /* Adjust padding for smaller screens */
-      }
-      h1 {
-        font-size: 24px; /* Adjust font-size for smaller screens */
-      }
-      h2 {
-        font-size: 18px; /* Adjust font-size for smaller screens */
-      }
-      p {
-        font-size: 14px; /* Adjust font-size for smaller screens */
-      }
-      .section-divider {
-        margin-top: 20px; /* Adjust margin for smaller screens */
-      }
-      .project-title {
-        font-size: 14px; /* Adjust font-size for smaller screens */
-      }
-      .project-description {
-        font-size: 12px; /* Adjust font-size for smaller screens */
-      }
-      .profile-picture-container {
-        top: 20px; /* Adjust top position for smaller screens */
-        right: 20px; /* Adjust right position for smaller screens */
-        width: 80px; /* Adjust width for smaller screens */
-        height: 90px; /* Adjust height for smaller screens */
-      }
+
+    .profile-name {
+      font-size: 24px;
+      font-weight: 700;
+      margin-top: 10px;
+      margin-bottom: 5px;
+      text-align: center;
+      color: #444444;
     }
+
+    .profile-subtitle {
+      font-size: 16px;
+      font-weight: 400;
+      text-align: center;
+      color: #8cc63e;
+    }
+        .divider {
+      display: inline-block;
+      width: 1px;
+      height: 12px;
+      background-color: #000000;
+      margin: 0 10px;
+      vertical-align: middle;
+    }
+    .dashed-line {
+     border-top: 1.8px dashed #000000;
+    }
+       a {
+     color: #005826;
+     text-decoration: none;
+     }
+    /* Updated Styles */
+
+    /* Dark Green Colors */
+    .dark-green {
+      color: #005826;
+    }
+
+    .light-green {
+      color: #8cc63e;
+    }
+
+    /* Background Colors */
+    .bg-dark-green {
+      background-color: #005826;
+    }
+
+    .bg-light-green {
+      background-color: #8cc63e;
+    }
+    .project-link {
+      color: #8cc63e;
+      text-decoration: none;
+    }
+    
   </style>
 </head>
 <body>
   <div class="container">
     <div class="content">
-        <div class="profile-picture-container">
-        <img class="profile-picture" src="images/profile.jpg" alt="Profile Picture of Tanmay Kalbande">
+      <div class="profile-picture">
+        <img src="images/profile.jpg" alt="Profile Picture">
       </div>
-      <h1>Tanmay Kalbande</h1>
-      <p class="subtitle">Data Science Enthusiast</p>
-      <div class="contact-info">
-        <p><strong>Email:</strong> tanmaykalbande@gmail.com</p>
-        <p><strong>Phone:</strong> 737-838-1494</p>
+      <h1 class="profile-name">Tanmay Kalbande</h1>
+      <h2 class="profile-subtitle">Data Science Enthusiast</h2>
+      
+      <div class="section-divider">
+        <h2 class="light-green">Summary</h2>
+        <p>Data science enthusiast with a solid foundation in statistical analysis, machine learning, and data visualization. Experienced in Python and R programming languages. Passionate about leveraging data to extract meaningful insights and drive data-driven decision-making.</p>
       </div>
       
-      <div class="section">
-        <h2 id="summary">Summary</h2>
-        <p>As a data science enthusiast with a solid foundation in statistical analysis, machine learning, and data visualization, I am eager to apply my skills and knowledge to contribute to meaningful insights and data-driven decision-making.</p>
+
+      <div class="section-divider">
+  <h2 class="light-green">Education</h2>
       </div>
-      
+
+    <div class="section">
+      <ul>
+        <li>
+          <div class="section">
+            <h3 class="dark-green">The Certified Data Scientist, DataMites™  </h3>
+            
+            <p>Duration: 8 months</p>
+            <p>Year: 2022 - 2023</p>
+          </div>
+        </li>
+        <li>
+          <div class="section">
+            <h3 class="dark-green">Bachelor of Engineering in Mechanical Engineering</h3>
+            <p>Sant Gadge Baba Amravati University</p>
+            <p>Year: 2019 - 2022</p>
+          </div>
+        </li>
+      </ul>
+    </div>
+      <div class="section-divider">
+        <h2 class="light-green">Skills</h2>
+      </div>
+
       <div class="section">
-        <h2 id="experience">Experience</h2>
-        <div class="job">
-          <h3>Data Science Consultant, Rubixe</h3>
-          <p class="job-dates"><em>Dec 2022 - Present</em></p>
+        <div class="skill-badge bg-dark-green">Python</div>
+        <div class="skill-badge bg-dark-green">R</div>
+        <div class="skill-badge bg-dark-green">SQL</div>
+        <div class="skill-badge bg-dark-green">Machine Learning</div>
+        <div class="skill-badge bg-dark-green">Data Visualization</div>
+        <div class="skill-badge bg-dark-green">Excel</div>
+        <div class="skill-badge bg-dark-green">Neural Networks</div>
+      </div>
+
+      <div class="section-divider">
+        <h2 class="light-green">Interests</h2>
+      </div>
+
+      <div class="section">
+        <div class="interest-badge bg-light-green">Artificial Intelligence</div>
+        <div class="interest-badge bg-light-green">Data Mining</div>
+        <div class="interest-badge bg-light-green">Big Data</div>
+        <div class="interest-badge bg-light-green">Natural Language Processing</div>
+        <div class="interest-badge bg-light-green">Ethical AI</div>
+      </div>
+
+      <div class="section-divider">
+        <h2 class="light-green">Projects</h2>
+      </div>
+
+      <div class="section">
+        <div class="project-title dark-green"><b>Customer Segmentation using Clustering Analysis</b></div>
+        <div class="project-description">This project applies clustering analysis to customer data to identify distinct segments within a customer base. By grouping customers with similar characteristics, businesses can develop targeted marketing strategies using Python.<a class="project-link" href="https://github.com/tanmay-kalbande/Customer-Segmentation">View Project</a></div>
+      </div>
+
+      <div class="section">
+        <div class="project-title dark-green"><b>Movie Recommendation System</b></div>
+        <div class="project-description">This project develops a movie recommendation system using Python and the MovieLens dataset. By analyzing user ratings and preferences, personalized movie recommendations are provided. It offers flexibility to explore various recommendation algorithms.<a class="project-link" href="https://github.com/tanmay-kalbande/Movie-Recommendation-System">View Project</a></div>
+      </div>
+
+      <div class="section">
+        <div class="project-title dark-green"><b>Predictive Maintenance using Machine Learning</b></div>
+        <div class="project-description">Built a predictive maintenance model using machine learning algorithms to predict equipment failure in a manufacturing plant. The model helped optimize maintenance schedules and reduce downtime.<a class="project-link" href="#">View Project</a></div>
+      </div>
+
+      <div class="section-divider">
+        <h2 class="light-green">Experience</h2>
+      </div>
+
+      <div class="section">
+        <h3 class="dark-green">Data Analyst Intern at Rubixe</h3>
+        <p>Dec 2022 - Present</p>
+        <ul>
+          <li>Performed data analysis and visualization tasks to support decision-making processes.</li>
+          <li>Collaborated with cross-functional teams to gather requirements and deliver insights.</li>
+          <li>Developed data-driven reports and dashboards using tools like Tableau.</li>
+        </ul>
+      </div>
+
+      <div class="section-divider">
+        <h2 class="light-green">Certifications</h2>
+      </div>
+
+      <div class="section">
           <ul>
-            <li>Extracted, cleaned, and transformed data from various sources for analysis</li>
-            <li>Performed exploratory data analysis to identify trends and patterns</li>
-            <li>Created interactive dashboards and reports to communicate insights to stakeholders</li>
-          </ul>
-        </div>
-      </div>
-      
-      <div class="section">
-        <h2 id="education">Education</h2>
-        <div class="education">
-          <p class="education-dates"><strong>The Certified Data Scientist Bootcamp</strong><br>DataMites™, [2022 - 2023]
-          </p>
-        </div>
-        <div class="education">
-          <p class="education-dates"><strong>B.E. - Mechanical Engineering</strong><br>Prof. Ram Meghe Institute of Technology & Research, Amravati University, 9.3 CGPA   [2019 - 2022]
-          </p>
-          <p class="education-dates"><strong>Diploma in Mechanical Engineering</strong><br>Government Polytechnic, Murtijapur, 73%  [2016 - 2019]</p>
-        </div>
-      </div>
-      
-      <div class="section">
-        <h2 id="skills">Skills</h2>
-        <div class="skills">
-          <span class="skill-badge" style="background-color: #FFDAB6; color: #333333;">Python</span>
-          <span class="skill-badge" style="background-color: #FFC5A1; color: #333333;">R</span>
-          <span class="skill-badge" style="background-color: #FFB18C; color: #333333;">SQL</span>
-          <span class="skill-badge" style="background-color: #FFC5A1; color: #333333;">Machine Learning</span>
-          <span class="skill-badge" style="background-color: #FFB18C; color: #333333;">Statistical Analysis</span>
-          <span class="skill-badge" style="background-color: #FFC5A1; color: #333333;">Data Visualization</span>
-          <span class="skill-badge" style="background-color: #FFB18C; color: #333333;">Data Cleaning and Preprocessing</span>
-        </div>
-      </div>
-      
-      <div class="section">
-        <h2 id="projects">Projects</h2>
-        <div class="project">
-          <div class="project-title">Movie Recommendation System</div>
-          <p class="project-description">This project implements a collaborative filtering-based movie recommendation system using Python and the MovieLens dataset. By analyzing user ratings and preferences, the system suggests personalized movie recommendations to users. It allows for exploration and experimentation with different recommendation algorithms.<a href="https://github.com/tanmay-kalbande/Movie-Recommendation-System"> Github Link</a></p>
-        </div>
-        <div class="project">
-          <div class="project-title">Customer Segmentation</div>
-          <p class="project-description">In this project, clustering analysis is applied to customer data to identify distinct segments within a customer base. By grouping customers with similar characteristics, businesses can develop targeted marketing strategies. The Python implementation offers flexibility in applying clustering algorithms and visualizing the resulting segments, enabling data-driven marketing decisions. <a href="https://github.com/tanmay-kalbande/Customer-Segmentation"> Github Link</a>
-</p>
-        </div>
-      </div>
-      
-      <div class="section">
-        <h2 id="certifications">Certifications</h2>
-        <ul>
-          <li><a>Python for Data Science</a> - Issued by Coursera, 2021</li>
-        <li><a>The Data Science Course Complete Data Science Bootcamp</a> - Issued by 365 Data Science, 2022</li>
-	      <li><a>Certified Data Scientist</a> - Issued by IABAC™, 2023</li>
+        <li class="light-green"><a>Python for Data Science -</a> Issued by Coursera, 2021</li>
+        <li class="light-green"><a>The Data Science Course Complete Data Science Bootcamp -</a> Issued by 365 Data Science, 2022</li>
+        <li class="light-green"><a>Certified Data Scientist -</a> Issued by IABAC™, 2023</li>
         </ul>
       </div>
-      <h2 id="interests">Interests</h2>
-        <ul>
-          <li>Data Science</li>
-          <li>Machine Learning</li>
-          <li>Data Visualization</li>
-          <li>Artificial Intelligence</li>
-        </ul>
-      
-      <div class="section">
-        
-        <div class="section-divider"></div>
-                <h3 id="contact">Contact</h3>
-        <p class="text-center">For more information, please visit my <a href="https://www.linkedin.com/in/tanmay-kalbande">LinkedIn</a> profile and check out my <a href="https://github.com/tanmay-kalbande">GitHub</a> page for the project repositories.</p>
+          <div class="dashed-line"></div>
+      <div class="section-divider">
+        <h2 class="light-green">Contact</h2>
       </div>
+
+        <div class="section">
+          <p class="contact-details">
+            Email: tanmaykalbande@gmail.com
+            <span class="divider"></span>
+            Phone: +91 737-838-1494
+          </p>
+          <p class="text-center">
+            For more information, please visit my 
+            <a class="project-link" href="https://www.linkedin.com/in/tanmay-kalbande">LinkedIn</a> profile 
+            and check out my 
+            <a class="project-link" href="https://github.com/tanmay-kalbande">GitHub</a> page 
+            for the project repositories.
+          </p>
+        </div>
     </div>
   </div>
 </body>
