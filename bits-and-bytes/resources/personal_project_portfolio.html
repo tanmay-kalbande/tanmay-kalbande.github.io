@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Tanmay Kalbande - Personal Projects Portfolio</title>
+  <meta name="description" content="Explore Tanmay Kalbande's personal projects portfolio. Discover a variety of projects covering data science, machine learning, statistics, data visualization, and more.">
+  <meta name="keywords" content="data science, machine learning, statistics, data visualization, Python, SQL, AI, Big Data, NLP, ethical AI, deep learning, TinyML, personal projects, portfolio">
+  <meta name="author" content="Tanmay Kalbande">
+  <link rel="icon" href="favicon.png" type="image/x-icon" alt="Website Favicon">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles/light.css" id="light-theme">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <style>
+  /* Reset some default styles */
+  body, h1, h2, h3, p {
+    margin: 0;
+    padding: 0;
+  }
+
+  body {
+    font-size: 16px;
+    line-height: 1.6;
+    scroll-behavior: smooth;
+    font-family: 'Poppins', sans-serif;
+    color: #333333;
+    background-color: #f7f7f7;
+    border: 2px dotted #555555;
+  }
+
+  .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 50px;
+    background-color: #C4C3BE;
+    min-height: 100vh;
+    max-width: 1400px;
+    margin: 0 auto;
+    border: 4px dotted #555555; /* Add this line for the dotted border */
+  }
+
+  .content {
+    max-width: 800px;
+    background-color: #FBFBFB;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    padding: 50px;
+    border: 4px ridge #555555;
+  }
+
+  .header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+  }
+
+  .logo {
+    width: 100px;
+    height: 100px;
+    border: 2px solid #F9F9F9;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+  }
+
+  .logo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 5px;
+  }
+
+  .contact-info {
+    text-align: right;
+  }
+
+  h1 {
+    font-size: 36px;
+    margin-bottom: 20px;
+    font-weight: 700;
+    color: #454545;
+  }
+
+  .subtitle {
+    margin-top: auto;
+  }
+
+  h2 {
+    font-size: 24px;
+    margin-top: 30px;
+    margin-bottom: 10px;
+    font-weight: 700;
+    color: #191919;
+  }
+
+  p {
+    margin-bottom: 10px;
+    font-size: 16px;
+    line-height: 1.6;
+  }
+
+  ul {
+    list-style-type: disc;
+    padding-left: 20px;
+    margin-top: 5px;
+    margin-bottom: 10px;
+  }
+
+  li {
+    margin-bottom: 5px;
+    font-size: 16px;
+    line-height: 1.6;
+  }
+
+  a {
+    color: #1B2430;
+    text-decoration: none;
+  }
+
+  a:hover {
+    color: #20262E;
+  }
+
+  .section-divider {
+    margin-top: 40px;
+    margin-bottom: 20px;
+    border-top: 2px dashed #555555;
+    text-align: center;
+  }
+
+  .project {
+    margin-bottom: 20px;
+  }
+
+  .project-title {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    font-size: 18px;
+    color: #000000;
+    margin-top: 15px;
+    cursor: pointer;
+    text-align: left;
+  }
+
+  .project-description {
+    margin-bottom: 10px;
+    color: #555555;
+    font-size: 16px;
+  }
+
+  .project-title summary::-webkit-details-marker {
+    display: none;
+  }
+
+  .project-title summary::after {
+    content: "+";
+    font-size: 20px;
+    margin-left: 5px;
+  }
+
+  .project-title[open] summary::after {
+    content: "-";
+  }
+
+  .dropdown-content {
+    width: 100%;
+    border: 2px solid #555555;
+    border-radius: 5px;
+    padding: 15px;
+    box-sizing: border-box;
+    text-align: left;
+  }
+
+  .screenshots,
+  .links {
+    margin-top: 10px;
+  }
+
+  .screenshots img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    border: 4px ridge #555555;
+    transition: opacity 0.5s ease-in-out;
+  }
+
+  .screenshots img.lazy {
+    opacity: 0;
+  }
+
+  .screenshots img.lazy-loaded {
+    opacity: 1;
+  }
+
+  .footer {
+    margin-top: 5px;
+    text-align: center;
+    font-size: 12px !important; /* Use !important to override conflicting styles */
+    color: #777777;
+  }
+
+  .footer a {
+    color: #0F0F0F;
+    text-decoration: none;
+  }
+
+  .footer a:hover {
+    text-decoration: underline;
+  }
+
+  .links .fa {
+    margin-right: 5px;
+  }
+
+     /* Change the background and text color for selected content */
+   ::selection {
+     background-color: #555555; /* Adjust the background color as needed */
+     color: #ffffff; /* Adjust the text color as needed */
+   }
+
+    /* Change the background and text color for selected content in Firefox */
+  ::-moz-selection {
+     background-color: #555555; /* Adjust the background color as needed */
+     color: #ffffff; /* Adjust the text color as needed */
+   }
+
+  @media only screen and (max-width: 600px) {
+    body {
+      font-size: 14px;
+      line-height: 1.5;
+    }
+
+    h1 {
+      font-size: 24px;
+      margin-bottom: 10px;
+    }
+
+    h2 {
+      font-size: 20px;
+      margin-top: 20px;
+      margin-bottom: 10px;
+    }
+
+    p,
+    ul,
+    li {
+      margin-bottom: 8px;
+    }
+
+    .container {
+      padding: 5px;
+    }
+
+    .content {
+      padding: 10px;
+      border: 3px groove #555555;
+    }
+
+    .header {
+      flex-direction: column;
+      text-align: center;
+      margin-bottom: 15px;
+    }
+
+    .logo {
+      width: 80px;
+      height: 80px;
+      margin: 0 auto 10px;
+      margin-top: 10px;
+    }
+
+    .project-title {
+      font-size: 16px;
+      margin-top: 15px;
+    }
+
+    summary {
+      outline: none; /* Removes the default outline */
+    }
+
+    .project li {
+      font-size: 14px;
+      line-height: 1.6;
+    }
+
+    .screenshots {
+      margin-top: 20px;
+    }
+
+    .screenshots img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 5px;
+      margin-bottom: 10px;
+      border: 3px ridge #555555;
+    }
+  }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="content">
+      <div class="header">
+        <div class="logo">
+          <img src="profile_picture.jpg" alt="Logo">
+        </div>
+        <div class="contact-info">
+          <p><strong>Email:</strong> kalbandetanmay@gmail.com</p>
+          <p><strong>Phone:</strong> 737-838-1494</p>
+        </div>
+      </div>
+
+      <h1>Tanmay Kalbande</h1>
+      <div class="subtitle">
+        <!-- Add your subtitle here -->
+      </div>
+
+      <h2>Personal Projects</h2>
+
+      <!-- New section for the Table Extractor project description -->
+
+      <div class="project">
+        <details class="project-title">
+          <summary>
+            <i class="fas fa-table"></i> <strong>Table Extractor</strong>
+            <p class="project-description">A Flask web application for extracting tables from any webpage URL, utilizing BeautifulSoup for web scraping and DataTables for efficient table display.</p>
+          </summary>
+
+          <!-- Project Details -->
+          <div class="dropdown-content" id="detailsContent">
+            <p><strong>Duration:</strong> Dec 2023 - Jan 2024</p>
+            <p><strong>Description:</strong> The Table Extractor is a web application that allows users to extract tables from any webpage by providing the URL of the page. It utilizes Flask as the backend framework, BeautifulSoup for web scraping, and jQuery DataTables for efficient table rendering on the frontend. The application enables users to specify a table index in case a webpage contains multiple tables and provides the option to download the extracted data in CSV format.</p>
+            <p><strong>Features:</strong></p>
+            <ul>
+              <li>Table Extraction: Enter the URL of a webpage and, optionally, the index of the desired table to extract tabular data efficiently.</li>
+              <li>Dynamic Table Rendering: Utilizes jQuery DataTables to dynamically render the extracted table, providing features like sorting, searching, and pagination.</li>
+              <li>CSV Download: Download the extracted table data in CSV format for further analysis or storage.</li>
+              <li>Responsive Design: The application is designed to work seamlessly on various screen sizes, providing a consistent user experience.</li>
+            </ul>
+            <p><strong>Technologies Used:</strong></p>
+            <ul>
+              <li>Frontend:</li>
+              <li>HTML, CSS, JavaScript</li>
+              <li>jQuery DataTables for dynamic table rendering.</li>
+              <li>Backend:</li>
+              <li>Flask (Python web framework)</li>
+              <li>BeautifulSoup for web scraping</li>
+              <li>pandas for data manipulation</li>
+              <li>Flask-CORS for handling cross-origin resource sharing</li>
+            </ul>
+          </div>
+
+          <!-- Screenshots -->
+          <details class="screenshots">
+            <summary>Screenshots</summary>
+            <div class="dropdown-content">
+              <img class="lazy" data-src="screenshot2.png" alt="Screenshot 1" loading="lazy">
+            </div>
+          </details>
+
+          <!-- Links -->
+          <details class="links">
+            <summary>Links</summary>
+            <div class="dropdown-content">
+              <p><i class="fas fa-desktop"></i> <strong>Demo:</strong> <a href="https://table-extractor.onrender.com/" target="_blank">Table Extractor Web App</a></p>
+              <p><i class="fab fa-github"></i> <strong>GitHub:</strong> <a href="https://github.com/tanmay-kalbande/table-extractor-app" target="_blank">Table Extractor Repository</a></p>
+            </div>
+          </details>
+        </details>
+      </div>
+
+      <div class="project">
+        <details class="project-title">
+          <summary>
+            <i class="fas fa-bullseye"></i> <strong>Goal Tracker Web App</strong>
+            <p class="project-description">Welcome to Goal Tracker – the perfect tool to help you achieve your goals one day at a time!</p>
+          </summary>
+
+          <!-- Project Details -->
+          <div class="dropdown-content" id="detailsContent">
+            <p><strong>Duration:</strong> Sep 2023 - Sep 2023</p>
+            <p><strong>Description:</strong> Welcome to Goal Tracker – the perfect tool to help you achieve your goals one day at a time!</p>
+            <p><strong>Goals:</strong></p>
+            <ul>
+              <li>Easily Track Your Progress</li>
+              <li>Daily Goal Tracking</li>
+              <li>Custom Goals</li>
+              <li>Reset Whenever Needed</li>
+              <li>Visualize Your Progress</li>
+              <li>Share with Friends</li>
+            </ul>
+            <p><strong>Customization:</strong> Personalize it to your liking by modifying the CSS styles in the style.css file. Adjust colors, fonts, and other design elements to make it your own.</p>
+          </div>
+
+          <!-- Screenshots -->
+          <details class="screenshots">
+            <summary>Screenshots</summary>
+            <div class="dropdown-content">
+              <img class="lazy" data-src="screenshot1.png" alt="Screenshot 1" loading="lazy">
+            </div>
+          </details>
+
+          <!-- Links -->
+          <details class="links">
+            <summary>Links</summary>
+            <div class="dropdown-content">
+              <p><i class="fas fa-desktop"></i> <strong>Demo:</strong> <a href="https://tanmay-kalbande.github.io/Goal-Tracker/" target="_blank">Goal Tracker Web App</a></p>
+              <p><i class="fab fa-github"></i> <strong>GitHub:</strong> <a href="https://github.com/tanmay-kalbande/Goal-Tracker" target="_blank">Goal Tracker Repository</a></p>
+            </div>
+          </details>
+        </details>
+      </div>
+      <!-- Project Section for "The Scam Master" Podcast Website -->
+      <div class="project">
+          <details class="project-title">
+              <summary>
+                  <i class="fas fa-microphone-alt"></i> <strong>The Scam Master Podcast Website</strong>
+                  <p class="project-description">The website for "The Scam Master" podcast, exposing fraudsters and guiding listeners on outwitting them.</p>
+              </summary>
+
+              <!-- Project Details -->
+              <div class="dropdown-content" id="scamMasterDetails">
+                  <p><strong>Duration:</strong>July 2023 - Sep 2023</p>
+                  <p><strong>Description:</strong> The Scam Master podcast website serves as a platform to educate and entertain listeners about various scams, tricks, and tactics used by fraudsters. The website design focuses on providing a user-friendly experience with easy navigation to episodes, platforms, and social media links.</p>
+                  <p><strong>Features:</strong></p>
+                  <ul>
+                      <li>Engaging Hero Section: Introduces the podcast with a captivating logo and tagline.</li>
+                      <li>Platform Accessibility: Allows users to listen on various platforms such as Spotify, YouTube, and Amazon Music.</li>
+                      <li>Latest Episodes Showcase: Displays the most recent podcast episodes with embedded Spotify players.</li>
+                      <li>Social Media Integration: Connects with the audience through Instagram and other social media channels.</li>
+                  </ul>
+                  <p><strong>Technologies Used:</strong></p>
+                  <ul>
+                      <li>HTML, CSS for Frontend</li>
+                      <li>Embedded Spotify Players for Episodes</li>
+                      <li>Responsive Design for Various Screen Sizes</li>
+                      <!-- Add any additional technologies used -->
+                  </ul>
+              </div>
+
+              <!-- Screenshots -->
+              <details class="screenshots">
+                  <summary>Screenshots</summary>
+                  <div class="dropdown-content">
+                      <img class="lazy" data-src="screenshot3.png" alt="Screenshot 1" loading="lazy">
+                      <!-- Add more screenshots as needed -->
+                  </div>
+              </details>
+
+              <!-- Links -->
+              <details class="links">
+                  <summary>Links</summary>
+                  <div class="dropdown-content">
+                      <p><i class="fas fa-globe"></i> <strong>Website:</strong> <a href="https://the-scam-master.vercel.app/" target="_blank">The Scam Master Podcast Website</a></p>
+                      <p><i class="fab fa-instagram"></i> <strong>Instagram:</strong> <a href="https://www.instagram.com/the_scam_master/" target="_blank">The Scam Master on Instagram</a></p>
+                      <p><i class="fab fa-github"></i> <strong>GitHub:</strong> <a href="https://github.com/the-scam-master/podcast_webpage" target="_blank">The Scam Master Repository</a></p>
+                  </div>
+              </details>
+          </details>
+      </div>
+    </div>
+  </div>
+  <!-- Footer -->
+  <div class="footer">
+      <p><span style="font-size: 14px;">Connect with me on <a href="https://www.linkedin.com/in/tanmay-kalbande" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a> | Check out my projects on <a href="https://github.com/tanmay-kalbande" target="_blank"><i class="fab fa-github"></i> GitHub</a></span></p>
+      <p><span style="font-size: 14px;">© 2024 Tanmay Kalbande. All rights reserved.</span></p>
+  </div>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      var lazyImages = [].slice.call(document.querySelectorAll("img.lazy"));
+
+      if ("IntersectionObserver" in window && "IntersectionObserverEntry" in window && "intersectionRatio" in window.IntersectionObserverEntry.prototype) {
+        let lazyImageObserver = new IntersectionObserver(function (entries, observer) {
+          entries.forEach(function (entry) {
+            if (entry.isIntersecting) {
+              let lazyImage = entry.target;
+              lazyImage.src = lazyImage.dataset.src;
+              lazyImage.classList.remove("lazy");
+              lazyImageObserver.unobserve(lazyImage);
+            }
+          });
+        });
+
+        lazyImages.forEach(function (lazyImage) {
+          lazyImageObserver.observe(lazyImage);
+        });
+      } else {
+        // Fallback for browsers that don't support IntersectionObserver
+        lazyImages.forEach(function (lazyImage) {
+          lazyImage.src = lazyImage.dataset.src;
+          lazyImage.classList.remove("lazy");
+        });
+      }
+    });
+  </script>
+</body>
+</html>

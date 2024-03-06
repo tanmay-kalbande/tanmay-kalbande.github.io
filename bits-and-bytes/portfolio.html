@@ -1,0 +1,595 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <script>
+  window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
+  </script>
+  <script defer src="/_vercel/insights/script.js"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Tanmay Kalbande - Data Science Portfolio</title>
+  <meta name="description" content="Data science enthusiast with a solid foundation in statistical analysis, machine learning, and data visualization. Ready to contribute to meaningful insights and data-driven decision-making.">
+  <meta name="keywords" content="data science, machine learning, statistics, data visualization, Python, SQL, AI, Big Data, NLP, ethical AI, deep learning, TinyML">
+  <meta name="author" content="Tanmay Kalbande">
+  <link rel="icon" href="resources/favicon.png" type="image/x-icon" alt="Website Favicon">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <style>
+    /* Reset some default styles */
+    body, h1, h2, h3, p {
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      scroll-behavior: smooth;
+      font-family: 'Poppins', sans-serif;
+      margin: 0;
+      padding: 0;
+      color: #333333;
+      background-color: #f7f7f7;
+      border: 2px dotted #555555; /* Add this line for the dotted border */
+    }
+
+    .container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 50px;
+      background-color: #C4C3BE;
+      min-height: 100vh;
+      max-width: 1400px;
+      margin: 0 auto;
+      border: 4px dotted #555555; /* Add this line for the dotted border */
+    }
+
+    .content {
+      max-width: 800px;
+      background-color: #FBFBFB;
+      border-radius: 10px;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+      padding: 50px;
+      border: 4px ridge #555555; /* Add this line for the dotted border */
+    }
+
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 20px;
+    }
+
+    .logo {
+      width: 100px;
+      height: 100px;
+      border: 2px solid #F9F9F9;
+      border-radius: 5px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+    }
+
+    .logo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .contact-info {
+      text-align: right;
+    }
+
+    h1 {
+      font-size: 36px;
+      margin-bottom: 20px;
+      font-weight: 700;
+      color: #454545;
+    }
+
+    .subtitle {
+      margin-top: auto;
+    }
+
+    h2 {
+      font-size: 24px;
+      margin-top: 30px;
+      margin-bottom: 10px;
+      font-weight: 700;
+      color: #191919;
+    }
+
+    p {
+      margin-bottom: 10px;
+    }
+
+    ul {
+      list-style-type: disc;
+      padding-left: 20px;
+      margin-top: 5px;
+      margin-bottom: 10px;
+    }
+
+    li {
+      margin-bottom: 5px;
+    }
+
+    a {
+      color: #1B2430;
+      text-decoration: none;
+    }
+
+    a:hover {
+      color: #20262E;
+    }
+
+    .section-divider {
+      margin-top: 40px;
+      margin-bottom: 20px;
+      border-top: 2px dashed #555555;
+      text-align: center;
+    }
+
+    .project {
+      margin-bottom: 20px;
+    }
+
+    .project-description {
+      margin-top: 5px;
+      color: #666666;
+    }
+
+    .skill-badge,
+    .interest-badge {
+      display: inline-block;
+      padding: 6px 12px;
+      border-radius: 16px;
+      margin-right: 10px;
+      margin-bottom: 10px;
+      font-weight: 700;
+      font-size: 13px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      color: #000000;
+    }
+
+    .skill-python {
+      background-color: #EEEDEB;
+    }
+
+    .skill-r {
+      background-color: #EEEDEB;
+    }
+
+    .skill-sql {
+      background-color: #EEEDEB;
+    }
+
+    .skill-machine-learning {
+      background-color: #EEEDEB;
+    }
+
+    .skill-statistical-analysis {
+      background-color: #EEEDEB;
+    }
+
+    .skill-data-viz {
+      background-color: #EEEDEB;
+    }
+
+    .interest-ai {
+      background-color: #EEEDEB;
+    }
+
+    .interest-big-data {
+      background-color: #EEEDEB;
+    }
+
+    .interest-nlp {
+      background-color: #EEEDEB;
+    }
+
+    .interest-ethical-ai {
+      background-color: #EEEDEB;
+    }
+
+    .interest-deep-learning {
+      background-color: #EEEDEB;
+    }
+
+    .interest-tinyml {
+      background-color: #EEEDEB;
+    }
+
+    h3#contact {
+      margin-bottom: 0;
+    }
+
+    p.text-center {
+      margin-top: 0;
+    }
+
+    .download-button-container {
+      text-align: center;
+      margin-top: 20px;
+    }
+
+    .project-title {
+      font-size: 18px;
+      color: #000000;
+      margin-top: 15px;
+    }
+
+    .download-button {
+      display: inline-block;
+      padding: 8px 15px;
+      font-size: 16px;
+      font-weight: 700;
+      color: #ffffff;
+      background-color: #3D3B40;
+      text-decoration: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.6s ease;
+    }
+
+    .download-button:hover {
+      background-color: #EDE4E0;
+    }
+
+    /* Add this style in your existing styles */
+    ul.technical-summary-list {
+      list-style-type: none;
+      padding: 0;
+    }
+
+    ul.technical-summary-list li {
+      margin-bottom: 10px;
+      line-height: 1.6;
+    }
+
+    /* Change #certifications to .certifications in CSS */
+    .certifications h2 {
+      font-size: 22px;
+      color: #0F0F0F;
+      margin-top: 20px;
+      margin-bottom: 10px;
+    }
+
+    .certifications ul {
+      list-style-type: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .certifications li {
+      margin-bottom: 10px;
+    }
+
+    .section-divider {
+      margin-top: 40px;
+      margin-bottom: 20px;
+      border-top: 2px dashed #555555;
+      text-align: center;
+     }
+
+     .social-icons {
+       display: flex;
+       gap: 20px; /* Adjust the gap between icons as needed */
+       justify-content: center;
+       align-items: center;
+       margin-top: 20px; /* Add margin at the top for spacing */
+     }
+
+     .fab {
+       font-size: 28px; /* Adjust the size as needed */
+       color: #191919; /* Adjust the color as needed */
+       transition: color 0.3s ease; /* Add a smooth transition effect */
+     }
+
+     .fab:hover {
+       color: #3D3B40; /* Change the color on hover */
+     }
+
+     .footer {
+       margin-top: 5px;
+       text-align: center;
+       font-size: 14px;
+       color: #777777;
+     }
+
+     .footer a {
+       color: #0F0F0F;
+       text-decoration: none;
+     }
+
+     .footer a:hover {
+       text-decoration: underline;
+     }
+
+     /* Change the background and text color for selected content */
+    ::selection {
+      background-color: #555555; /* Adjust the background color as needed */
+      color: #ffffff; /* Adjust the text color as needed */
+    }
+
+    /* Change the background and text color for selected content in Firefox */
+    ::-moz-selection {
+      background-color: #555555; /* Adjust the background color as needed */
+      color: #ffffff; /* Adjust the text color as needed */
+    }
+
+    /* Refined Media Query for Mobile Screens Under 600px */
+    @media only screen and (max-width: 600px) {
+      /* Typography */
+      body {
+        font-size: 14px;
+        line-height: 1.5;
+      }
+
+      h1 {
+        font-size: 24px;
+        margin-bottom: 10px;
+      }
+
+      h2 {
+        font-size: 20px;
+        margin-top: 20px;
+        margin-bottom: 10px;
+      }
+
+      p, ul, li {
+        margin-bottom: 8px;
+      }
+
+      /* Layout */
+      .container {
+        padding: 5px;
+      }
+
+      .content {
+        padding: 10px;
+        border: 3px groove #555555; /* Add this line for the dotted border */
+      }
+
+      /* Header */
+      .header {
+        flex-direction: column;
+        text-align: center;
+        margin-bottom: 15px;
+      }
+
+      .logo {
+        width: 80px;
+        height: 80px;
+        margin: 0 auto 10px;
+        margin-top: 10px;
+      }
+
+      /* Sections */
+      .section {
+        margin-top: 15px;
+      }
+
+      /* Projects */
+      .project-title {
+        font-size: 16px;
+        margin-top: 15px;
+      }
+
+      .project li {
+        font-size: 14px;
+        line-height: 1.6;
+      }
+
+      /* Skills */
+      .skills, .interests {
+        flex-wrap: wrap;
+      }
+
+      .skill-badge, .interest-badge {
+        margin: 5px;
+        font-size: 12px;
+        padding: 4px 8px;
+        color: #000000;
+      }
+
+      /* Buttons */
+      .download-button {
+        padding: 10px 18px;
+        font-size: 14px;
+      }
+
+      .social-icons {
+        gap: 20px; /* Adjust the gap between icons as needed */
+        margin-top: 15px; /* Add margin at the top for spacing */
+      }
+
+      .fab {
+        font-size: 28px; /* Adjust the size as needed */
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="content">
+      <div class="header">
+        <div class="logo">
+          <img src="resources/profile_picture.jpg" alt="Tanmay Kalbande Profile Picture" id="theme-toggle-img">
+        </div>
+        <div class="contact-info">
+          <p><strong>Email:</strong> kalbandetanmay@gmail.com</p>
+          <p><strong>Phone:</strong> 737-838-1494</p>
+        </div>
+      </div>
+      <h1 id="your-name">Tanmay Kalbande</h1>
+      <p class="subtitle"><strong>Data Science Enthusiast</strong></p>
+      <div class="section">
+        <h2 id="objective">Objective</h2>
+        <p>As a data science enthusiast with a solid foundation in statistical analysis, machine learning, and data visualization, I am eager to apply my skills and knowledge to contribute to meaningful insights and data-driven decision-making.</p>
+      </div>
+      <div class="section">
+        <h2 id="technical-summary">Technical Summary</h2>
+        <ul class="technical-summary-list">
+          <li><strong>Experience:</strong> Hands-on experience in data science, encompassing the end-to-end development of predictive modeling solutions.</li>
+          <li><strong>Programming:</strong> Proficient in Python, specializing in data analysis and AI frameworks (NumPy, Pandas, Scikit-learn, Jupyter).</li>
+          <li><strong>SQL:</strong> Comfortable working with SQL Server and some exposure to Spark.</li>
+          <li><strong>Analytics:</strong> Familiarity with a range of machine learning techniques (supervised/unsupervised), deep learning, neural networks, and Natural Language Processing (NLP).</li>
+          <li><strong>Problem Solving:</strong> Skilled in troubleshooting and analytical thinking.</li>
+          <li><strong>Data Visualization:</strong> Proficient in creating insightful visualizations using tools such as Matplotlib and Seaborn.</li>
+          <li><strong>Statistical Analysis:</strong> Solid foundation in statistical concepts and their application in data analysis.</li>
+          <li><strong>Big Data:</strong> Exposure to big data technologies, including Hadoop and Spark.</li>
+          <li><strong>Ethical AI:</strong> Understanding of ethical considerations in AI development and deployment.</li>
+        </ul>
+      </div>
+      <div class="section">
+        <h2 id="tools">Tools</h2>
+        <ul style="list-style: none; padding-left: 0;">
+          <li><strong>Languages:</strong> Python 🐍</li>
+          <li><strong>Databases:</strong> SQL Server, Spark 💽</li>
+          <li><strong>IDE:</strong> PyCharm, Jupyter Notebooks 💻</li>
+          <li><strong>BI Tool:</strong> Tableau, PowerBI 📊</li>
+        </ul>
+      </div>
+      <div class="section">
+        <h2 id="experience">Experience</h2>
+        <div class="job">
+          <h3>Data Science Intern, Rubixe (Nov 2022 - Dec 2023)</h3>
+          <ul>
+            <li>Worked with a team to gather, clean, and organize data from various sources for in-depth analysis.</li>
+            <li>Explored data to find patterns and trends, helping shape practical strategies.</li>
+            <li>Assisted in creating clear reports and interactive visuals to share insights with others.</li>
+            <li>Collaborated with different teams, aligning data findings with business goals.</li>
+          </ul>
+        </div>
+      </div>
+      <div class="section">
+        <h2 id="skills">Skills</h2>
+        <div class="skills">
+          <span class="skill-badge skill-python">Python</span>
+          <span class="skill-badge skill-r">R</span>
+          <span class="skill-badge skill-sql">SQL</span>
+          <span class="skill-badge skill-machine-learning">Machine Learning</span>
+          <span class="skill-badge skill-statistical-analysis">Statistical Analysis</span>
+          <span class="skill-badge skill-data-viz">Data Visualization</span>
+        </div>
+      </div>
+      <div class="section">
+        <h2 id="interests">Interests</h2>
+        <div class="interests">
+          <span class="interest-badge interest-ai">Artificial Intelligence</span>
+          <span class="interest-badge interest-big-data">Big Data</span>
+          <span class="interest-badge interest-nlp">Natural Language Processing</span>
+          <span class="interest-badge interest-ethical-ai">Ethical AI</span>
+          <span class="interest-badge interest-deep-learning">Deep Learning</span>
+          <span class="interest-badge interest-tinyml">TinyML</span>
+        </div>
+      </div>
+      <div class="section">
+        <h2 id="projects">Projects</h2>
+        <!-- Project 1 details go here -->
+        <div class="project">
+          <h3 class="project-title">1. Web Traffic Analysis for Conversion Rate Improvement - Zoompare</h3>
+          <p><strong>Goal:</strong> Improve customer conversion rates</p>
+          <p><strong>Contributions:</strong> Performed web traffic analysis, Implemented A/B testing, Aligned findings with engineering teams</p>
+          <details>
+            <summary><strong>Tasks:</strong></summary>
+            <ul>
+              <li>Extracted data from Google Analytics API</li>
+              <li>Designed funnel analysis</li>
+              <li>Proposed page optimizations</li>
+            </ul>
+          </details>
+        </div>
+        <!-- Project 2 details go here -->
+        <div class="project">
+          <h3 class="project-title">2. Customer Segmentation using Clustering Analysis - Rubixe</h3>
+          <p><strong>Goal:</strong> Develop targeted marketing strategies</p>
+          <p><strong>Contributions:</strong> Applied clustering analysis to customer data, Utilized Python for algorithm implementation, Visualized resulting segments</p>
+          <details>
+            <summary><strong>Tasks:</strong></summary>
+            <ul>
+              <li>Define data preprocessing steps for clustering analysis.</li>
+              <li>Implement K-means clustering algorithm for segmentation.</li>
+              <li>Evaluate and visualize distinct customer segments.</li>
+            </ul>
+          </details>
+        </div>
+        <!-- Project 3 details go here -->
+        <div class="project">
+          <h3 class="project-title">3. Lead Quality Prediction - Rubixe</h3>
+          <p><strong>Goal:</strong> Prioritize sales efforts based on lead quality</p>
+          <p><strong>Contributions:</strong> Explored data, Utilized multiple models, Identified the top-performing model</p>
+          <details>
+            <summary><strong>Tasks:</strong></summary>
+            <ul>
+              <li>Prepare data for training models.</li>
+              <li>Experiment with various machine learning models (e.g., logistic regression, random forest, etc.)</li>
+              <li>Evaluate model performance and select the best-performing model.</li>
+            </ul>
+          </details>
+        </div>
+        <!-- Project 4 details go here -->
+        <div class="project">
+          <h3 class="project-title">4. Movie Recommendation System - Rubixe</h3>
+          <p><strong>Goal:</strong> Provide personalized movie suggestions</p>
+          <p><strong>Contributions:</strong> Collaborative filtering-based recommendation system, Explored various recommendation algorithms</p>
+          <details>
+            <summary><strong>Tasks:</strong></summary>
+            <ul>
+              <li>Build collaborative filtering models for recommendation.</li>
+              <li>Evaluate and compare the performance of different recommendation algorithms.</li>
+              <li>Integrate the recommendation system into the existing platform.</li>
+            </ul>
+          </details>
+        </div>
+      </div>
+
+      <div class="section">
+        <h2 id="certifications">Certifications</h2>
+        <div class="certifications">
+          <ul>
+            <li><strong>Python for Data Science</strong> - Issued by Coursera, 2021</li>
+            <li><strong>The Data Science Course Complete Data Science Bootcamp</strong> - Issued by 365 Data Science, 2022</li>
+            <li><strong>Certified Data Scientist</strong> - Issued by IABAC™, 2023</li>
+          </ul>
+        </div>
+      </div>
+      <div class="section-divider">
+        <p><strong>Interested in working together?</strong></p>
+        <h3 id="contact">Get in touch!</h3>
+      </div>
+      <!-- Updated button for Personal Projects -->
+      <div class="download-button-container">
+        <a href="resources/personal_project_portfolio" class="download-button" role="button">Explore My Data Science Projects</a>
+      </div>
+
+      <!-- Updated button for BI & Tableau Dashboards -->
+      <div class="download-button-container">
+        <a href="dashboard_project\BI_Dashboards" class="download-button" role="button">Explore Business Intelligence Dashboards</a>
+      </div>
+
+      <div class="section">
+        <h2 id="contact">Contact</h2>
+          <p class="text-center">
+            Feel free to reach out if you'd like to connect, discuss a project, or just say hello!
+            <br>
+            <div class="social-icons">
+              <a href="https://www.linkedin.com/in/tanmay-kalbande" target="_blank" class="fab"><i class="fab fa-linkedin"></i></a>
+              <a href="https://github.com/tanmay-kalbande" target="_blank" class="fab"><i class="fab fa-github"></i></a>
+              <!-- Add more social icons here if needed -->
+            </div>
+          </p>
+          <div class="download-button-container">
+          <a href="resources/tanmay-resume.pdf" download="Tanmay_Kalbande_Resume.pdf" class="download-button">Download Resume</a>
+        </div>
+        <p class="text-center"><a href="#top">Back to top</a></p>
+        <p style="display: none;">
+          <img src="https://visitor-badge.laobi.icu/badge?page_id=tanmay-sk.io&left_color=crimson&right_color=008080">
+        </p>
+      </div>
+    </div>
+  </div>
+  <div class="footer">
+    <p><span style="font-size: 14px;">© 2024 Tanmay Kalbande. All rights reserved.</span></p>
+  </div>
+</body>
+</html>
