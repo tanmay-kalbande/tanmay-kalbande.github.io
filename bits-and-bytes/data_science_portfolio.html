@@ -1,0 +1,639 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tanmay Kalbande - Crafting Insights from Data</title>
+  <meta name="description" content="Data science enthusiast with a solid foundation in statistical analysis, machine learning, and data visualization. Ready to contribute to meaningful insights and data-driven decision-making.">
+  <meta name="keywords" content="data science, machine learning, statistics, data visualization, Python, SQL, AI, Big Data, NLP, ethical AI, deep learning, TinyML">
+  <meta name="author" content="Tanmay Kalbande">
+  <meta name="robots" content="index, follow">
+  <meta property="og:title" content="Tanmay Kalbande - Data Science Portfolio">
+  <meta property="og:description" content="Data science enthusiast with a solid foundation in statistical analysis, machine learning, and data visualization. Ready to contribute to meaningful insights and data-driven decision-making.">
+  <meta property="og:image" content="bits-and-bytes/resources/portfolio.png">
+  <meta property="og:url" content="https://tanmay-kalbande.github.io/">
+  <meta property="og:type" content="website">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <link rel="icon" href="resources/favicon.png" type="image/x-icon" alt="Website Favicon">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&display=swap">
+  <style>
+    /* Reset some default styles */
+    body, h1, h2, h3, p {
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Roboto Mono', monospace;
+      color: #333;
+      background-color: #f5f5f5;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    ::selection {
+      background-color: #ffd700;
+      color: #333;
+    }
+
+    ::-moz-selection {
+      background-color: #ffd700;
+      color: #333;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 20px;
+      box-sizing: border-box;
+    }
+
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 20px;
+    }
+
+    .logo {
+      width: 120px;
+      height: 120px;
+      border: 2px solid #F9F9F9;
+      border-radius: 20%; /* Make it circular */
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+    }
+
+    .logo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover; /* Prevent the image from zooming */
+    }
+
+    .header-content {
+      display: flex;
+      align-items: center;
+    }
+
+    .header-text {
+      margin-left: 20px;
+    }
+
+    .header-text h1 {
+      font-size: 50px;
+      margin-bottom: 5px;
+    }
+
+    .header-text h2 {
+      font-size: 18px;
+      margin-bottom: 10px;
+      color: #666;
+    }
+
+    .contact-info {
+      text-align: right;
+    }
+
+    .content {
+      width: 100%;
+    }
+
+    .project {
+      margin-top: 20px; /* Add a top margin to create space between projects */
+      margin-bottom: 20px;
+      border-bottom: 2px solid #ddd; /* Add a border-bottom to separate projects */
+    }
+
+    h1 {
+      font-size: 36px;
+      margin-top: 20px;
+      margin-bottom: 5px;
+    }
+
+    h2 {
+      font-size: 22px;
+      margin-bottom: 15px;
+    }
+
+    h3, .project-title {
+      font-size: 18px;
+    }
+
+    p, li {
+      font-size: 16px;
+      line-height: 1.5;
+    }
+
+    .section {
+      padding: 20px;
+      margin-bottom: 20px;
+      border-radius: 5px;
+      background-color: #fff;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    }
+
+    .section-divider {
+      margin-top: 40px;
+      margin-bottom: 20px;
+      border-top: 2px dashed #555555;
+      text-align: center;
+    }
+
+    .skill-badge {
+      display: inline-block;
+      margin-bottom: 8px;
+      margin-right: 8px;
+      padding: 6px 12px;
+      border-radius: 20px;
+      background-color: #f0f0f0;
+      font-size: 16px;
+    }
+
+    @media only screen and (max-width: 600px) {
+      .skill-badge {
+        font-size: 12px;
+      }
+    }
+
+    .interest-badge {
+      display: inline-block;
+      margin-bottom: 8px;
+      margin-right: 8px;
+      padding: 6px 12px;
+      border-radius: 20px;
+      background-color: #f0f0f0;
+      font-size: 16px;
+    }
+
+    @media only screen and (max-width: 600px) {
+      .interest-badge {
+        font-size: 12px;
+      }
+    }
+
+    .project {
+      margin-bottom: 20px;
+    }
+
+    .download-button-container {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 40px;
+    }
+
+    .download-button {
+      padding: 12px 24px;
+      background-color: #333;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 4px;
+      font-weight: 700;
+      transition: background-color 0.3s ease;
+    }
+
+    .download-button:hover {
+      background-color: #ffd700;
+      color: #333;
+    }
+
+    a {
+      color: #333;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+
+    a:hover {
+      color: #ffd700;
+    }
+
+    footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      text-align: center;
+      margin: 15px 20px 0;
+      font-size: 14px;
+      color: #333;
+      font-weight: 600;
+      margin-top: auto;
+    }
+
+    .hidden-mobile {
+      display: inline;
+    }
+
+    @media only screen and (max-width: 600px) {
+      .container {
+        padding: 10px;
+      }
+
+      .header {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .contact-info {
+        text-align: left;
+        margin-top: 10px;
+      }
+
+      .download-button-container {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      footer {
+        margin-bottom: 15px;
+      }
+    }
+
+    @media only screen and (max-width: 600px) {
+      .section {
+        padding: 10px;
+        margin-top: auto;
+        margin-bottom: auto;
+      }
+
+      h1 {
+        font-size: 28px;
+      }
+
+      h2 {
+        font-size: 20px;
+      }
+
+      h3, .project-title {
+        font-size: 16px;
+      }
+
+      p, li {
+        font-size: 14px;
+      }
+    }
+
+    @media only screen and (max-width: 600px) {
+      .project-title summary {
+        font-size: 16px;
+      }
+
+      .project-description {
+        font-size: 14px;
+      }
+    }
+
+    @media only screen and (max-width: 600px) {
+      footer {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+      }
+
+      .download-button-container {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .download-button {
+        font-size: 13px; /* Adjust the font size */
+        padding: 10px 20px; /* Adjust the padding */
+      }
+
+      .hidden-mobile {
+        display: none;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <div class="header-content">
+        <div class="logo">
+          <img src="resources/profile_picture.jpg" alt="Tanmay Kalbande Profile Picture" id="theme-toggle-img">
+        </div>
+        <div class="header-text">
+          <h1>Tanmay Kalbande</h1>
+          <h2>Data Science Enthusiast</h2>
+        </div>
+      </div>
+      <div class="contact-info">
+        <p>Email: <a href="mailto:kalbandetanmay@gmail.com">kalbandetanmay@gmail.com</a><br>Phone: 737-838-1494</p>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2>About Me</h2>
+      <p>I'm a data science enthusiast skilled in statistical analysis, machine learning, and data visualization. Passionate about uncovering insights from complex datasets to drive informed decision-making. My goal is to contribute to impactful projects, constantly staying updated with the latest advancements in data science.</p>
+    </div>
+
+    <!-- Add this section towards the end of your portfolio -->
+    <div class="section" style="background-color: #ffd700; color: #333;">
+      <h2>Open for Job Opportunities</h2>
+      <p>I'm actively seeking new job opportunities in the field of data science. If you have any openings or know of any exciting opportunities, I'd love to hear from you!</p>
+      <p>Please feel free to reach out via email at <a href="mailto:kalbandetanmay@gmail.com">kalbandetanmay@gmail.com</a> or connect with me on <a href="https://www.linkedin.com/in/tanmay-kalbande">LinkedIn</a>.</p>
+      <p>Let's discuss how my skills and experiences can contribute to your team!</p>
+    </div>
+
+    <div class="section">
+      <h2>Technical Summary</h2>
+      <ul>
+        <li><strong>Experience:</strong> Hands-on experience in data science, encompassing the end-to-end development of predictive modeling solutions.</li>
+        <li><strong>Programming:</strong> Proficient in Python, specializing in data analysis and AI frameworks (NumPy, Pandas, Scikit-learn, Jupyter).</li>
+        <li><strong>SQL:</strong> Comfortable working with SQL Server and some exposure to Spark.</li>
+        <li><strong>Analytics:</strong> Familiarity with a range of machine learning techniques (supervised/unsupervised), deep learning, neural networks, and Natural Language Processing (NLP).</li>
+        <li><strong>Problem Solving:</strong> Skilled in troubleshooting and analytical thinking.</li>
+        <li><strong>Data Visualization:</strong> Proficient in creating insightful visualizations using tools such as Matplotlib and Seaborn.</li>
+        <li><strong>Statistical Analysis:</strong> Solid foundation in statistical concepts and their application in data analysis.</li>
+        <li><strong>Big Data:</strong> Exposure to big data technologies, including Hadoop and Spark.</li>
+        <li><strong>Ethical AI:</strong> Understanding of ethical considerations in AI development and deployment.</li>
+      </ul>
+    </div>
+
+    <div class="section">
+      <h2>Tools</h2>
+      <ul>
+        <li><strong>Languages:</strong> Python 🐍</li>
+        <li><strong>Databases:</strong> SQL Server, Spark 💽</li>
+        <li><strong>IDE:</strong> PyCharm, Jupyter Notebooks 💻</li>
+        <li><strong>BI Tool:</strong> Tableau, PowerBI 📊</li>
+      </ul>
+    </div>
+
+    <div class="section">
+      <h2>Experience</h2>
+      <h3>Data Science Intern, Rubixe (Nov 2022 - Dec 2023)</h3>
+      <ul>
+        <li>Worked with a team to gather, clean, and organize data from various sources for in-depth analysis.</li>
+        <li>Explored data to find patterns and trends, helping shape practical strategies.</li>
+        <li>Assisted in creating clear reports and interactive visuals to share insights with others.</li>
+        <li>Collaborated with different teams, aligning data findings with business goals.</li>
+      </ul>
+    </div>
+
+    <div class="section">
+      <h2>Skills</h2>
+      <span class="skill-badge">Python</span>
+      <span class="skill-badge">R</span>
+      <span class="skill-badge">SQL</span>
+      <span class="skill-badge">Machine Learning</span>
+      <span class="skill-badge">Statistical Analysis</span>
+      <span class="skill-badge">Data Visualization</span>
+    </div>
+
+    <div class="section">
+      <h2>Interests</h2>
+      <span class="interest-badge">Artificial Intelligence</span>
+      <span class="interest-badge">Big Data</span>
+      <span class="interest-badge">Natural Language Processing</span>
+      <span class="interest-badge">Ethical AI</span>
+      <span class="interest-badge">Deep Learning</span>
+      <span class="interest-badge">TinyML</span>
+    </div>
+
+    <div class="section">
+      <h2 id="projects">Projects</h2>
+      <!-- Project 1 details go here -->
+      <div class="project">
+       <h3 class="project-title"><i class="fas fa-chart-line"></i> Web Traffic Analysis for Conversion Rate Improvement - Zoompare</h3>
+        <p class="project-description">Analyzed website traffic data to identify patterns and optimize conversion rates using Python and Google Analytics.</p>
+        <p><strong>Contributions:</strong> Performed web traffic analysis, Implemented A/B testing, Aligned findings with engineering teams</p>
+        <details>
+          <summary><strong>Tasks:</strong></summary>
+          <ul>
+            <li>Extracted data from Google Analytics API</li>
+            <li>Designed funnel analysis</li>
+            <li>Proposed page optimizations</li>
+          </ul>
+        </details>
+      </div>
+      <!-- Project 2 details go here -->
+      <div class="project">
+        <h3 class="project-title"><i class="fas fa-users"></i> Customer Segmentation using Clustering Analysis - Rubixe</h3>
+        <p class="project-description">Applied clustering analysis to customer data and visualized resulting segments using Python.</p>
+        <p><strong>Contributions:</strong> Defined data preprocessing steps, Implemented K-means clustering algorithm, Evaluated and visualized distinct customer segments</p>
+        <details>
+          <summary><strong>Tasks:</strong></summary>
+          <ul>
+            <li>Define data preprocessing steps for clustering analysis.</li>
+            <li>Implement K-means clustering algorithm for segmentation.</li>
+            <li>Evaluate and visualize distinct customer segments.</li>
+          </ul>
+        </details>
+      </div>
+      <!-- Project 3 details go here -->
+      <div class="project">
+        <h3 class="project-title"><i class="fas fa-bullseye"></i> Lead Quality Prediction - Rubixe</h3>
+        <p class="project-description">Explored data and utilized multiple models to predict lead quality for sales prioritization.</p>
+        <p><strong>Contributions:</strong> Explored data, Utilized multiple models, Identified the top-performing model</p>
+        <details>
+          <summary><strong>Tasks:</strong></summary>
+          <ul>
+            <li>Prepare data for training models.</li>
+            <li>Experiment with various machine learning models (e.g., logistic regression, random forest, etc.)</li>
+            <li>Evaluate model performance and select the best-performing model.</li>
+          </ul>
+        </details>
+      </div>
+      <!-- Project 4 details go here -->
+      <div class="project">
+        <h3 class="project-title"><i class="fas fa-film"></i> Movie Recommendation System - Rubixe</h3>
+        <p class="project-description">Developed a collaborative filtering-based recommendation system for personalized movie suggestions.</p>
+        <p><strong>Contributions:</strong> Built collaborative filtering models, Explored various recommendation algorithms</p>
+        <details>
+          <summary><strong>Tasks:</strong></summary>
+          <ul>
+            <li>Build collaborative filtering models for recommendation.</li>
+            <li>Evaluate and compare the performance of different recommendation algorithms.</li>
+            <li>Integrate the recommendation system into the existing platform.</li>
+          </ul>
+        </details>
+      </div>
+
+      <div class="project">
+        <h3 class="project-title"><i class="fas fa-comment"></i> Sentiment Analysis of Customer Reviews - Sentix</h3>
+        <p class="project-description">Analyzed sentiment in customer reviews using natural language processing techniques.</p>
+        <p><strong>Contributions:</strong> Developed sentiment analysis model, Implemented NLP techniques</p>
+        <details>
+          <summary><strong>Tasks:</strong></summary>
+          <ul>
+            <li>Collect and preprocess customer review data.</li>
+            <li>Train and test sentiment analysis model using machine learning algorithms.</li>
+            <li>Deploy model for real-time sentiment analysis of incoming customer reviews.</li>
+          </ul>
+        </details>
+      </div>
+
+      <!-- Project 6 details go here -->
+      <div class="project">
+        <h3 class="project-title"><i class="fas fa-tools"></i> Predictive Maintenance System - TechCorp</h3>
+        <p class="project-description">Developed a predictive maintenance system to anticipate equipment failures and enable proactive maintenance.</p>
+        <p><strong>Contributions:</strong> Built predictive maintenance model, Integrated with existing maintenance systems</p>
+        <details>
+          <summary><strong>Tasks:</strong></summary>
+          <ul>
+            <li>Collect sensor data from industrial equipment.</li>
+            <li>Develop predictive maintenance algorithms using machine learning.</li>
+            <li>Implement real-time monitoring and alerting system for maintenance personnel.</li>
+          </ul>
+        </details>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2 style="background-color: #ffd700; padding: 5px;">Personal Projects</h2>
+      <!-- Project 1: Table Extractor -->
+      <div class="project">
+          <details class="project-title">
+              <summary>
+                  <i class="fas fa-table"></i> <strong>Table Extractor</strong>
+                  <p class="project-description">A Flask web application for extracting tables from any webpage URL, utilizing BeautifulSoup for web scraping and DataTables for efficient table display.</p>
+              </summary>
+
+              <!-- Project Details -->
+              <div class="dropdown-content" id="detailsContent">
+                  <p><strong>Description:</strong> A Flask web application that allows users to extract tables from any webpage by providing the URL of the page. It utilizes Flask as the backend framework, BeautifulSoup for web scraping, and jQuery DataTables for efficient table rendering on the frontend. Users can specify a table index in case a webpage contains multiple tables and download the extracted data in CSV format.</p>
+                  <p><strong>Features:</strong></p>
+                  <ul>
+                      <li>Table Extraction</li>
+                      <li>Dynamic Table Rendering</li>
+                      <li>CSV Download</li>
+                      <li>Responsive Design</li>
+                  </ul>
+                  <p><strong>Technologies Used:</strong></p>
+                  <ul>
+                      <li>Frontend: HTML, CSS, JavaScript, jQuery DataTables</li>
+                      <li>Backend: Flask, BeautifulSoup, pandas, Flask-CORS</li>
+                  </ul>
+              </div>
+
+              <!-- Links -->
+              <details class="links">
+                  <summary>Links</summary>
+                  <div class="dropdown-content">
+                      <p><i class="fas fa-desktop"></i> <strong>Demo:</strong> <a href="https://table-extractor.onrender.com/" target="_blank">Table Extractor Web App</a></p>
+                      <p><i class="fab fa-github"></i> <strong>GitHub:</strong> <a href="https://github.com/tanmay-kalbande/table-extractor-app" target="_blank">Table Extractor Repository</a></p>
+                  </div>
+              </details>
+          </details>
+      </div>
+
+      <!-- Project 2: Goal Tracker Web App -->
+      <div class="project">
+          <details class="project-title">
+              <summary>
+                  <i class="fas fa-bullseye"></i> <strong>Goal Tracker Web App</strong>
+                  <p class="project-description">Welcome to Goal Tracker – the perfect tool to help you achieve your goals one day at a time!</p>
+              </summary>
+
+              <!-- Project Details -->
+              <div class="dropdown-content" id="detailsContent">
+                  <p><strong>Description:</strong> Welcome to Goal Tracker – the perfect tool to help you achieve your goals one day at a time!</p>
+                  <p><strong>Features:</strong></p>
+                  <ul>
+                      <li>Easily Track Your Progress</li>
+                      <li>Daily Goal Tracking</li>
+                      <li>Custom Goals</li>
+                      <li>Reset Whenever Needed</li>
+                      <li>Visualize Your Progress</li>
+                      <li>Share with Friends</li>
+                  </ul>
+              </div>
+
+              <!-- Links -->
+              <details class="links">
+                  <summary>Links</summary>
+                  <div class="dropdown-content">
+                      <p><i class="fas fa-desktop"></i> <strong>Demo:</strong> <a href="https://tanmay-kalbande.github.io/Goal-Tracker/" target="_blank">Goal Tracker Web App</a></p>
+                      <p><i class="fab fa-github"></i> <strong>GitHub:</strong> <a href="https://github.com/tanmay-kalbande/Goal-Tracker" target="_blank">Goal Tracker Repository</a></p>
+                  </div>
+              </details>
+          </details>
+      </div>
+
+      <!-- Project 3: The Scam Master Podcast Website -->
+      <div class="project">
+          <details class="project-title">
+              <summary>
+                  <i class="fas fa-microphone-alt"></i> <strong>The Scam Master Podcast Website</strong>
+                  <p class="project-description">The website for "The Scam Master" podcast, exposing fraudsters and guiding listeners on outwitting them.</p>
+              </summary>
+
+              <!-- Project Details -->
+              <div class="dropdown-content" id="scamMasterDetails">
+                  <p><strong>Description:</strong> The Scam Master podcast website serves as a platform to educate and entertain listeners about various scams, tricks, and tactics used by fraudsters. The website design focuses on providing a user-friendly experience with easy navigation to episodes, platforms, and social media links.</p>
+                  <p><strong>Features:</strong></p>
+                  <ul>
+                      <li>Engaging Hero Section</li>
+                      <li>Platform Accessibility</li>
+                      <li>Latest Episodes Showcase</li>
+                      <li>Social Media Integration</li>
+                  </ul>
+                  <p><strong>Technologies Used:</strong></p>
+                  <ul>
+                      <li>HTML, CSS for Frontend</li>
+                      <li>Embedded Spotify Players for Episodes</li>
+                      <li>Responsive Design for Various Screen Sizes</li>
+                  </ul>
+              </div>
+
+              <!-- Links -->
+              <details class="links">
+                  <summary>Links</summary>
+                  <div class="dropdown-content">
+                      <p><i class="fas fa-globe"></i> <strong>Website:</strong> <a href="https://the-scam-master.vercel.app/" target="_blank">The Scam Master Podcast Website</a></p>
+                      <p><i class="fab fa-instagram"></i> <strong>Instagram:</strong> <a href="https://www.instagram.com/the_scam_master/" target="_blank">The Scam Master on Instagram</a></p>
+                      <p><i class="fab fa-github"></i> <strong>GitHub:</strong> <a href="https://github.com/the-scam-master/podcast_webpage" target="_blank">The Scam Master Repository</a></p>
+                  </div>
+              </details>
+          </details>
+      </div>
+  </div>
+
+    <div class="section">
+      <h2>Certifications</h2>
+      <ul>
+        <li><strong>Python for Data Science</strong> - Issued by Coursera, 2021</li>
+        <li><strong>The Data Science Course Complete Data Science Bootcamp</strong> - Issued by 365 Data Science, 2022</li>
+        <li><strong>Certified Data Scientist</strong> - Issued by IABAC™, 2023</li>
+      </ul>
+    </div>
+
+    <div class="section-divider">
+      <p><strong>Want to see more?</strong></p>
+      <h3 id="contact">Explore My BI Dashboards</h3>
+    </div>
+    <div class="download-button-container">
+      <a href="dashboard_project/data_visualization_portfolio.html" class="download-button" role="button">Explore Business Intelligence Dashboards</a>
+    </div>
+
+    <div class="section-divider">
+      <p><strong>Interested in working together?</strong></p>
+      <h3>Get in touch!</h3>
+    </div>
+
+    <div class="section">
+      <h2 id="contact">Contact</h2>
+      <p class="text-center">Feel free to reach out if you'd like to connect, discuss a project, or just say hello!</p>
+      <p class="text-center">
+        <i class="fas fa-envelope"></i> <a href="mailto:kalbandetanmay@gmail.com">tanmaykalbande@gmail.com</a><br>
+        <i class="fas fa-phone-alt"></i><a> 737-838-1494</a><br>
+        <i class="fab fa-linkedin"></i> <a href="https://www.linkedin.com/in/tanmay-kalbande" target="_blank">LinkedIn</a><br>
+        <i class="fab fa-github"></i> <a href="https://github.com/tanmay-kalbande" target="_blank">GitHub</a>
+      </p>
+      <p class="text-center"><a href="#top">Back to top</a></p>
+    </div>
+
+  </div>
+  <footer>
+    <span>
+      <i class="fas fa-copyright"></i> 2024 Tanmay Kalbande. All rights reserved.
+    </span>
+    <span class="hidden-mobile">
+      Crafted with ❤️ and <i class="fas fa-coffee" style="color: #704214;"></i>
+    </span>
+  </footer>
+</body>
+</html>
