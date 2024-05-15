@@ -3,42 +3,19 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Tanmay Kalbande - Data Science Portfolio | Data Science Enthusiast</title>
-  <meta name="description" content="Tanmay Kalbande is a data science enthusiast with 1.2 years of experience as a data science trainee. He has successfully completed 7 projects and holds 4 certifications in data science, machine learning, and related fields.">
-  <meta name="keywords" content="data science, machine learning, statistics, data visualization, Python, SQL, AI, Big Data, NLP, ethical AI, deep learning, TinyML, data science portfolio, data scientist">
+  <title>Tanmay Kalbande - Crafting Insights from Data</title>
+  <meta name="description" content="Data science enthusiast with a solid foundation in statistical analysis, machine learning, and data visualization. Ready to contribute to meaningful insights and data-driven decision-making.">
+  <meta name="keywords" content="data science, machine learning, statistics, data visualization, Python, SQL, AI, Big Data, NLP, ethical AI, deep learning, TinyML">
   <meta name="author" content="Tanmay Kalbande">
   <meta name="robots" content="index, follow">
   <meta property="og:title" content="Tanmay Kalbande - Data Science Portfolio">
-  <meta property="og:description" content="Tanmay Kalbande is a data science enthusiast with 1.2 years of experience as a data science trainee. He has successfully completed 7 projects and holds 4 certifications in data science, machine learning, and related fields.">
-  <meta property="og:image" content="https://tanmay-kalbande.github.io/bits-and-bytes/resources/portfolio.png">
+  <meta property="og:description" content="Data science enthusiast with a solid foundation in statistical analysis, machine learning, and data visualization. Ready to contribute to meaningful insights and data-driven decision-making.">
+  <meta property="og:image" content="bits-and-bytes/resources/portfolio.png">
   <meta property="og:url" content="https://tanmay-kalbande.github.io/">
   <meta property="og:type" content="website">
-  <link rel="canonical" href="https://tanmay-kalbande.github.io/">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
   <link rel="icon" href="bits-and-bytes/resources/favicon.png" type="image/x-icon" alt="Website Favicon">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&display=swap">
-
-  <!-- Schema.org Structured Data -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Person",
-    "name": "Tanmay Kalbande",
-    "url": "https://tanmay-kalbande.github.io/",
-    "image": "https://tanmay-kalbande.github.io/bits-and-bytes/resources/portfolio.png",
-    "jobTitle": "Data Science Enthusiast",
-    "worksFor": {
-      "@type": "Organization",
-      "name": "Tanmay Kalbande - Data Science Portfolio"
-    },
-    "description": "Passionate about leveraging data for meaningful insights and decision-making. Experienced in end-to-end development of predictive modeling solutions.",
-    "hasOffer": {
-      "@type": "Offer",
-      "url": "https://tanmay-kalbande.github.io/bits-and-bytes/resources/tanmay-resume.pdf",
-      "description": "Download Tanmay Kalbande's Resume"
-    }
-  }
-  </script>
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&display=swap');
 
@@ -69,18 +46,14 @@
       align-items: center;
       width: 100%;
       max-width: 1300px;
-      margin: 10px auto;
-      padding: 70px;
+      margin: 20px auto;
+      padding: 40px 70px;
       background-color: #fff;
       box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
       box-sizing: border-box;
       border: 1px solid #ddd;
       border-radius: 10px;
       flex: 1;
-    }
-
-    .extra-section {
-      display: none;
     }
 
     .left {
@@ -92,7 +65,8 @@
       font-size: 60px;
       font-weight: 900;
       margin-top: 20px;
-      margin-bottom: 5px;
+      margin-bottom: 10px;
+      color: #333;
     }
 
     .tagline {
@@ -100,6 +74,7 @@
       font-weight: 700;
       margin-top: 5px;
       margin-bottom: 35px;
+      color: #555;
     }
 
     .description,
@@ -123,20 +98,22 @@
       background-color: #333;
       color: #fff;
       text-decoration: none;
-      border-radius: 0px;
+      border-radius: 5px;
       margin-right: 15px;
-      border: 3px dashed #333;
+      border: 3px solid #333;
       font-weight: 700;
-      transition: background-color 0.3s ease;
+      transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease, transform 0.3s ease;
     }
 
     .button a:hover {
       background-color: #ffd700;
       color: #333;
+      border-color: #ffd700;
+      transform: scale(1.05);
     }
 
     .button a.download {
-      border: 3px dashed #333;
+      border: 3px solid #ffd700;
       background-color: #ffd700;
       color: #333;
     }
@@ -144,6 +121,8 @@
     .button a.download:hover {
       background-color: #333;
       color: #fff;
+      border-color: #333;
+      transform: scale(1.05);
     }
 
     .right {
@@ -159,6 +138,12 @@
       text-align: center;
       border-radius: 10px;
       box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+      transition: box-shadow 0.3s ease, transform 0.3s ease;
+    }
+
+    .stat:hover {
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+      transform: translateY(-5px);
     }
 
     .value {
@@ -172,6 +157,7 @@
       font-size: 18px;
       text-transform: uppercase;
       margin-top: 10px;
+      color: #666;
     }
 
     footer {
@@ -179,11 +165,12 @@
       justify-content: space-between;
       align-items: center;
       text-align: center;
-      margin: 15px 20px 0;
+      margin: 10px 20px 0;
       font-size: 14px;
       color: #333;
       font-weight: 600;
       margin-top: auto;
+      background-color: #f8f8f8;
     }
 
     .hidden-mobile {
@@ -237,51 +224,36 @@
   </style>
 </head>
 <body>
-    <div class="container">
-      <div class="left">
-        <h1 class="logo">Tanmay Kalbande</h1>
-        <p class="tagline">Data Science Enthusiast</p>
-        <p class="description">Passionate about leveraging data for meaningful insights and decision-making.</p>
-        <p class="benefit">Experienced in end-to-end development of predictive modeling solutions.</p>
-        <div class="button">
-          <a href="bits-and-bytes/data_science_portfolio.html">Check My full portfolio!</a>
-          <a href="bits-and-bytes/resources/tanmay-resume.pdf" class="download">Download Resume</a>
-        </div>
-      </div>
-      <div class="right">
-        <div class="stat">
-          <span class="value">1.2</span>
-          <span class="label">YEARS OF EXPERIENCE AS DATA SCIENCE TRAINEE</span>
-        </div>
-        <div class="stat">
-          <span class="value">7</span>
-          <span class="label">SUCCESSFUL PROJECTS</span>
-        </div>
-        <div class="stat">
-          <span class="value">4</span>
-          <span class="label">CERTIFICATIONS</span>
-        </div>
+  <div class="container">
+    <div class="left">
+      <h1 class="logo">Tanmay Kalbande</h1>
+      <p class="tagline">Data Science Enthusiast</p>
+      <p class="description">Passionate about leveraging data for meaningful insights and decision-making.</p>
+      <p class="benefit">Experienced in end-to-end development of predictive modeling solutions.</p>
+      <p class="benefit">Currently working at Capgemini, contributing to data-driven projects for the past 3 months.</p>
+      <div class="button">
+        <a href="bits-and-bytes/data_science_portfolio">Check My full portfolio!</a>
+        <a href="bits-and-bytes/resources/tanmay-resume.pdf" class="download">Download Resume</a>
       </div>
     </div>
-
-  <main>
-    <section class="extra-section">
-      <h2>About Tanmay Kalbande</h2>
-      <p>Tanmay Kalbande is a data science enthusiast with a solid foundation in statistical analysis, machine learning, and data visualization. With 1.2 years of experience as a data science trainee, he has successfully completed 7 projects and earned 4 certifications in data science, machine learning, and related fields.</p>
-      <p>Tanmay is passionate about leveraging data to derive meaningful insights and drive data-driven decision-making. He is experienced in end-to-end development of predictive modeling solutions, including data preprocessing, feature engineering, model training, and deployment.</p>
-      <p>With strong skills in Python, SQL, and various data science libraries, Tanmay is well-equipped to tackle complex data challenges and deliver innovative solutions.</p>
-    </section>
-
-    <section class="extra-section">
-      <h3>Site links</h3>
-      <ul>
-        <li><a href="https://tanmay-kalbande.github.io/">tanmay-kalbande-personal-portfolio</a></li>
-        <li><a href="https://tanmay-kalbande.github.io/data-science-portfolio/">tanmay-kalbande-data-science-portfolio</a></li>
-        <li><a href="https://tanmay-kalbande.github.io/data-visualization-portfolio/">tanmay-kalbande-data-visualization-portfolio</a></li>
-      </ul>
-    </section>
-  </main>
-
+    <div class="right">
+      <div class="stat">
+        <span class="value">1.5</span>
+        <span class="label">YEARS OF EXPERIENCE</span>
+      </div>
+      <div class="stat">
+        <span class="value">7</span>
+        <span class="label">SUCCESSFUL PROJECTS</span>
+      </div>
+      <div class="stat">
+        <span class="value">4</span>
+        <span class="label">CERTIFICATIONS</span>
+      </div>
+    </div>
+  </div>
+  <p style="display: none;">
+    <img src="https://visitor-badge.laobi.icu/badge?page_id=tanmay-sk-personal-pro.io&left_color=crimson&right_color=008080">
+  </p>
   <footer>
     <span>
       <i class="fas fa-copyright"></i> 2024 Tanmay Kalbande. All rights reserved. Crafted with ❤️ and <i class="fas fa-coffee" style="color: #704214;"></i>
@@ -293,6 +265,5 @@
       Phone: 737-838-1494
     </span>
   </footer>
-  <p style="display: none;"><img src="https://visitor-badge.laobi.icu/badge?page_id=tanmay-sk-personal-pro.io&left_color=crimson&right_color=008080"></p>
 </body>
 </html>
