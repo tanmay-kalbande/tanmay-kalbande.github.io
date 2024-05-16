@@ -19,15 +19,26 @@
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&display=swap');
 
+    /* Ensure body has appropriate min-height and gradient background is constrained */
     body {
       font-family: 'Roboto Mono', monospace;
       margin: 0;
       padding: 0;
-      background-color: #f5f5f5;
+      background: linear-gradient(45deg, #74512D, #577B8D);
+      background-size: 400% 400%;
+      animation: gradient 15s ease infinite;
       color: #333;
       min-height: 100vh;
       display: flex;
       flex-direction: column;
+      scroll-behavior: smooth;
+      overflow: hidden;
+    }
+
+    @keyframes gradient {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
     }
 
     ::selection {
@@ -40,6 +51,7 @@
       color: #333;
     }
 
+    /* Ensure container is fully visible and properly positioned */
     .container {
       display: flex;
       justify-content: space-between;
@@ -48,12 +60,21 @@
       max-width: 1300px;
       margin: 20px auto;
       padding: 40px 70px;
-      background-color: #fff;
+      background-color: rgba(255, 255, 255, 0.8);
       box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
       box-sizing: border-box;
       border: 1px solid #ddd;
       border-radius: 10px;
       flex: 1;
+      position: relative;
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+    }
+
+    .fade-in {
+      opacity: 1;
+      transform: translateY(0);
     }
 
     .left {
@@ -75,6 +96,20 @@
       margin-top: 5px;
       margin-bottom: 35px;
       color: #555;
+      white-space: nowrap;
+      overflow: hidden;
+      border-right: .15em solid orange;
+      animation: typing 3.5s steps(40, end), blink-caret .75s step-end infinite;
+    }
+
+    @keyframes typing {
+      from { width: 0 }
+      to { width: 100% }
+    }
+
+    @keyframes blink-caret {
+      from, to { border-color: transparent }
+      50% { border-color: orange; }
     }
 
     .description,
@@ -110,6 +145,7 @@
       color: #333;
       border-color: #ffd700;
       transform: scale(1.05);
+      box-shadow: 0 0 15px rgba(255, 215, 0, 0.75);
     }
 
     .button a.download {
@@ -123,11 +159,13 @@
       color: #fff;
       border-color: #333;
       transform: scale(1.05);
+      box-shadow: 0 0 15px rgba(51, 51, 51, 0.75);
     }
 
     .right {
       flex: 1;
       text-align: right;
+      position: relative;
     }
 
     .stat {
@@ -139,11 +177,20 @@
       border-radius: 10px;
       box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
       transition: box-shadow 0.3s ease, transform 0.3s ease;
+      background-color: #fff;
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.6s ease-out, transform 0.6s ease-out, box-shadow 0.3s ease, transform 0.3s ease;
     }
 
     .stat:hover {
       box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-      transform: translateY(-5px);
+      transform: translateY(-5px) scale(1.05);
+    }
+
+    .fade-in-stat {
+      opacity: 1;
+      transform: translateY(0);
     }
 
     .value {
@@ -180,6 +227,7 @@
     @media only screen and (max-width: 600px) {
       body {
         overflow-x: hidden;
+        overflow-y: auto;  /* Ensure vertical scroll works */
       }
 
       .container {
@@ -187,8 +235,10 @@
         padding: 20px;
         align-items: center;
         margin: 10px 0;
-        overflow: hidden;
+        overflow: visible;
         border-radius: 0px;
+        opacity: 1;  /* Ensure container is visible */
+        transform: none;  /* Ensure container is correctly positioned */
       }
 
       .left,
@@ -196,6 +246,10 @@
         width: 100%;
         padding: 0;
         text-align: center;
+      }
+
+      .tagline {
+        font-size: 25px;
       }
 
       .button {
@@ -237,15 +291,15 @@
       </div>
     </div>
     <div class="right">
-      <div class="stat">
+      <div class="stat fade-in-stat">
         <span class="value">1.5</span>
         <span class="label">YEARS OF EXPERIENCE</span>
       </div>
-      <div class="stat">
+      <div class="stat fade-in-stat">
         <span class="value">7</span>
         <span class="label">SUCCESSFUL PROJECTS</span>
       </div>
-      <div class="stat">
+      <div class="stat fade-in-stat">
         <span class="value">4</span>
         <span class="label">CERTIFICATIONS</span>
       </div>
@@ -263,7 +317,34 @@
       <a href="https://www.linkedin.com/in/tanmay-kalbande" target="_blank" style="color: #333;"><i class="fab fa-linkedin"></i></a>
       <a href="https://github.com/tanmay-kalbande" target="_blank" style="color: #333;"><i class="fab fa-github"></i></a>
       Phone: 737-838-1494
+      Last Updated: May 2024
     </span>
   </footer>
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      const container = document.querySelector(".container");
+      const stats = document.querySelectorAll(".stat");
+      const fadeInElements = [container, ...stats];
+
+      const fadeInOnScroll = (element) => {
+        const rect = element.getBoundingClientRect();
+        const elemTop = rect.top;
+        const elemBottom = rect.bottom;
+        const isVisible = (elemTop >= 0) && (elemBottom <= window.innerHeight);
+
+        if (isVisible) {
+          element.classList.add('fade-in');
+        }
+      };
+
+      const handleScroll = () => {
+        fadeInElements.forEach(el => fadeInOnScroll(el));
+      };
+
+      window.addEventListener("scroll", handleScroll);
+
+      handleScroll(); // Initial check on page load
+    });
+  </script>
 </body>
 </html>
