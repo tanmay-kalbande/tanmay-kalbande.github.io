@@ -4,22 +4,21 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Tanmay Kalbande - Crafting Insights from Data</title>
-  <meta name="description" content="Data science enthusiast with a solid foundation in statistical analysis, machine learning, and data visualization. Ready to contribute to meaningful insights and data-driven decision-making.">
-  <meta name="keywords" content="data science, machine learning, statistics, data visualization, Python, SQL, AI, Big Data, NLP, ethical AI, deep learning, TinyML">
+  <meta name="description" content="Tanmay Kalbande is a data science enthusiast with a solid foundation in statistical analysis, machine learning, and data visualization. Ready to contribute to meaningful insights and data-driven decision-making.">
+  <meta name="keywords" content="Tanmay Kalbande, data science, machine learning, statistics, data visualization, Python, SQL, AI, Big Data, NLP, ethical AI, deep learning, TinyML">
   <meta name="author" content="Tanmay Kalbande">
   <meta name="robots" content="index, follow">
   <meta property="og:title" content="Tanmay Kalbande - Data Science Portfolio">
-  <meta property="og:description" content="Data science enthusiast with a solid foundation in statistical analysis, machine learning, and data visualization. Ready to contribute to meaningful insights and data-driven decision-making.">
+  <meta property="og:description" content="Tanmay Kalbande is a data science enthusiast with a solid foundation in statistical analysis, machine learning, and data visualization. Ready to contribute to meaningful insights and data-driven decision-making.">
   <meta property="og:image" content="bits-and-bytes/resources/portfolio.png">
   <meta property="og:url" content="https://tanmay-kalbande.github.io/">
   <meta property="og:type" content="website">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-  <link rel="icon" href="bits-and-bytes/resources/favicon.png" type="image/x-icon" alt="Website Favicon">
+  <link rel="icon" href="bits-and-bytes/resources/favicon.png" type="image/x-icon">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&display=swap">
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&display=swap');
 
-    /* Ensure body has appropriate min-height and gradient background is constrained */
     body {
       font-family: 'Roboto Mono', monospace;
       margin: 0;
@@ -50,7 +49,6 @@
       color: #333;
     }
 
-    /* Ensure container is fully visible and properly positioned */
     .container {
       display: flex;
       justify-content: space-between;
@@ -59,17 +57,17 @@
       max-width: 1300px;
       margin: 20px auto;
       padding: 40px 70px;
-      background-color: rgba(255, 255, 255, 0.8);
+      background-color: rgba(255, 255, 255, 0.75); /* Slightly more opaque for visibility */
       box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
       box-sizing: border-box;
       border: 1px solid #ddd;
       border-radius: 10px;
-      flex: 1;
       position: relative;
-      opacity: 0;
-      transform: translateY(20px);
+      opacity: 1; /* Ensure it's visible */
+      transform: translateY(0); /* No translation */
       transition: opacity 0.6s ease-out, transform 0.6s ease-out;
     }
+
 
     .fade-in {
       opacity: 1;
@@ -217,6 +215,7 @@
       font-weight: 600;
       margin-top: auto;
       background-color: #f8f8f8;
+      padding: 2px 0; /* Added padding for better spacing */
     }
 
     .hidden-mobile {
@@ -226,7 +225,7 @@
     @media only screen and (max-width: 600px) {
       body {
         overflow-x: hidden;
-        overflow-y: auto;  /* Ensure vertical scroll works */
+        overflow-y: auto;
       }
 
       .container {
@@ -234,10 +233,9 @@
         padding: 20px;
         align-items: center;
         margin: 10px 0;
-        overflow: visible;
-        border-radius: 0px;
-        opacity: 1;  /* Ensure container is visible */
-        transform: none;  /* Ensure container is correctly positioned */
+        border-radius: 0;
+        opacity: 1;
+        transform: none;
       }
 
       .left,
@@ -266,8 +264,8 @@
       }
 
       footer {
-        margin-bottom: 10px;
         flex-direction: column;
+        margin-bottom: 10px;
       }
 
       footer span {
@@ -277,7 +275,7 @@
   </style>
 </head>
 <body>
-  <div class="container">
+  <header class="container">
     <div class="left">
       <h1 class="logo">Tanmay Kalbande</h1>
       <p class="tagline">Data Science Enthusiast</p>
@@ -285,7 +283,7 @@
       <p class="benefit">Experienced in end-to-end development of predictive modeling solutions.</p>
       <p class="benefit">Currently working at Capgemini, contributing to data-driven projects for the past 3 months.</p>
       <div class="button">
-        <a href="bits-and-bytes/data_science_portfolio">Check My full portfolio!</a>
+        <a href="bits-and-bytes/data_science_portfolio">Check My Full Portfolio</a>
         <a href="bits-and-bytes/resources/tanmay-resume.pdf" class="download">Download Resume</a>
       </div>
     </div>
@@ -303,10 +301,7 @@
         <span class="label">CERTIFICATIONS</span>
       </div>
     </div>
-  </div>
-  <p style="display: none;">
-    <img src="https://visitor-badge.laobi.icu/badge?page_id=tanmay-sk-personal-pro.io&left_color=crimson&right_color=008080">
-  </p>
+  </header>
   <footer>
     <span>
       <i class="fas fa-copyright"></i> 2024 Tanmay Kalbande. All rights reserved. Crafted with ❤️ and <i class="fas fa-coffee" style="color: #704214;"></i>
@@ -342,7 +337,7 @@
 
       window.addEventListener("scroll", handleScroll);
 
-      handleScroll(); // Initial check on page load
+      handleScroll();
     });
   </script>
 </body>
