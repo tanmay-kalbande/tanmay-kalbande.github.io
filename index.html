@@ -17,8 +17,6 @@
   <link rel="icon" href="bits-and-bytes/resources/favicon.png" type="image/x-icon">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&display=swap">
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&display=swap');
-
     body {
       font-family: 'Roboto Mono', monospace;
       margin: 0;
@@ -57,17 +55,16 @@
       max-width: 1300px;
       margin: 20px auto;
       padding: 40px 70px;
-      background-color: rgba(255, 255, 255, 0.75); /* Slightly more opaque for visibility */
+      background-color: rgba(255, 255, 255, 0.75);
       box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
       box-sizing: border-box;
       border: 1px solid #ddd;
       border-radius: 10px;
       position: relative;
-      opacity: 1; /* Ensure it's visible */
-      transform: translateY(0); /* No translation */
+      opacity: 1;
+      transform: translateY(0);
       transition: opacity 0.6s ease-out, transform 0.6s ease-out;
     }
-
 
     .fade-in {
       opacity: 1;
@@ -215,7 +212,7 @@
       font-weight: 600;
       margin-top: auto;
       background-color: #f8f8f8;
-      padding: 2px 0; /* Added padding for better spacing */
+      padding: 2px 0;
     }
 
     .hidden-mobile {
@@ -307,37 +304,29 @@
       <i class="fas fa-copyright"></i> 2024 Tanmay Kalbande. All rights reserved. Crafted with ❤️ and <i class="fas fa-coffee" style="color: #704214;"></i>
     </span>
     <span class="hidden-mobile">
-      <a href="mailto:kalbandetanmay@gmail.com" style="color: #333;"><i class="fas fa-envelope"></i></a>
-      <a href="https://www.linkedin.com/in/tanmay-kalbande" target="_blank" style="color: #333;"><i class="fab fa-linkedin"></i></a>
-      <a href="https://github.com/tanmay-kalbande" target="_blank" style="color: #333;"><i class="fab fa-github"></i></a>
+      <a href="mailto:kalbandetanmay@gmail.com" style="color: #333;" aria-label="Email Tanmay Kalbande"><i class="fas fa-envelope"></i></a>
+      <a href="https://www.linkedin.com/in/tanmay-kalbande" target="_blank" style="color: #333;" aria-label="LinkedIn Profile"><i class="fab fa-linkedin"></i></a>
+      <a href="https://github.com/tanmay-kalbande" target="_blank" style="color: #333;" aria-label="GitHub Profile"><i class="fab fa-github"></i></a>
       Phone: 737-838-1494
       Last Updated: May 2024
     </span>
   </footer>
   <script>
     document.addEventListener("DOMContentLoaded", function() {
-      const container = document.querySelector(".container");
-      const stats = document.querySelectorAll(".stat");
-      const fadeInElements = [container, ...stats];
+      const fadeInElements = document.querySelectorAll(".container, .stat");
 
-      const fadeInOnScroll = (element) => {
-        const rect = element.getBoundingClientRect();
-        const elemTop = rect.top;
-        const elemBottom = rect.bottom;
-        const isVisible = (elemTop >= 0) && (elemBottom <= window.innerHeight);
+      const observer = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('fade-in');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.1 });
 
-        if (isVisible) {
-          element.classList.add('fade-in');
-        }
-      };
-
-      const handleScroll = () => {
-        fadeInElements.forEach(el => fadeInOnScroll(el));
-      };
-
-      window.addEventListener("scroll", handleScroll);
-
-      handleScroll();
+      fadeInElements.forEach(el => {
+        observer.observe(el);
+      });
     });
   </script>
 </body>
