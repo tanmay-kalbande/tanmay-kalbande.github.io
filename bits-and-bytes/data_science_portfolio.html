@@ -3,325 +3,549 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Primary Meta Tags -->
   <title>Tanmay Kalbande - Crafting Insights from Data</title>
+  <meta name="title" content="Tanmay Kalbande - Crafting Insights from Data">
   <meta name="description" content="Data science enthusiast with a solid foundation in statistical analysis, machine learning, and data visualization. Ready to contribute to meaningful insights and data-driven decision-making.">
-  <meta name="keywords" content="data science, machine learning, statistics, data visualization, Python, SQL, AI, Big Data, NLP, ethical AI, deep learning, TinyML">
+  <meta name="keywords" content="data science, machine learning, statistics, data visualization, Python, SQL, AI, Big Data, NLP, ethical AI, deep learning, TinyML, portfolio, Tanmay Kalbande">
   <meta name="author" content="Tanmay Kalbande">
-  <meta name="robots" content="index, follow">
+
+  <!-- Robot and Content Tags -->
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+  <meta name="theme-color" content="#fefce8">
+  <meta name="color-scheme" content="light">
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://tanmay-kalbande.github.io/">
   <meta property="og:title" content="Tanmay Kalbande - Data Science Portfolio">
   <meta property="og:description" content="Data science enthusiast with a solid foundation in statistical analysis, machine learning, and data visualization. Ready to contribute to meaningful insights and data-driven decision-making.">
-  <meta property="og:image" content="bits-and-bytes/resources/portfolio.png">
-  <meta property="og:url" content="https://tanmay-kalbande.github.io/">
-  <meta property="og:type" content="website">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-  <link rel="icon" href="resources/favicon.png" type="image/x-icon" alt="Website Favicon">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&display=swap">
+  <meta property="og:image" content="https://tanmay-kalbande.github.io/resources/portfolio.png">
+  <meta property="og:image:alt" content="Tanmay Kalbande's Portfolio Preview">
+  <meta property="og:site_name" content="Tanmay Kalbande Portfolio">
+  <meta property="og:locale" content="en_US">
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:url" content="https://tanmay-kalbande.github.io/">
+  <meta name="twitter:title" content="Tanmay Kalbande - Data Science Portfolio">
+  <meta name="twitter:description" content="Data science enthusiast with a solid foundation in statistical analysis, machine learning, and data visualization. Ready to contribute to meaningful insights and data-driven decision-making.">
+  <meta name="twitter:image" content="https://tanmay-kalbande.github.io/resources/portfolio.png">
+  <meta name="twitter:image:alt" content="Tanmay Kalbande's Portfolio Preview">
+
+  <!-- Apple Touch Icons -->
+  <link rel="apple-touch-icon" sizes="180x180" href="resources/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="resources/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="resources/favicon-16x16.png">
+
+  <!-- PWA Support -->
+  <link rel="manifest" href="resources/site.webmanifest">
+  <meta name="msapplication-TileColor" content="#fefce8">
+  <meta name="msapplication-config" content="resources/browserconfig.xml">
+
+  <!-- Preload Critical Resources -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+
+  <!-- Stylesheets -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&display=swap" rel="stylesheet">
+
+  <!-- Security Headers -->
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self' https:; script-src 'self' 'unsafe-inline' https:; style-src 'self' 'unsafe-inline' https:; img-src 'self' data: https:;">
+  <meta http-equiv="X-Content-Type-Options" content="nosniff">
+  <meta http-equiv="X-Frame-Options" content="SAMEORIGIN">
+  <meta http-equiv="Permissions-Policy" content="camera=(), microphone=(), geolocation=()">
+
+  <!-- Cache Control -->
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+  <meta http-equiv="Pragma" content="no-cache">
+  <meta http-equiv="Expires" content="0">
+
   <style>
-    /* Reset some default styles */
-    body, h1, h2, h3, p {
-      margin: 0;
-      padding: 0;
-    }
+  /* General Reset */
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto Mono', monospace, sans-serif;
+  }
 
-    body {
-      font-family: 'Roboto Mono', monospace;
-      color: #333;
-      background-color: #f5f5f5;
-    }
+  ::selection {
+      background-color: #4ade80;
+      color: #000000;
+  }
+  ::-moz-selection {
+      background-color: #4ade80;
+      color: #000000;
+  }
 
-    html {
-      scroll-behavior: smooth;
-    }
+  /* Base Styles */
+  body {
+    background-color: #fefce8;
+    min-height: 100vh;
+    color: #333;
+    display: flex;
+    flex-direction: column;
+  }
 
-    html, body {
-      overflow-x: hidden;
-    }
+  .container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1rem;
+  }
 
-    ::selection {
-      background-color: #ffd700;
-      color: #333;
-    }
+  /* Header Section */
+  .header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 1rem;
+    padding: 1rem;
+  }
 
-    ::-moz-selection {
-      background-color: #ffd700;
-      color: #333;
-    }
-
-    .container {
-      width: 100%;
-      max-width: 1000px;
-      margin: 0 auto;
-      padding: 20px;
-      box-sizing: border-box;
-    }
-
+  @media (min-width: 768px) {
     .header {
-      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      text-align: left;
+    }
+  }
+
+  .logo {
+    width: 120px;
+    height: 120px;
+    border: 2px solid #f9f9f9;
+    border-radius: 20%;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+
+  .logo:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  }
+
+  .logo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.2s;
+  }
+
+  .logo:hover img {
+    transform: scale(1.05);
+  }
+
+  .header-text h1 {
+    font-size: 2.5rem;
+    margin-bottom: 5px;
+    font-weight: 900;
+  }
+
+  .header-text h2 {
+    font-size: 1.25rem;
+    color: #2563eb;
+  }
+
+  .contact-info {
+    text-align: right;
+  }
+
+  /* Section Styling */
+  .section {
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 12px;
+    background-color: #fff;
+    border: 4px solid #000;
+    box-shadow: 8px 8px 0 rgba(0, 0, 0, 1);
+    transition: all 0.2s ease;
+  }
+
+  .section:hover {
+    transform: translate(3px, 3px);
+    box-shadow: 5px 5px 0 rgba(0, 0, 0, 1);
+  }
+
+  h2 {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+    font-weight: bold;
+  }
+
+  /* Project Cards */
+  .projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+  }
+
+  .project-card {
+    background: #fff;
+    border: 3px solid #000;
+    border-radius: 12px;
+    padding: 1.5rem;
+    transition: transform 0.2s;
+    height: 100%;
+  }
+
+  .project-card:hover {
+    transform: translateY(-5px);
+  }
+
+  .project-content {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+  }
+
+  .project-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: auto;
+    padding-top: 1rem;
+  }
+
+  /* Experience Section */
+  .experience-item {
+    margin-bottom: 2rem;
+    padding-bottom: 1rem;
+    border-bottom: 2px solid #eee;
+  }
+
+  .experience-header {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+  }
+
+  @media (min-width: 768px) {
+    .experience-header {
+      flex-direction: row;
       justify-content: space-between;
       align-items: center;
-      margin-bottom: 20px;
     }
+  }
 
-    .logo {
-      width: 120px;
-      height: 120px;
-      border: 2px solid #F9F9F9;
-      border-radius: 20%; 
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-      overflow: hidden;
-    }
+  .experience-meta {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+    font-size: 0.9rem;
+    color: #666;
+  }
 
-    .logo img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover; /* Prevent the image from zooming */
-    }
-
-    .header-content {
-      display: flex;
-      align-items: center;
-    }
-
-    .header-text {
-      margin-left: 20px;
-    }
-
-    .header-text h1 {
-      font-size: 50px;
-      margin-bottom: 5px;
-    }
-
-    .header-text h2 {
-      font-size: 18px;
-      margin-bottom: 10px;
-      color: #666;
-    }
-
-    .contact-info {
+  @media (min-width: 768px) {
+    .experience-meta {
+      flex-direction: row;
+      gap: 1rem;
       text-align: right;
     }
+  }
 
-    .content {
-      width: 100%;
+  .experience-details {
+    padding-left: 1.25rem;
+  }
+
+  @media (max-width: 640px) {
+    .experience-details {
+      padding-left: 1rem;
     }
 
-    .project {
-      margin-top: 20px; /* Add a top margin to create space between projects */
-      margin-bottom: 20px;
-      border-bottom: 2px solid #ddd; /* Add a border-bottom to separate projects */
+    .experience-details li {
+      margin-bottom: 0.5rem;
+    }
+  }
+
+  /* CTA Section */
+  .cta-section {
+    background-color: #f9f9f9;
+    padding: 50px 20px;
+    text-align: center;
+    border-radius: 10px;
+    margin: 40px 0;
+  }
+
+  .cta-section h2 {
+    font-size: 2em;
+    margin-bottom: 20px;
+    color: #333;
+  }
+
+  .cta-section h3 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+    color: #0072b1;
+  }
+
+  .cta-section p {
+    font-size: 1.1em;
+    margin-bottom: 30px;
+    color: #666;
+  }
+
+  .cta-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+  }
+
+  .cta-button {
+    padding: 15px 30px;
+    font-size: 1.2em;
+    border-radius: 30px;
+    background-color: #0072b1;
+    color: #fff;
+    text-decoration: none;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+  }
+
+  .cta-button:hover {
+    background-color: #0056b3;
+    transform: scale(1.05);
+  }
+
+  .cta-button i {
+    margin-right: 10px;
+  }
+
+  /* Contact Grid */
+  .contact-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    margin: 1.5rem 0;
+  }
+
+  @media (min-width: 640px) {
+    .contact-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .contact-grid {
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
+
+  .contact-item {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 1rem;
+    background: #f8f8f8;
+    border-radius: 8px;
+    word-break: break-word;
+  }
+
+  .contact-item i {
+    font-size: 1.5rem;
+    color: #2563eb;
+  }
+
+  @media (max-width: 640px) {
+    .contact-item {
+      flex-direction: row;
+      justify-content: flex-start;
+    }
+
+    .contact-item a {
+      font-size: 0.9rem;
+    }
+  }
+
+  .contact-message {
+    text-align: center;
+    margin-top: 2rem;
+  }
+
+  /* Skill & Interest Badges */
+  .skill-badge,
+  .interest-badge {
+    display: inline-block;
+    margin: 5px;
+    padding: 6px 12px;
+    border-radius: 20px;
+    background-color: #f0f0f0;
+    font-size: 0.9rem;
+  }
+
+  /* Button Group */
+  .button-group {
+    display: flex;
+    gap: 1rem;
+    margin-top: 10px;
+  }
+
+  .neo-button {
+    padding: 12px 24px;
+    border: 4px solid #000;
+    border-radius: 12px;
+    background-color: #4ade80;
+    font-weight: bold;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+    color: black;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+  }
+
+  .neo-button:hover {
+    transform: translate(3px, 3px);
+    box-shadow: 2px 2px 0 rgba(0, 0, 0, 1);
+  }
+
+  /* Footer */
+  footer {
+    background-color: white;
+    border-top: 4px solid black;
+    padding: 1.5rem;
+    margin-top: auto;
+    text-align: center;
+    font-size: 0.875rem;
+  }
+
+  /* Tabbed Layout */
+  .tabs {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-bottom: 1rem;
+  }
+
+  .tab-button {
+    background-color: #93c5fd;
+    color: #000;
+    border: none;
+    padding: 6px 12px;
+    margin: 3px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s;
+    flex: 1 1 auto;
+    min-width: 80px;
+  }
+
+  .tab-button:hover {
+    background-color: #7cb9f7;
+  }
+
+  .tab-button.active {
+    background-color: #93c5fd;
+  }
+
+  .tab-content {
+    display: none;
+  }
+
+  .tab-content.active {
+    display: block;
+  }
+
+  /* Responsive Adjustments */
+  @media (max-width: 640px) {
+    .section {
+      padding: 1rem;
+      margin-bottom: 1rem;
     }
 
     h1 {
-      font-size: 36px;
-      margin-top: 20px;
-      margin-bottom: 5px;
+      font-size: 1.75rem;
     }
 
     h2 {
-      font-size: 22px;
-      margin-bottom: 15px;
+      font-size: 1.5rem;
     }
 
-    h3, .project-title {
-      font-size: 18px;
+    h3 {
+      font-size: 1.25rem;
     }
 
-    p, li {
-      font-size: 16px;
-      line-height: 1.5;
+    p {
+      font-size: 0.95rem;
     }
 
-    .section {
-      padding: 20px;
-      margin-bottom: 20px;
-      border-radius: 5px;
-      background-color: #fff;
-      box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    .project-description {
+      font-size: 0.9rem;
     }
 
-    .section-divider {
-      margin-top: 40px;
-      margin-bottom: 20px;
-      border-top: 2px dashed #555555;
-      text-align: center;
+    .tabs {
+      flex-direction: row;
+      overflow-x: auto;
+      padding: 0 10px;
     }
 
-    .skill-badge {
-      display: inline-block;
-      margin-bottom: 8px;
-      margin-right: 8px;
-      padding: 6px 12px;
-      border-radius: 20px;
-      background-color: #f0f0f0;
-      font-size: 16px;
+    .tab-button {
+      width: auto;
+      padding: 8px 14px;
+      font-size: 0.9rem;
+      margin: 3px;
     }
 
-    @media only screen and (max-width: 600px) {
-      .skill-badge {
-        font-size: 12px;
-      }
+    footer span {
+      display: block;
+      margin-bottom: 0.5rem;
     }
+  }
 
-    .interest-badge {
-      display: inline-block;
-      margin-bottom: 8px;
-      margin-right: 8px;
-      padding: 6px 12px;
-      border-radius: 20px;
-      background-color: #f0f0f0;
-      font-size: 16px;
-    }
+  /* Ensure images are responsive */
+  img {
+    max-width: 100%;
+    height: auto;
+  }
 
-    @media only screen and (max-width: 600px) {
-      .interest-badge {
-        font-size: 12px;
-      }
-    }
+  /* Section Titles */
+  .section-title {
+    position: relative;
+    padding-bottom: 0.5rem;
+    margin-bottom: 1.5rem;
+    font-size: 1.75rem;
+    font-weight: bold;
+  }
 
-    .project {
-      margin-bottom: 20px;
-    }
+  .section-title::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 60px;
+    height: 4px;
+    background: #2563eb;
+    border-radius: 2px;
+  }
 
-    .download-button-container {
-      display: flex;
-      justify-content: center;
-      margin-bottom: 40px;
-    }
+  /* Fix for long URLs and email addresses */
+  a {
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+  }
 
-    .download-button {
-      padding: 12px 24px;
-      background-color: #333;
-      color: #fff;
-      text-decoration: none;
-      border-radius: 4px;
-      font-weight: 700;
-      transition: background-color 0.3s ease;
-    }
+  /* Additional Details Styling */
+  details ul {
+    padding-left: 20px;
+    margin: 0;
+    list-style-position: inside;
+  }
 
-    .download-button:hover {
-      background-color: #ffd700;
-      color: #333;
-    }
-
-    a {
-      color: #333;
-      text-decoration: none;
-      transition: color 0.3s ease;
-    }
-
-    a:hover {
-      color: #ffd700;
-    }
-
-    footer {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      text-align: center;
-      margin: 15px 20px 0;
-      font-size: 14px;
-      color: #333;
-      font-weight: 600;
-      margin-top: auto;
-    }
-
-    .hidden-mobile {
-      display: inline;
-    }
-
-    @media only screen and (max-width: 600px) {
-      .container {
-        padding: 10px;
-      }
-
-      .header {
-        margin-top: 5px;
-        flex-direction: column;
-        align-items: flex-start;
-      }
-
-      .header-text h1 {
-        font-size: 50px;
-        margin-bottom: 5px;
-      }
-
-      .header-text h2 {
-        font-size: 16px;
-        margin-bottom: 10px;
-        color: #666;
-      }
-
-      .contact-info {
-        text-align: left;
-        margin-top: 10px;
-      }
-
-      .download-button-container {
-        flex-direction: column;
-        align-items: center;
-      }
-
-      footer {
-        margin-bottom: 15px;
-      }
-    }
-
-    @media only screen and (max-width: 600px) {
-      .section {
-        padding: 10px;
-        margin-top: 20px;
-        margin-bottom: 15px;
-        border-radius: 2px;
-      }
-
-      h1 {
-        font-size: 28px;
-      }
-
-      h2 {
-        font-size: 20px;
-      }
-
-      h3, .project-title {
-        font-size: 16px;
-      }
-
-      p, li {
-        font-size: 14px;
-      }
-    }
-
-    @media only screen and (max-width: 600px) {
-      .project-title summary {
-        font-size: 16px;
-      }
-
-      .project-description {
-        font-size: 14px;
-      }
-    }
-
-    @media only screen and (max-width: 600px) {
-      footer {
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-      }
-
-      .download-button-container {
-        flex-direction: column;
-        align-items: center;
-      }
-
-      .download-button {
-        font-size: 13px;
-        padding: 10px 20px; 
-      }
-
-      .hidden-mobile {
-        display: none;
-      }
-    }
+  details {
+    margin-bottom: 15px;
+  }
   </style>
 </head>
 <body>
@@ -367,27 +591,42 @@
         <li><strong>Languages:</strong> SQL, R, C, Python 🐍</li>
         <li><strong>Databases:</strong> SQL Server, Spark 💽</li>
         <li><strong>IDE:</strong> PyCharm, Vs, Atom, Jupyter Notebooks 💻</li>
-        <li><strong>BI Tool:</strong>  Excel, Tableau, PowerBI 📊</li>
+        <li><strong>BI Tool:</strong> Excel, Tableau, PowerBI 📊</li>
       </ul>
     </div>
 
     <div class="section">
-      <h2>Experience</h2>
+      <h2 class="section-title">Experience</h2>
 
-      <h3>Analyst, Capgemini (March 2024 - Present)</h3>
-      <ul>
-        <li>Utilized advanced analytical techniques to derive actionable insights from complex datasets.</li>
-        <li>Collaborated closely with cross-functional teams to translate data findings into impactful business strategies.</li>
-        <li>Designed and implemented interactive dashboards to visualize key performance metrics and trends.</li>
-      </ul>
+      <div class="experience-item">
+        <div class="experience-header">
+          <h3>Analyst</h3>
+          <div class="experience-meta">
+            <span class="company">Capgemini</span>
+            <span class="duration">March 2024 - Present</span>
+          </div>
+        </div>
+        <ul class="experience-details">
+          <li>Utilized advanced analytical techniques to derive actionable insights from complex datasets</li>
+          <li>Collaborated with cross-functional teams to translate data findings into business strategies</li>
+          <li>Designed and implemented interactive dashboards for visualizing key metrics</li>
+        </ul>
+      </div>
 
-      <h3>Data Analyst trainee, Rubixe (Nov 2022 - Dec 2023)</h3>
-      <ul>
-        <li>Worked with a team to gather, clean, and organize data from various sources for in-depth analysis.</li>
-        <li>Explored data to find patterns and trends, helping shape practical strategies.</li>
-        <li>Assisted in creating clear reports and interactive visuals to share insights with others.</li>
-        <li>Collaborated with different teams, aligning data findings with business goals.</li>
-      </ul>
+      <div class="experience-item">
+        <div class="experience-header">
+          <h3>Data Analyst Trainee</h3>
+          <div class="experience-meta">
+            <span class="company">Rubixe</span>
+            <span class="duration">Nov 2022 - Dec 2023</span>
+          </div>
+        </div>
+        <ul class="experience-details">
+          <li>Worked with teams to gather, clean, and organize data from various sources</li>
+          <li>Explored data patterns and trends to shape practical strategies</li>
+          <li>Created clear reports and interactive visualizations</li>
+        </ul>
+      </div>
     </div>
 
     <div class="section">
@@ -499,154 +738,134 @@
       </div>
     </div>
 
+    <!-- Updated Personal Projects Section -->
     <div class="section">
-      <h2 style="background-color: #ffd700; padding: 5px;">Personal Projects</h2>
+      <h2 class="section-title">Fun Projects</h2>
 
-      <!-- Project 1: Expense Tracker -->
-      <div class="project">
-          <details class="project-title">
-              <summary>
-                  <i class="fas fa-money-bill-wave"></i> <strong>Expense Tracker</strong>
-                  <p class="project-description">A web application for tracking personal expenses, featuring data visualization, export/import functionality, and a user-friendly interface.</p>
-              </summary>
-
-              <!-- Project Details -->
-              <div class="dropdown-content" id="detailsContent">
-                  <p><strong>Description:</strong> Expense Tracker is a web application designed to help users keep track of their expenses. It provides a user-friendly interface for adding, viewing, and managing expenses. The application supports dynamic data visualization using Chart.js and allows users to export their expense data to a CSV file for further analysis. Additionally, users can import existing expense data from CSV files into the application.</p>
-                  <p><strong>Features:</strong></p>
-                  <ul>
-                      <li>Expense Management</li>
-                      <li>Data Visualization</li>
-                      <li>Data Export to CSV</li>
-                      <li>Data Import from CSV</li>
-                      <li>User-friendly Interface</li>
-                  </ul>
-                  <p><strong>Technologies Used:</strong></p>
-                  <ul>
-                      <li>Frontend: HTML, CSS, JavaScript, Chart.js</li>
-                      <li>Backend: None (localStorage for data storage)</li>
-                  </ul>
-              </div>
-
-              <!-- Links -->
-              <details class="links">
-                  <summary>Links</summary>
-                  <div class="dropdown-content">
-                      <p><i class="fas fa-desktop"></i> <strong>Demo:</strong> <a href="https://expense-tail.vercel.app/" target="_blank">Expense Tracker Web App</a></p>
-                      <p><i class="fab fa-github"></i> <strong>GitHub:</strong> <a href="https://github.com/tanmay-kalbande/Expense-Tracker" target="_blank">Expense Tracker Repository</a></p>
-                  </div>
-              </details>
-          </details>
-      </div>
-  
-      
-      <!-- Project 2: Table Extractor -->
-      <div class="project">
-          <details class="project-title">
-              <summary>
-                  <i class="fas fa-table"></i> <strong>Table Extractor</strong>
-                  <p class="project-description">A Flask web application for extracting tables from any webpage URL, utilizing BeautifulSoup for web scraping and DataTables for efficient table display.</p>
-              </summary>
-
-              <!-- Project Details -->
-              <div class="dropdown-content" id="detailsContent">
-                  <p><strong>Description:</strong> A Flask web application that allows users to extract tables from any webpage by providing the URL of the page. It utilizes Flask as the backend framework, BeautifulSoup for web scraping, and jQuery DataTables for efficient table rendering on the frontend. Users can specify a table index in case a webpage contains multiple tables and download the extracted data in CSV format.</p>
-                  <p><strong>Features:</strong></p>
-                  <ul>
-                      <li>Table Extraction</li>
-                      <li>Dynamic Table Rendering</li>
-                      <li>CSV Download</li>
-                      <li>Responsive Design</li>
-                  </ul>
-                  <p><strong>Technologies Used:</strong></p>
-                  <ul>
-                      <li>Frontend: HTML, CSS, JavaScript, jQuery DataTables</li>
-                      <li>Backend: Flask, BeautifulSoup, pandas, Flask-CORS</li>
-                  </ul>
-              </div>
-
-              <!-- Links -->
-              <details class="links">
-                  <summary>Links</summary>
-                  <div class="dropdown-content">
-                      <p><i class="fas fa-desktop"></i> <strong>Demo:</strong> <a href="https://table-extractor.onrender.com/" target="_blank">Table Extractor Web App</a></p>
-                      <p><i class="fab fa-github"></i> <strong>GitHub:</strong> <a href="https://github.com/tanmay-kalbande/table-extractor-app" target="_blank">Table Extractor Repository</a></p>
-                  </div>
-              </details>
-          </details>
+      <!-- Tabs -->
+      <div class="tabs">
+        <button class="tab-button active" data-tab="project1">Expense Tracker</button>
+        <button class="tab-button" data-tab="project2">Table Extractor</button>
+        <button class="tab-button" data-tab="project3">Goal Tracker Web App</button>
+        <button class="tab-button" data-tab="project4">The Scam Master Podcast</button>
+        <button class="tab-button" data-tab="project5">Incident Tracker</button>
       </div>
 
-      <!-- Project 3: Goal Tracker Web App -->
-      <div class="project">
-          <details class="project-title">
-              <summary>
-                  <i class="fas fa-bullseye"></i> <strong>Goal Tracker Web App</strong>
-                  <p class="project-description">Welcome to Goal Tracker – the perfect tool to help you achieve your goals one day at a time!</p>
-              </summary>
-
-              <!-- Project Details -->
-              <div class="dropdown-content" id="detailsContent">
-                  <p><strong>Description:</strong> Welcome to Goal Tracker – the perfect tool to help you achieve your goals one day at a time!</p>
-                  <p><strong>Features:</strong></p>
-                  <ul>
-                      <li>Easily Track Your Progress</li>
-                      <li>Daily Goal Tracking</li>
-                      <li>Custom Goals</li>
-                      <li>Reset Whenever Needed</li>
-                      <li>Visualize Your Progress</li>
-                      <li>Share with Friends</li>
-                  </ul>
-              </div>
-
-              <!-- Links -->
-              <details class="links">
-                  <summary>Links</summary>
-                  <div class="dropdown-content">
-                      <p><i class="fas fa-desktop"></i> <strong>Demo:</strong> <a href="https://tanmay-kalbande.github.io/Goal-Tracker/" target="_blank">Goal Tracker Web App</a></p>
-                      <p><i class="fab fa-github"></i> <strong>GitHub:</strong> <a href="https://github.com/tanmay-kalbande/Goal-Tracker" target="_blank">Goal Tracker Repository</a></p>
-                  </div>
-              </details>
-          </details>
+      <!-- Tab Contents -->
+      <div class="tab-content active" id="project1">
+        <div class="project-card">
+          <h3><i class="fas fa-money-bill-wave"></i> Expense Tracker</h3>
+          <p class="project-description">A web application for tracking personal expenses with data visualization and CSV import/export functionality.</p>
+          <h4>Features:</h4>
+          <ul>
+            <li>Expense Management</li>
+            <li>Data Visualization</li>
+            <li>CSV Import/Export</li>
+            <li>User-friendly Interface</li>
+          </ul>
+          <div class="project-links">
+            <a href="https://expense-tail.vercel.app/" target="_blank" class="neo-button">
+              <i class="fas fa-desktop"></i> Live Demo
+            </a>
+            <a href="https://github.com/tanmay-kalbande/Expense-Tracker" target="_blank" class="neo-button">
+              <i class="fab fa-github"></i> GitHub
+            </a>
+          </div>
+        </div>
       </div>
 
-      <!-- Project 4: The Scam Master Podcast Website -->
-      <div class="project">
-          <details class="project-title">
-              <summary>
-                  <i class="fas fa-microphone-alt"></i> <strong>The Scam Master Podcast Website</strong>
-                  <p class="project-description">The website for "The Scam Master" podcast, exposing fraudsters and guiding listeners on outwitting them.</p>
-              </summary>
-
-              <!-- Project Details -->
-              <div class="dropdown-content" id="scamMasterDetails">
-                  <p><strong>Description:</strong> The Scam Master podcast website serves as a platform to educate and entertain listeners about various scams, tricks, and tactics used by fraudsters. The website design focuses on providing a user-friendly experience with easy navigation to episodes, platforms, and social media links.</p>
-                  <p><strong>Features:</strong></p>
-                  <ul>
-                      <li>Engaging Hero Section</li>
-                      <li>Platform Accessibility</li>
-                      <li>Latest Episodes Showcase</li>
-                      <li>Social Media Integration</li>
-                  </ul>
-                  <p><strong>Technologies Used:</strong></p>
-                  <ul>
-                      <li>HTML, CSS for Frontend</li>
-                      <li>Embedded Spotify Players for Episodes</li>
-                      <li>Responsive Design for Various Screen Sizes</li>
-                  </ul>
-              </div>
-
-              <!-- Links -->
-              <details class="links">
-                  <summary>Links</summary>
-                  <div class="dropdown-content">
-                      <p><i class="fas fa-globe"></i> <strong>Website:</strong> <a href="https://the-scam-master.vercel.app/" target="_blank">The Scam Master Podcast Website</a></p>
-                      <p><i class="fab fa-instagram"></i> <strong>Instagram:</strong> <a href="https://www.instagram.com/the_scam_master/" target="_blank">The Scam Master on Instagram</a></p>
-                      <p><i class="fab fa-github"></i> <strong>GitHub:</strong> <a href="https://github.com/the-scam-master/podcast_webpage" target="_blank">The Scam Master Repository</a></p>
-                  </div>
-              </details>
-          </details>
+      <div class="tab-content" id="project2">
+        <div class="project-card">
+          <h3><i class="fas fa-table"></i> Table Extractor</h3>
+          <p class="project-description">A Flask web app for extracting tables from web pages, using BeautifulSoup and DataTables.</p>
+          <h4>Features:</h4>
+          <ul>
+            <li>Table Extraction</li>
+            <li>Dynamic Table Rendering</li>
+            <li>CSV Download</li>
+            <li>Responsive Design</li>
+          </ul>
+          <div class="project-links">
+            <a href="https://table-extractor.onrender.com/" target="_blank" class="neo-button">
+              <i class="fas fa-desktop"></i> Live Demo
+            </a>
+            <a href="https://github.com/tanmay-kalbande/table-extractor-app" target="_blank" class="neo-button">
+              <i class="fab fa-github"></i> GitHub
+            </a>
+          </div>
+        </div>
       </div>
-  </div>
+
+      <div class="tab-content" id="project3">
+        <div class="project-card">
+          <h3><i class="fas fa-bullseye"></i> Goal Tracker Web App</h3>
+          <p class="project-description">Goal Tracker helps you achieve your goals one day at a time!</p>
+          <h4>Features:</h4>
+          <ul>
+            <li>Daily Goal Tracking</li>
+            <li>Custom Goals</li>
+            <li>Visualize Progress</li>
+            <li>Share with Friends</li>
+          </ul>
+          <div class="project-links">
+            <a href="https://tanmay-kalbande.github.io/Goal-Tracker/" target="_blank" class="neo-button">
+              <i class="fas fa-desktop"></i> Live Demo
+            </a>
+            <a href="https://github.com/tanmay-kalbande/Goal-Tracker" target="_blank" class="neo-button">
+              <i class="fab fa-github"></i> GitHub
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="tab-content" id="project4">
+        <div class="project-card">
+          <h3><i class="fas fa-microphone-alt"></i> The Scam Master Podcast Website</h3>
+          <p class="project-description">The Scam Master podcast website, exposing fraudsters and providing guidance to outwit them.</p>
+          <h4>Features:</h4>
+          <ul>
+            <li>Engaging Hero Section</li>
+            <li>Platform Accessibility</li>
+            <li>Latest Episodes Showcase</li>
+            <li>Social Media Integration</li>
+          </ul>
+          <div class="project-links">
+            <a href="https://the-scam-master.vercel.app/" target="_blank" class="neo-button">
+              <i class="fas fa-globe"></i> Website
+            </a>
+            <a href="https://www.instagram.com/the_scam_master/" target="_blank" class="neo-button">
+              <i class="fab fa-instagram"></i> Instagram
+            </a>
+            <a href="https://github.com/the-scam-master/podcast_webpage" target="_blank" class="neo-button">
+              <i class="fab fa-github"></i> GitHub
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="tab-content" id="project5">
+        <div class="project-card">
+          <h3><i class="fas fa-exclamation-triangle"></i> Incident Tracker</h3>
+          <p class="project-description">A tool to record, track, and manage incidents efficiently within a company.</p>
+          <h4>Features:</h4>
+          <ul>
+            <li>Add incidents with details like INC Number, Caller Number, Status, Date, and Summary</li>
+            <li>Search and filter incidents</li>
+            <li>Pagination through incident history</li>
+            <li>CSV export and import</li>
+            <li>Professional interface</li>
+          </ul>
+          <div class="project-links">
+            <a href="https://tanmay-kalbande.github.io/Incident-Tracker/" target="_blank" class="neo-button">
+              <i class="fas fa-desktop"></i> Live Demo
+            </a>
+            <a href="https://github.com/tanmay-kalbande/Incident-Tracker" target="_blank" class="neo-button">
+              <i class="fab fa-github"></i> GitHub
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
 
     <div class="section">
       <h2>Certifications</h2>
@@ -657,48 +876,77 @@
       </ul>
     </div>
 
-    <div class="section-divider">
-      <p><strong>Want to see more?</strong></p>
-      <h3 id="contact">Explore My BI Dashboards</h3>
-    </div>
-    <div class="download-button-container">
-      <a href="dashboard_project/data_visualization_portfolio" class="download-button" role="button">Explore Business Intelligence Dashboards</a>
-    </div>
-
-    <div class="section-divider">
-      <p><strong>Interested in working together?</strong></p>
-      <h3>Get in touch!</h3>
-    </div>
-
-    <div class="section">
-      <h2 id="contact">Contact</h2>
-      <p class="text-center">Feel free to reach out if you'd like to connect, discuss a project, or just say hello!</p>
-      <p class="text-center">  <i class="fa-brands fa-square-whatsapp"></i>
-        <i class="fas fa-envelope"></i> <a href="mailto:tanmaykalbande@gmail.com">tanmaykalbande@gmail.com</a><br>
-        <i class="fab fa-whatsapp-square"></i> <a href="https://wa.me/7378381494?text=Hi%20Tanmay,%20I%20came%20across%20your%20portfolio%20and%20I%20">WhatsApp: 7378381494</a><br>
-        <i class="fab fa-linkedin"></i> <a href="https://www.linkedin.com/in/tanmay-kalbande" target="_blank">LinkedIn</a><br>
-        <i class="fab fa-github"></i> <a href="https://github.com/tanmay-kalbande" target="_blank">GitHub</a>
-      </p>
-      <p class="text-center"><a href="#top">Back to top</a></p>
+    <div class="section cta-section">
+      <h2 class="section-header">Want to see more?</h2>
+      <div class="cta-content">
+        <h3>Explore My BI Dashboards</h3>
+        <p>Discover my collection of interactive Business Intelligence dashboards showcasing data visualization skills.</p>
+        <div class="cta-buttons">
+          <a href="dashboard_project/data_visualization_portfolio" class="neo-button">
+            <i class="fas fa-chart-bar"></i> View Dashboards
+          </a>
+        </div>
+      </div>
     </div>
 
-  </div>
-  <footer>
-    <span>
-      <i class="fas fa-copyright"></i> 2024 Tanmay Kalbande. All rights reserved.
-    </span>
-    <span class="hidden-mobile">
-      Crafted with ❤️ and <i class="fas fa-coffee" style="color: #704214;"></i>
-    </span>
-  </footer>
-
-      <!-- Add this section towards the end of your portfolio -->
-      <div class="section" style="background-color: #ffd700; color: #333;">
-        <h2>Open for Job Opportunities</h2>
-        <p>I'm actively seeking new job opportunities in the field of data science. If you have any openings or know of any exciting opportunities, I'd love to hear from you!</p>
-        <p>Please feel free to reach out via email at <a href="mailto:kalbandetanmay@gmail.com">kalbandetanmay@gmail.com</a> or connect with me on <a href="https://www.linkedin.com/in/tanmay-kalbande">LinkedIn</a>.</p>
-        <p>Let's discuss how my skills and experiences can contribute to your team!</p>
+      <div class="section-divider">
+        <p class="cta-header">Interested in working together?</p>
+        <h3 class="cta-subheader">Get in touch!</h3>
       </div>
 
+    <div class="section contact-section">
+      <h2 id="contact" class="section-title">Contact</h2>
+      <p class="text-center">
+        Feel free to reach out if you'd like to connect, discuss a project, or just say hello!
+      </p>
+      <div class="contact-grid">
+        <div class="contact-item">
+          <i class="fas fa-envelope"></i>
+          <a href="mailto:tanmaykalbande@gmail.com">tanmaykalbande@gmail.com</a>
+        </div>
+        <div class="contact-item">
+          <i class="fab fa-whatsapp-square"></i>
+          <a href="https://wa.me/7378381494?text=Hi%20Tanmay,%20I%20came%20across%20your%20portfolio%20and%20I%20">WhatsApp: 737-838-1494</a>
+        </div>
+        <div class="contact-item">
+          <i class="fab fa-linkedin"></i>
+          <a href="https://www.linkedin.com/in/tanmay-kalbande" target="_blank">LinkedIn</a>
+        </div>
+        <div class="contact-item">
+          <i class="fab fa-github"></i>
+          <a href="https://github.com/tanmay-kalbande" target="_blank">GitHub</a>
+        </div>
+      </div>
+      <p class="text-center">
+        <a href="#top">Back to top</a>
+      </p>
+    </div>
+  </div>
+  <footer class="footer">
+      <div class="footer-content">
+          <div class="footer-text">© 2024 Tanmay Kalbande. All rights reserved.</div>
+      </div>
+  </footer>
+<script>
+    document.querySelectorAll('.tab-button').forEach(button => {
+    button.addEventListener('click', () => {
+      // Remove active class from all buttons
+      document.querySelectorAll('.tab-button').forEach(btn => {
+        btn.classList.remove('active');
+      });
+      // Hide all tab contents
+      document.querySelectorAll('.tab-content').forEach(content => {
+        content.classList.remove('active');
+      });
+
+      // Add active class to clicked button
+      button.classList.add('active');
+      // Show the corresponding tab content
+      const tabId = button.getAttribute('data-tab');
+      document.getElementById(tabId).classList.add('active');
+    });
+  });
+</script>
+  <script src="https://kit.fontawesome.com/a076d05399.js"></script>
 </body>
 </html>
