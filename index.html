@@ -1,333 +1,520 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Tanmay Kalbande - Crafting Insights from Data</title>
-  <meta name="description" content="Tanmay Kalbande is a data science enthusiast with a solid foundation in statistical analysis, machine learning, and data visualization. Ready to contribute to meaningful insights and data-driven decision-making.">
-  <meta name="keywords" content="Tanmay Kalbande, data science, machine learning, statistics, data visualization, Python, SQL, AI, Big Data, NLP, ethical AI, deep learning, TinyML">
-  <meta name="author" content="Tanmay Kalbande">
-  <meta name="robots" content="index, follow">
-  <meta property="og:title" content="Tanmay Kalbande - Data Science Portfolio">
-  <meta property="og:description" content="Tanmay Kalbande is a data science enthusiast with a solid foundation in statistical analysis, machine learning, and data visualization. Ready to contribute to meaningful insights and data-driven decision-making.">
-  <meta property="og:image" content="bits-and-bytes/resources/portfolio.png">
-  <meta property="og:url" content="https://tanmay-kalbande.github.io/">
-  <meta property="og:type" content="website">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-  <link rel="icon" href="bits-and-bytes/resources/favicon.png" type="image/x-icon">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&display=swap">
-  <style>
-    body {
-      font-family: 'Roboto Mono', monospace;
-      margin: 0;
-      padding: 0;
-      background: linear-gradient(45deg, #74512D, #577B8D);
-      background-size: 400% 400%;
-      animation: gradient 15s ease infinite;
-      color: #333;
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      scroll-behavior: smooth;
-    }
+    <!-- Basic Meta Tags for SEO and Responsiveness -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tanmay Kalbande - Crafting Insights from Data</title>
+    <meta name="description" content="Tanmay Kalbande is a data science enthusiast with a solid foundation in statistical analysis, machine learning, and data visualization. Ready to contribute to meaningful insights and data-driven decision-making.">
+    <meta name="keywords" content="Tanmay Kalbande, data science, machine learning, statistics, data visualization, Python, SQL, AI, Big Data, NLP, ethical AI, deep learning, TinyML">
+    <meta name="author" content="Tanmay Kalbande">
+    <meta name="robots" content="index, follow">
 
-    @keyframes gradient {
-      0% { background-position: 0% 50%; }
-      50% { background-position: 100% 50%; }
-      100% { background-position: 0% 50%; }
-    }
+    <!-- Open Graph Meta Tags with improved image handling -->
+    <meta property="og:title" content="Tanmay Kalbande - Data Science Portfolio">
+    <meta property="og:description" content="Tanmay Kalbande is a data science enthusiast with a solid foundation in statistical analysis, machine learning, and data visualization. Ready to contribute to meaningful insights and data-driven decision-making.">
+    <meta property="og:image" content="bits-and-bytes/resources/portfolio.png">
+    <meta property="og:image:alt" content="Tanmay Kalbande's Data Science Portfolio Banner">
+    <meta property="og:url" content="https://tanmay-kalbande.github.io/">
+    <meta property="og:type" content="website">
 
-    ::selection {
-      background-color: #ffd700;
-      color: #333;
-    }
+    <!-- Preload critical resources -->
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&display=swap" as="style">
+    <link rel="preload" href="bits-and-bytes/resources/favicon.png" as="image">
 
-    ::-moz-selection {
-      background-color: #ffd700;
-      color: #333;
-    }
+    <!-- External Styles and Icon Links -->
+    <link rel="icon" href="bits-and-bytes/resources/favicon.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&display=swap">
 
-    .container {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      width: 100%;
-      max-width: 1300px;
-      margin: 20px auto;
-      padding: 40px 70px;
-      background-color: rgba(255, 255, 255, 0.75);
-      box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
-      box-sizing: border-box;
-      border: 1px solid #ddd;
-      border-radius: 10px;
-      position: relative;
-      opacity: 1;
-      transform: translateY(0);
-      transition: opacity 0.6s ease-out, transform 0.6s ease-out;
-    }
+    <style>
+        /* Reset and Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+        }
 
-    .fade-in {
-      opacity: 1;
-      transform: translateY(0);
-    }
+        /* Skip to main content link for accessibility */
+        .skip-to-main {
+            position: absolute;
+            left: -9999px;
+            z-index: 999;
+            padding: 1em;
+            background-color: white;
+            color: black;
+            text-decoration: none;
+        }
 
-    .left {
-      flex: 1;
-      padding-right: 40px;
-    }
+        .skip-to-main:focus {
+            left: 50%;
+            transform: translateX(-50%);
+        }
 
-    .logo {
-      font-size: 60px;
-      font-weight: 900;
-      margin-top: 20px;
-      margin-bottom: 10px;
-      color: #333;
-    }
+        body {
+            background-color: #fefce8;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            line-height: 1.5;
+        }
 
-    .tagline {
-      font-size: 30px;
-      font-weight: 700;
-      margin-top: 5px;
-      margin-bottom: 35px;
-      color: #555;
-      white-space: nowrap;
-      overflow: hidden;
-      border-right: .15em solid orange;
-      animation: typing 3.5s steps(40, end), blink-caret .75s step-end infinite;
-    }
+        /* Improved focus styles */
+        :focus {
+            outline: 3px solid #2563eb;
+            outline-offset: 2px;
+        }
 
-    @keyframes typing {
-      from { width: 0 }
-      to { width: 100% }
-    }
+        /* Reduced motion preferences */
+        @media (prefers-reduced-motion: reduce) {
+            * {
+                animation: none !important;
+                transition: none !important;
+            }
+        }
 
-    @keyframes blink-caret {
-      from, to { border-color: transparent }
-      50% { border-color: orange; }
-    }
+        /* Main Content Styling with improved readability */
+        main {
+            flex: 1;
+            padding: 2rem;
+            width: 100%;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
 
-    .description,
-    .benefit {
-      margin-bottom: 30px;
-      font-size: 18px;
-      font-weight: 600;
-      border-bottom: 2px solid #ddd;
-      padding-bottom: 15px;
-    }
+        /* Enhanced Grid Layout */
+        .grid-container {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 2rem;
+            height: 100%;
+        }
 
-    .button {
-      display: flex;
-      align-items: center;
-      margin-bottom: 30px;
-    }
+        /* Responsive breakpoints */
+        @media (min-width: 768px) {
+            .grid-container {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
 
-    .button a {
-      display: inline-block;
-      padding: 15px 30px;
-      background-color: #333;
-      color: #fff;
-      text-decoration: none;
-      border-radius: 5px;
-      margin-right: 15px;
-      border: 3px solid #333;
-      font-weight: 700;
-      transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease, transform 0.3s ease;
-    }
+        @media (min-width: 1200px) {
+            .grid-container {
+                grid-template-columns: 1.2fr 0.8fr;
+                gap: 3rem;
+            }
+        }
 
-    .button a:hover {
-      background-color: #ffd700;
-      color: #333;
-      border-color: #ffd700;
-      transform: scale(1.05);
-      box-shadow: 0 0 15px rgba(255, 215, 0, 0.75);
-    }
+        /* Neobrutalism Card Styles with improved interaction */
+        .neo-box {
+            border: 4px solid #000;
+            border-radius: 12px;
+            box-shadow: 8px 8px 0px 0px rgba(0, 0, 0, 1);
+            padding: 1.5rem;
+            background: white;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
 
-    .button a.download {
-      border: 3px solid #ffd700;
-      background-color: #ffd700;
-      color: #333;
-    }
+        .neo-box:hover {
+            transform: translate(3px, 3px);
+            box-shadow: 5px 5px 0px 0px rgba(0, 0, 0, 1);
+        }
 
-    .button a.download:hover {
-      background-color: #333;
-      color: #fff;
-      border-color: #333;
-      transform: scale(1.05);
-      box-shadow: 0 0 15px rgba(51, 51, 51, 0.75);
-    }
+        /* Hero Section with improved typography */
+        .hero-content {
+            margin-bottom: 2rem;
+            max-width: 800px;
+        }
 
-    .right {
-      flex: 1;
-      text-align: right;
-      position: relative;
-    }
+        .hero-title {
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            font-weight: 900;
+            margin-bottom: 1rem;
+            line-height: 1.1;
+            letter-spacing: -0.02em;
+        }
 
-    .stat {
-      margin-top: 25px;
-      margin-bottom: 20px;
-      border: 2px solid #ddd;
-      padding: 20px;
-      text-align: center;
-      border-radius: 10px;
-      box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
-      transition: box-shadow 0.3s ease, transform 0.3s ease;
-      background-color: #fff;
-      opacity: 0;
-      transform: translateY(20px);
-      transition: opacity 0.6s ease-out, transform 0.6s ease-out, box-shadow 0.3s ease, transform 0.3s ease;
-    }
+        .hero-subtitle {
+            font-size: clamp(1.5rem, 3vw, 2rem);
+            font-weight: bold;
+            color: #2563eb;
+            margin-bottom: 1rem;
+        }
 
-    .stat:hover {
-      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-      transform: translateY(-5px) scale(1.05);
-    }
+        .hero-text {
+            font-size: 1.25rem;
+            margin-bottom: 1.5rem;
+            max-width: 65ch;
+            color: #374151;
+        }
 
-    .fade-in-stat {
-      opacity: 1;
-      transform: translateY(0);
-    }
+        /* Enhanced Button Styles */
+        .button-group {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            margin-bottom: 2rem;
+        }
 
-    .value {
-      font-size: 48px;
-      font-weight: 700;
-      display: block;
-      color: #333;
-    }
+        .neo-button {
+            border: 4px solid #000;
+            border-radius: 12px;
+            padding: 1rem 2rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            text-decoration: none;
+            color: black;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            position: relative;
+        }
 
-    .label {
-      font-size: 18px;
-      text-transform: uppercase;
-      margin-top: 10px;
-      color: #666;
-    }
+        .neo-button:hover {
+            transform: translate(3px, 3px);
+            box-shadow: 2px 2px 0px 0px rgba(0, 0, 0, 1);
+        }
 
-    footer {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      text-align: center;
-      margin: 10px 20px 0;
-      font-size: 14px;
-      color: #333;
-      font-weight: 600;
-      margin-top: auto;
-      background-color: #f8f8f8;
-      padding: 2px 0;
-    }
+        .neo-button:active {
+            transform: translate(4px, 4px);
+            box-shadow: 1px 1px 0px 0px rgba(0, 0, 0, 1);
+        }
 
-    .hidden-mobile {
-      display: inline;
-    }
+        /* Button Colors with improved contrast */
+        .portfolio-btn {
+            background-color: #4ade80;
+        }
 
-    @media only screen and (max-width: 600px) {
-      body {
-        overflow-x: hidden;
-        overflow-y: auto;
-      }
+        .resume-btn {
+            background-color: #f472b6;
+        }
 
-      .container {
-        flex-direction: column;
-        padding: 20px;
-        align-items: center;
-        margin: 10px 0;
-        border-radius: 0;
-        opacity: 1;
-        transform: none;
-      }
+        /* Social Links with improved interaction */
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
 
-      .left,
-      .right {
-        width: 100%;
-        padding: 0;
-        text-align: center;
-      }
+        .social-link {
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            background: white;
+        }
 
-      .tagline {
-        font-size: 25px;
-      }
+        .social-link:hover {
+            background-color: #f3f4f6;
+        }
 
-      .button {
-        flex-direction: column;
-        margin-bottom: 30px;
-      }
+        /* Stats Section with improved layout */
+        .stats-grid {
+            display: grid;
+            gap: 1.5rem;
+        }
 
-      .button a {
-        margin-right: 0;
-        margin-bottom: 10px;
-      }
+        .stat-card {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
 
-      .hidden-mobile {
-        display: none;
-      }
+        .stat-icon {
+            font-size: 2rem;
+            color: #1f2937;
+        }
 
-      footer {
-        flex-direction: column;
-        margin-bottom: 10px;
-      }
+        .stat-value {
+            font-size: 2.5rem;
+            font-weight: 900;
+            line-height: 1;
+        }
 
-      footer span {
-        margin-bottom: 10px;
-      }
-    }
-  </style>
+        .stat-label {
+            font-weight: bold;
+            font-size: 0.875rem;
+            color: #374151;
+        }
+
+        /* Stats Card Colors with improved contrast */
+        .stat-blue { background-color: #93c5fd; }
+        .stat-purple { background-color: #c084fc; }
+        .stat-orange { background-color: #fb923c; }
+
+
+        .category {
+          background-color: #e0e0e0;
+          padding: 1.5rem;
+          border: 4px solid black;
+          border-radius: 1rem;
+          box-shadow: 8px 8px 0 rgba(0, 0, 0, 1);
+          transition: all 0.2s ease-in-out;
+        }
+
+        .category:hover {
+          transform: translate(3px, 3px);
+          box-shadow: 5px 5px 0 rgba(0, 0, 0, 1);
+        }
+
+        .bg-blue-200 { background-color: #c3e3ff; }
+        .bg-purple-200 { background-color: #e3c3ff; }
+        .bg-green-200 { background-color: #c3ffd7; }
+        .bg-orange-200 { background-color: #ffdfc3; }
+
+        .category-header {
+          display: flex;
+          align-items: center;
+          gap: 0.5rem;
+          margin-bottom: 1rem;
+        }
+
+        .icon {
+          width: 24px;
+          height: 24px;
+        }
+
+        .category-title {
+          font-size: 1.25rem;
+          font-weight: bold;
+        }
+
+        .tools {
+          display: flex;
+          flex-wrap: wrap;
+          gap: 0.5rem;
+        }
+
+        .tool {
+          background-color: white;
+          padding: 0.25rem 0.75rem;
+          border: 2px solid black;
+          border-radius: 9999px;
+          font-size: 0.875rem;
+          font-weight: 500;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1350px; /* Adjust as necessary */
+            padding: 2rem;
+            margin-top: -3rem; /* Reduce or adjust this value */
+        }
+
+
+        .title {
+            font-size: 2rem;
+            font-weight: bold;
+            margin-bottom: 1.5rem;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr); /* Four cards in one row */
+            gap: 1.5rem;
+            width: 100%; /* Ensure grid takes full width */
+        }
+
+        @media (max-width: 1200px) {
+            .grid {
+                grid-template-columns: repeat(2, 1fr); /* Two cards in one row on smaller screens */
+            }
+        }
+
+        @media (max-width: 768px) {
+            .grid {
+                grid-template-columns: 1fr; /* One card in one row on very small screens */
+            }
+        }
+
+
+        /* Footer with improved layout */
+        .footer {
+            background-color: white;
+            border-top: 4px solid black;
+            padding: 1.5rem;
+            margin-top: auto;
+        }
+
+        .footer-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1rem;
+            text-align: center;
+        }
+
+        @media (min-width: 768px) {
+            .footer-content {
+                grid-template-columns: repeat(3, 1fr);
+                text-align: center;
+            }
+        }
+
+        .footer-text {
+            font-size: 0.875rem;
+            font-weight: 500;
+            color: #4b5563;
+        }
+
+        /* Print Styles */
+        @media print {
+            body {
+                background: white;
+            }
+
+            .neo-box {
+                box-shadow: none;
+                border: 1px solid #000;
+            }
+
+            .footer {
+                border-top: 1px solid #000;
+            }
+
+            .no-print {
+                display: none;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hidden-mobile {
+                display: none;
+            }
+        }
+  
+    </style>
 </head>
 <body>
-  <header class="container">
-    <div class="left">
-      <h1 class="logo">Tanmay Kalbande</h1>
-      <p class="tagline">Data Science Enthusiast</p>
-      <p class="description">Passionate about leveraging data for meaningful insights and decision-making.</p>
-      <p class="benefit">Experienced in end-to-end development of predictive modeling solutions.</p>
-      <p class="benefit">Currently working at Capgemini, contributing to data-driven projects for the past 3 months.</p>
-      <div class="button">
-        <a href="bits-and-bytes/data_science_portfolio">Check My Full Portfolio</a>
-        <a href="bits-and-bytes/resources/tanmay-resume.pdf" class="download">Download Resume</a>
+    <!-- Skip to main content link -->
+    <a href="#main-content" class="skip-to-main">Skip to main content</a>
+
+    <!-- Main Content -->
+    <main id="main-content">
+        <div class="grid-container">
+            <!-- Left Column with Hero Section -->
+            <div>
+                <div class="neo-box hero-content">
+                    <h1 class="hero-title">TANMAY KALBANDE</h1>
+                    <h2 class="hero-subtitle">Data Science Wizard 🧙‍♂️</h2>
+                    <p class="hero-text">Turning data into actionable insights | Machine Learning Enthusiast</p>
+                    <div class="button-group">
+                        <a href="#portfolio" class="neo-button portfolio-btn" aria-label="View Portfolio">
+                            Portfolio <i class="fas fa-chevron-right" aria-hidden="true"></i>
+                        </a>
+                        <a href="#resume" class="neo-button resume-btn" aria-label="Download Resume">
+                            Resume <i class="fas fa-download" aria-hidden="true"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Social Media Links Section -->
+                <div class="social-links">
+                    <a href="mailto:kalbandetanmay@gmail.com" class="neo-button social-link" aria-label="Send email">
+                        <i class="fas fa-envelope" aria-hidden="true"></i>
+                    </a>
+                    <a href="https://linkedin.com/in/tanmay-kalbande" class="neo-button social-link" aria-label="LinkedIn Profile">
+                        <i class="fab fa-linkedin-in" aria-hidden="true"></i>
+                    </a>
+                    <a href="https://github.com/tanmay-kalbande" class="neo-button social-link" aria-label="GitHub Profile">
+                        <i class="fab fa-github" aria-hidden="true"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Right Column with Stats -->
+            <div class="stats-grid">
+                <div class="neo-box stat-card stat-blue">
+                    <i class="fas fa-database stat-icon" aria-hidden="true"></i>
+                    <div>
+                        <div class="stat-value">1.10</div>
+                        <div class="stat-label">YEARS OF EXPERIENCE</div>
+                    </div>
+                </div>
+
+                <div class="neo-box stat-card stat-purple">
+                    <i class="fas fa-brain stat-icon" aria-hidden="true"></i>
+                    <div>
+                        <div class="stat-value">9</div>
+                        <div class="stat-label">SUCCESSFUL PROJECTS</div>
+                    </div>
+                </div>
+
+                <div class="neo-box stat-card stat-orange">
+                    <i class="fas fa-chart-line stat-icon" aria-hidden="true"></i>
+                    <div>
+                        <div class="stat-value">4</div>
+                        <div class="stat-label">CERTIFICATIONS</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <div class="container">
+      <h2 class="title">My Toolkit</h2>
+      <div class="grid">
+        <div class="category bg-blue-200">
+          <div class="category-header">
+            <i data-lucide="line-chart" class="icon"></i>
+            <h3 class="category-title">Analysis Tools</h3>
+          </div>
+          <div class="tools">
+            <span class="tool">Python</span>
+            <span class="tool">R</span>
+            <span class="tool">SQL</span>
+            <span class="tool">Excel</span>
+          </div>
+        </div>
+
+        <div class="category bg-purple-200">
+          <div class="category-header">
+            <i data-lucide="brain" class="icon"></i>
+            <h3 class="category-title">ML Frameworks</h3>
+          </div>
+          <div class="tools">
+            <span class="tool">TensorFlow</span>
+            <span class="tool">PyTorch</span>
+            <span class="tool">Scikit-learn</span>
+          </div>
+        </div>
+
+        <div class="category bg-green-200">
+          <div class="category-header">
+            <i data-lucide="git-branch" class="icon"></i>
+            <h3 class="category-title">Version Control</h3>
+          </div>
+          <div class="tools">
+            <span class="tool">Git</span>
+            <span class="tool">MLflow</span>
+          </div>
+        </div>
+
+        <div class="category bg-orange-200">
+          <div class="category-header">
+            <i data-lucide="bar-chart" class="icon"></i>
+            <h3 class="category-title">Visualization</h3>
+          </div>
+          <div class="tools">
+            <span class="tool">Tableau</span>
+            <span class="tool">PowerBI</span>
+            <span class="tool">Plotly</span>
+          </div>
+        </div>
       </div>
     </div>
-    <div class="right">
-      <div class="stat fade-in-stat">
-        <span class="value">1.5</span>
-        <span class="label">YEARS OF EXPERIENCE</span>
-      </div>
-      <div class="stat fade-in-stat">
-        <span class="value">7</span>
-        <span class="label">SUCCESSFUL PROJECTS</span>
-      </div>
-      <div class="stat fade-in-stat">
-        <span class="value">4</span>
-        <span class="label">CERTIFICATIONS</span>
-      </div>
-    </div>
-  </header>
-  <footer>
-    <span>
-      <i class="fas fa-copyright"></i> 2024 Tanmay Kalbande. All rights reserved. Crafted with ❤️ and <i class="fas fa-coffee" style="color: #704214;"></i>
-    </span>
-    <span class="hidden-mobile">
-      <a href="mailto:kalbandetanmay@gmail.com" style="color: #333;" aria-label="Email Tanmay Kalbande"><i class="fas fa-envelope"></i></a>
-      <a href="https://www.linkedin.com/in/tanmay-kalbande" target="_blank" style="color: #333;" aria-label="LinkedIn Profile"><i class="fab fa-linkedin"></i></a>
-      <a href="https://github.com/tanmay-kalbande" target="_blank" style="color: #333;" aria-label="GitHub Profile"><i class="fab fa-github"></i></a>
-      Phone: 737-838-1494
-      Last Updated: May 2024
-    </span>
-  </footer>
-  <script>
-    document.addEventListener("DOMContentLoaded", function() {
-      const fadeInElements = document.querySelectorAll(".container, .stat");
 
-      const observer = new IntersectionObserver((entries, observer) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('fade-in');
-            observer.unobserve(entry.target);
-          }
-        });
-      }, { threshold: 0.1 });
-
-      fadeInElements.forEach(el => {
-        observer.observe(el);
-      });
-    });
-  </script>
+    <!-- Footer Section -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-text">© 2024 Tanmay Kalbande. All rights reserved.</div>
+            <div class="footer-text">Last Updated: October 27, 2024</div>
+            <div class="footer-text hidden-mobile">Crafted with <span aria-label="love">❤️</span> using HTML & CSS</div>
+        </div>
+    </footer>
 </body>
 </html>
