@@ -18,375 +18,309 @@
     <meta property="og:url" content="https://tanmay-kalbande.github.io/">
     <meta property="og:type" content="website">
 
-    <!-- Preload critical resources -->
-    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&display=swap" as="style">
-    <link rel="preload" href="bits-and-bytes/resources/favicon.png" as="image">
-
-    <!-- External Styles and Icon Links -->
     <link rel="icon" href="bits-and-bytes/resources/favicon.png" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;900&display=swap">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&display=swap">
-
     <style>
-        /* Reset and Base Styles */
+        :root {
+            --primary: #2563eb;
+            --accent: #22c55e;
+            --background: #fafaf9;
+            --card: #ffffff;
+            --text: #1f2937;
+            --shadow-color: rgba(0, 0, 0, 0.1);
+        }
+
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-        }
-
-        ::selection {
-            background-color: #4ade80;
-            color: #000000;
-        }
-        ::-moz-selection {
-            background-color: #4ade80;
-            color: #000000;
-        }
-
-        /* Skip to main content link for accessibility */
-        .skip-to-main {
-            position: absolute;
-            left: -9999px;
-            z-index: 999;
-            padding: 1em;
-            background-color: white;
-            color: black;
-            text-decoration: none;
-        }
-
-        .skip-to-main:focus {
-            left: 50%;
-            transform: translateX(-50%);
+            font-family: 'Inter', -apple-system, system-ui, sans-serif;
+            transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
         body {
-            background-color: #fefce8;
-            min-height: 100vh;
+            background: var(--background);
+            background-image:
+                radial-gradient(circle at 20px 20px, #4ade80 1px, transparent 0),
+                radial-gradient(circle at 60px 60px, #93c5fd 1px, transparent 0);
+            background-size: 80px 80px;
+            height: 100vh;
             display: flex;
             flex-direction: column;
-            line-height: 1.5;
+            overflow: hidden;
+            animation: backgroundShift 20s linear infinite;
         }
 
-        /* Improved focus styles */
-        :focus {
-            outline: 3px solid #2563eb;
-            outline-offset: 2px;
+        @keyframes backgroundShift {
+            0% { background-position: 0 0; }
+            50% { background-position: 40px 40px; }
+            100% { background-position: 80px 80px; }
         }
 
-        /* Reduced motion preferences */
-        @media (prefers-reduced-motion: reduce) {
-            * {
-                animation: none !important;
-                transition: none !important;
-            }
-        }
-
-        /* Main Content Styling with improved readability */
-        main {
-            flex: 1;
-            padding: 2rem;
-            width: 100%;
+        .container {
             max-width: 1400px;
             margin: 0 auto;
-        }
-
-        /* Enhanced Grid Layout */
-        .grid-container {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 2rem;
-            height: 100%;
-        }
-
-        /* Responsive breakpoints */
-        @media (min-width: 768px) {
-            .grid-container {
-                grid-template-columns: 1fr 1fr;
-            }
-        }
-
-        @media (min-width: 1200px) {
-            .grid-container {
-                grid-template-columns: 1.2fr 0.8fr;
-                gap: 3rem;
-            }
-        }
-
-        /* Neobrutalism Card Styles with improved interaction */
-        .neo-box {
-            border: 4px solid #000;
-            border-radius: 12px;
-            box-shadow: 8px 8px 0px 0px rgba(0, 0, 0, 1);
-            padding: 1.5rem;
-            background: white;
-            transition: transform 0.2s ease, box-shadow 0.2s ease;
-        }
-
-        .neo-box:hover {
-            transform: translate(3px, 3px);
-            box-shadow: 5px 5px 0px 0px rgba(0, 0, 0, 1);
-        }
-
-        /* Hero Section with improved typography */
-        .hero-content {
-            margin-bottom: 2rem;
-            max-width: 800px;
-        }
-
-        .hero-title {
-            font-size: clamp(2.5rem, 5vw, 4rem);
-            font-weight: 900;
-            margin-bottom: 1rem;
-            line-height: 1.1;
-            letter-spacing: -0.02em;
-        }
-
-        .hero-subtitle {
-            font-size: clamp(1.5rem, 3vw, 2rem);
-            font-weight: bold;
-            color: #2563eb;
-            margin-bottom: 1rem;
-        }
-
-        .hero-text {
-            font-size: 1.25rem;
-            margin-bottom: 1.5rem;
-            max-width: 65ch;
-            color: #374151;
-        }
-
-        /* Enhanced Button Styles */
-        .button-group {
-            display: flex;
-            gap: 1rem;
-            flex-wrap: wrap;
-            margin-bottom: 2rem;
-        }
-
-        .neo-button {
-            border: 4px solid #000;
-            border-radius: 12px;
-            padding: 1rem 2rem;
-            font-weight: bold;
-            cursor: pointer;
-            transition: transform 0.2s ease, box-shadow 0.2s ease;
-            text-decoration: none;
-            color: black;
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            position: relative;
-        }
-
-        .neo-button:hover {
-            transform: translate(3px, 3px);
-            box-shadow: 2px 2px 0px 0px rgba(0, 0, 0, 1);
-        }
-
-        .neo-button:active {
-            transform: translate(4px, 4px);
-            box-shadow: 1px 1px 0px 0px rgba(0, 0, 0, 1);
-        }
-
-        /* Button Colors with improved contrast */
-        .portfolio-btn {
-            background-color: #4ade80;
-        }
-
-        .resume-btn {
-            background-color: #f472b6;
-        }
-
-        /* Social Links with improved interaction */
-        .social-links {
-            display: flex;
-            gap: 1rem;
-            flex-wrap: wrap;
-        }
-
-        .social-link {
-            width: 50px;
-            height: 50px;
+            padding: 2rem;
+            height: calc(100vh - 80px);
             display: flex;
             align-items: center;
             justify-content: center;
+        }
+
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 1.2fr 0.8fr;
+            gap: 3rem;
+            align-items: start;
+            width: 100%;
+            margin: 0 auto;
+        }
+
+        .hero-content {
+            position: relative;
+        }
+
+        .neo-card {
+            background: var(--card);
+            border: 3px solid var(--text);
+            border-radius: 16px;
+            padding: 2.5rem;
+            box-shadow: 8px 8px 0 var(--shadow-color);
+            will-change: transform;
+        }
+
+        .title {
+            font-size: clamp(2.5rem, 4vw, 3.5rem);
+            font-weight: 900;
+            color: var(--text);
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
+            position: relative;
+        }
+
+        .title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 200px;
+            height: 8px;
+            background: var(--accent);
+            border-radius: 5px;
+            animation: underlineGrow 1s ease-in-out forwards;
+            transform-origin: left center;
+            will-change: transform;
+        }
+
+        @keyframes underlineGrow {
+            0% {
+                transform: scaleX(0);
+                opacity: 0;
+            }
+            50% {
+                opacity: 1;
+            }
+            100% {
+                transform: scaleX(1);
+                opacity: 1;
+            }
+        }
+
+        .subtitle {
             font-size: 1.5rem;
-            background: white;
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
         }
 
-        .social-link:hover {
-            background-color: #f3f4f6;
+        .description {
+            font-size: 1.1rem;
+            color: var(--text);
+            margin-bottom: 2.5rem;
+            max-width: 600px;
+            line-height: 1.7;
         }
 
-        /* Stats Section with improved layout */
+        .mobile-version {
+            display: none;
+        }
+
+        .button-group {
+            display: flex;
+            gap: 1.25rem;
+            margin-bottom: 2.5rem;
+        }
+
+        .neo-button {
+            padding: 1rem 2rem;
+            border: 3px solid var(--text);
+            border-radius: 12px;
+            font-weight: 700;
+            font-size: 1.1rem;
+            cursor: pointer;
+            text-decoration: none;
+            color: var(--text);
+            display: inline-flex;
+            align-items: center;
+            gap: 0.75rem;
+            box-shadow: 4px 4px 0 var(--shadow-color);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .neo-button:hover {
+            transform: translate(2px, 2px);
+            box-shadow: 2px 2px 0 var(--shadow-color);
+        }
+
         .stats-grid {
             display: grid;
-            gap: 1.5rem;
+            gap: 1.75rem;
         }
 
         .stat-card {
             display: flex;
             align-items: center;
-            gap: 1rem;
+            gap: 1.75rem;
+            padding: 1.75rem;
+            background: var(--card);
+            border: 3px solid var(--text);
+            border-radius: 16px;
+            will-change: transform;
         }
 
         .stat-icon {
-            font-size: 2rem;
-            color: #1f2937;
+            font-size: 2.5rem;
+            color: var(--text);
+            background: rgba(255, 255, 255, 0.9);
+            padding: 1rem;
+            border-radius: 12px;
+            border: 2px solid var(--text);
         }
 
         .stat-value {
-            font-size: 2.5rem;
+            font-size: 2.75rem;
             font-weight: 900;
             line-height: 1;
+            margin-bottom: 0.75rem;
         }
 
         .stat-label {
-            font-weight: bold;
-            font-size: 0.875rem;
-            color: #374151;
+            font-weight: 600;
+            font-size: 1.05rem;
+            color: var(--text);
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
         }
 
-        /* Stats Card Colors with improved contrast */
-        .stat-blue { background-color: #93c5fd; }
-        .stat-purple { background-color: #c084fc; }
-        .stat-orange { background-color: #fb923c; }
-
-
-        .category {
-          background-color: #e0e0e0;
-          padding: 1.5rem;
-          border: 4px solid black;
-          border-radius: 1rem;
-          box-shadow: 8px 8px 0 rgba(0, 0, 0, 1);
-          transition: all 0.2s ease-in-out;
+        .social-links {
+            display: flex;
+            gap: 1.25rem;
         }
 
-        .category:hover {
-          transform: translate(3px, 3px);
-          box-shadow: 5px 5px 0 rgba(0, 0, 0, 1);
+        .social-link {
+            width: 60px;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            background: var(--card);
+            color: var(--text);
+            border: 3px solid var(--text);
+            border-radius: 12px;
+            box-shadow: 4px 4px 0 var(--shadow-color);
+            transition: transform 0.2s ease;
         }
 
-        .bg-blue-200 { background-color: #c3e3ff; }
-        .bg-purple-200 { background-color: #e3c3ff; }
-        .bg-green-200 { background-color: #c3ffd7; }
-        .bg-orange-200 { background-color: #ffdfc3; }
-
-        .category-header {
-          display: flex;
-          align-items: center;
-          gap: 0.5rem;
-          margin-bottom: 1rem;
+        .social-link:hover {
+            transform: scale(1.1);
         }
 
-        .icon {
-          width: 24px;
-          height: 24px;
-        }
-
-        .category-title {
-          font-size: 1.25rem;
-          font-weight: bold;
-        }
-
-        .tools {
-          display: flex;
-          flex-wrap: wrap;
-          gap: 0.5rem;
-        }
-
-        .tool {
-          background-color: white;
-          padding: 0.25rem 0.75rem;
-          border: 2px solid black;
-          border-radius: 9999px;
-          font-size: 0.875rem;
-          font-weight: 500;
-        }
-
-        .container {
-            width: 100%;
-            max-width: 1350px; /* Adjust as necessary */
-            padding: 2rem;
-            margin-top: -3rem; /* Reduce or adjust this value */
-        }
-
-
-        .title {
-            font-size: 2rem;
-            font-weight: bold;
-            margin-bottom: 1.5rem;
-        }
-
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr); /* Four cards in one row */
-            gap: 1.5rem;
-            width: 100%; /* Ensure grid takes full width */
-        }
-
-        @media (max-width: 1200px) {
-            .grid {
-                grid-template-columns: repeat(2, 1fr); /* Two cards in one row on smaller screens */
-            }
-        }
-
-        @media (max-width: 768px) {
-            .grid {
-                grid-template-columns: 1fr; /* One card in one row on very small screens */
-            }
-        }
-
-
-        /* Footer with improved layout */
         .footer {
-            background-color: white;
-            border-top: 4px solid black;
-            padding: 1.5rem;
-            margin-top: auto;
+            height: 80px;
+            background: rgba(255, 255, 255, 0.85);
+            border-top: 3px solid var(--text);
+            backdrop-filter: blur(12px);
+            display: flex;
+            align-items: center;
+            box-shadow: 0 -4px 12px rgba(0, 0, 0, 0.08);
+            position: relative;
+            z-index: 2;
         }
 
         .footer-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
             max-width: 1400px;
             margin: 0 auto;
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 1rem;
-            text-align: center;
-        }
-
-        @media (min-width: 768px) {
-            .footer-content {
-                grid-template-columns: repeat(3, 1fr);
-                text-align: center;
-            }
+            padding: 0 2rem;
         }
 
         .footer-text {
-            font-size: 0.875rem;
-            font-weight: 500;
-            color: #4b5563;
+            color: var(--text);
+            font-weight: 600;
+            text-shadow: 0 1px 2px rgba(0, 0, 0, 0.08);
         }
 
-        /* Print Styles */
-        @media print {
+        @media (max-width: 1024px) {
             body {
-                background: white;
+                height: auto;
+                overflow: auto;
             }
 
-            .neo-box {
-                box-shadow: none;
-                border: 1px solid #000;
+            .container {
+                height: auto;
+                padding: 1.5rem;
+            }
+
+            .hero-grid {
+                grid-template-columns: 1fr;
+                gap: 2.5rem;
+            }
+
+            .neo-card {
+                padding: 1.75rem;
+            }
+
+            .button-group {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .social-link {
+                width: 50px;
+                height: 50px;
+                font-size: 1.5rem;
+            }
+
+            .social-links {
+                gap: 0.75rem;
+            }
+
+            .stats-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .stat-card {
+                padding: 1.5rem;
+                gap: 1.5rem;
             }
 
             .footer {
-                border-top: 1px solid #000;
+                height: auto;
+                padding: 1.5rem 0;
             }
 
-            .no-print {
-                display: none;
+            .footer-content {
+                flex-direction: column;
+                gap: 0.95rem;
+                text-align: center;
             }
         }
 
@@ -394,136 +328,123 @@
             .hidden-mobile {
                 display: none;
             }
+            .desktop-version {
+                display: none;
+            }
+            .mobile-version {
+                display: block;
+            }
         }
-  
+
+        @media (prefers-reduced-motion: reduce) {
+            * {
+                animation: none !important;
+                transition: none !important;
+            }
+        }
     </style>
 </head>
 <body>
-    <!-- Skip to main content link -->
-    <a href="#main-content" class="skip-to-main">Skip to main content</a>
-
-    <!-- Main Content -->
-    <main id="main-content">
-        <div class="grid-container">
-            <!-- Left Column with Hero Section -->
-            <div>
-                <div class="neo-box hero-content">
-                    <h1 class="hero-title">TANMAY KALBANDE</h1>
-                    <h2 class="hero-subtitle">Data Science Wizard 🧙‍♂️</h2>
-                    <p class="hero-text">Turning data into actionable insights | Machine Learning Enthusiast</p>
+    <main class="container">
+        <section class="hero-section">
+            <div class="hero-grid">
+                <div class="hero-content neo-card">
+                    <h1 class="title">TANMAY KALBANDE</h1>
+                    <h2 class="subtitle">
+                        <span>Data Science Wizard</span>
+                        <span role="img" aria-label="wizard">🧙‍♂️</span>
+                    </h2>
+                    <p class="description desktop-version">
+                        Data Science Specialist 🚀 | Transforming raw data into actionable insights with
+                        <strong>Machine Learning</strong>, <strong>AI</strong>, and <strong>Python</strong>.
+                    </p>
+                    <p class="description mobile-version">
+                        Data Science Pro 🔥 | I turn data into insights using <strong>ML</strong>, <strong>AI</strong>, and <strong>Python</strong>.
+                    </p>
                     <div class="button-group">
-                        <a href="bits-and-bytes/data_science_portfolio" class="neo-button portfolio-btn" aria-label="View Portfolio">
-                            Portfolio <i class="fas fa-chevron-right" aria-hidden="true"></i>
+                        <a href="bits-and-bytes/data_science_portfolio" class="neo-button portfolio-btn" aria-label="View Portfolio Projects">
+                            View Portfolio <i class="fas fa-chevron-right"></i>
                         </a>
-                        <a href="bits-and-bytes/resources/tanmay-resume.pdf" class="neo-button resume-btn" aria-label="Download Resume">
-                            Resume <i class="fas fa-download" aria-hidden="true"></i>
+                        <a href="bits-and-bytes/resources/tanmay-resume.pdf" class="neo-button resume-btn" aria-label="Download Resume PDF">
+                            Download Resume <i class="fas fa-download"></i>
+                        </a>
+                    </div>
+                    <div class="social-links">
+                        <a href="mailto:kalbandetanmay@gmail.com" class="social-link" aria-label="Email">
+                            <i class="fas fa-envelope"></i>
+                        </a>
+                        <a href="https://linkedin.com/in/tanmay-kalbande" class="social-link" aria-label="LinkedIn Profile">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="https://github.com/tanmay-kalbande" class="social-link" aria-label="GitHub Profile">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="https://medium.com/@tanmaykalbande" class="social-link" aria-label="Medium Blog">
+                            <i class="fab fa-medium"></i>
                         </a>
                     </div>
                 </div>
 
-                <!-- Social Media Links Section -->
-                <div class="social-links">
-                    <a href="mailto:kalbandetanmay@gmail.com" class="neo-button social-link" aria-label="Send email">
-                        <i class="fas fa-envelope" aria-hidden="true"></i>
-                    </a>
-                    <a href="https://linkedin.com/in/tanmay-kalbande" class="neo-button social-link" aria-label="LinkedIn Profile">
-                        <i class="fab fa-linkedin-in" aria-hidden="true"></i>
-                    </a>
-                    <a href="https://github.com/tanmay-kalbande" class="neo-button social-link" aria-label="GitHub Profile">
-                        <i class="fab fa-github" aria-hidden="true"></i>
-                    </a>
+                <div class="stats-grid">
+                    <div class="neo-card stat-card">
+                        <i class="fas fa-database stat-icon"></i>
+                        <div>
+                            <div class="stat-value">1.10</div>
+                            <div class="stat-label">Years Experience</div>
+                        </div>
+                    </div>
+
+                    <div class="neo-card stat-card">
+                        <i class="fas fa-brain stat-icon"></i>
+                        <div>
+                            <div class="stat-value">9</div>
+                            <div class="stat-label">ML Projects Deployed</div>
+                        </div>
+                    </div>
+
+                    <div class="neo-card stat-card">
+                        <i class="fas fa-chart-line stat-icon"></i>
+                        <div>
+                            <div class="stat-value">4</div>
+                            <div class="stat-label">Industry Certifications</div>
+                        </div>
+                    </div>
                 </div>
             </div>
+        </section>
 
-            <!-- Right Column with Stats -->
-            <div class="stats-grid">
-                <div class="neo-box stat-card stat-blue">
-                    <i class="fas fa-database stat-icon" aria-hidden="true"></i>
-                    <div>
-                        <div class="stat-value">1.10</div>
-                        <div class="stat-label">YEARS OF EXPERIENCE</div>
-                    </div>
-                </div>
-
-                <div class="neo-box stat-card stat-purple">
-                    <i class="fas fa-brain stat-icon" aria-hidden="true"></i>
-                    <div>
-                        <div class="stat-value">9</div>
-                        <div class="stat-label">SUCCESSFUL PROJECTS</div>
-                    </div>
-                </div>
-
-                <div class="neo-box stat-card stat-orange">
-                    <i class="fas fa-chart-line stat-icon" aria-hidden="true"></i>
-                    <div>
-                        <div class="stat-value">4</div>
-                        <div class="stat-label">CERTIFICATIONS</div>
-                    </div>
-                </div>
-            </div>
-        </div>
+        <!-- Added anchor sections -->
+        <section id="portfolio" class="section-spacer"></section>
+        <section id="resume" class="section-spacer"></section>
     </main>
 
-    <div class="container">
-      <h2 class="title">My Toolkit</h2>
-      <div class="grid">
-        <div class="category bg-blue-200">
-          <div class="category-header">
-            <i data-lucide="line-chart" class="icon"></i>
-            <h3 class="category-title">Analysis Tools</h3>
-          </div>
-          <div class="tools">
-            <span class="tool">Python</span>
-            <span class="tool">R</span>
-            <span class="tool">SQL</span>
-            <span class="tool">Excel</span>
-          </div>
-        </div>
-
-        <div class="category bg-purple-200">
-          <div class="category-header">
-            <i data-lucide="brain" class="icon"></i>
-            <h3 class="category-title">ML Frameworks</h3>
-          </div>
-          <div class="tools">
-            <span class="tool">TensorFlow</span>
-            <span class="tool">PyTorch</span>
-            <span class="tool">Scikit-learn</span>
-          </div>
-        </div>
-
-        <div class="category bg-green-200">
-          <div class="category-header">
-            <i data-lucide="git-branch" class="icon"></i>
-            <h3 class="category-title">Version Control</h3>
-          </div>
-          <div class="tools">
-            <span class="tool">Git</span>
-            <span class="tool">MLflow</span>
-          </div>
-        </div>
-
-        <div class="category bg-orange-200">
-          <div class="category-header">
-            <i data-lucide="bar-chart" class="icon"></i>
-            <h3 class="category-title">Visualization</h3>
-          </div>
-          <div class="tools">
-            <span class="tool">Tableau</span>
-            <span class="tool">PowerBI</span>
-            <span class="tool">Plotly</span>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Footer Section -->
     <footer class="footer">
         <div class="footer-content">
             <div class="footer-text">© 2024 Tanmay Kalbande. All rights reserved.</div>
-            <div class="footer-text">Last Updated: October 27, 2024</div>
+            <div class="footer-text">Last Updated: January 25, 2025</div>
             <div class="footer-text hidden-mobile">Crafted with <span aria-label="love">❤️</span> using HTML & CSS</div>
         </div>
     </footer>
+
+    <script>
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', (e) => {
+                e.preventDefault();
+                const target = document.querySelector(anchor.getAttribute('href'));
+                target.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            });
+        });
+
+        // Update copyright year automatically
+        document.querySelectorAll('.footer-text').forEach(element => {
+            if (element.textContent.includes('©')) {
+                element.textContent = `© ${new Date().getFullYear()} Tanmay Kalbande. All rights reserved.`;
+            }
+        });
+    </script>
 </body>
 </html>
