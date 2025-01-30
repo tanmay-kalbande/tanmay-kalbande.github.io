@@ -10,7 +10,7 @@
   <meta name="description" content="Data science enthusiast with a solid foundation in statistical analysis, machine learning, and data visualization. Ready to contribute to meaningful insights and data-driven decision-making.">
   <meta name="keywords" content="data science, machine learning, statistics, data visualization, Python, SQL, AI, Big Data, NLP, ethical AI, deep learning, TinyML, portfolio, Tanmay Kalbande">
   <meta name="author" content="Tanmay Kalbande">
-
+  <link rel="icon" href="bits-and-bytes/resources/favicon.png" type="image/x-icon">
   <!-- Robot and Content Tags -->
   <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
   <meta name="theme-color" content="#fefce8">
@@ -34,11 +34,6 @@
   <meta name="twitter:image" content="https://tanmay-kalbande.github.io/resources/portfolio.png">
   <meta name="twitter:image:alt" content="Tanmay Kalbande's Portfolio Preview">
 
-  <!-- Apple Touch Icons -->
-  <link rel="apple-touch-icon" sizes="180x180" href="resources/apple-touch-icon.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="resources/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="resources/favicon-16x16.png">
-
   <!-- PWA Support -->
   <link rel="manifest" href="resources/site.webmanifest">
   <meta name="msapplication-TileColor" content="#fefce8">
@@ -51,7 +46,7 @@
 
   <!-- Stylesheets -->
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;900&display=swap" rel="stylesheet">
 
   <!-- Security Headers -->
   <meta http-equiv="Content-Security-Policy" content="default-src 'self' https:; script-src 'self' 'unsafe-inline' https:; style-src 'self' 'unsafe-inline' https:; img-src 'self' data: https:;">
@@ -65,12 +60,24 @@
   <meta http-equiv="Expires" content="0">
 
   <style>
+  /* Updated UI Colors and Styles */
+  :root {
+      --primary: #2563eb;
+      --accent: #22c55e;
+      --background: #fafaf9;
+      --card: #ffffff;
+      --text: #1f2937;
+      --shadow-color: rgba(0, 0, 0, 0.1);
+      --font-family: 'Inter', -apple-system, system-ui, sans-serif;
+  }
+
   /* General Reset */
   * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Roboto Mono', monospace, sans-serif;
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: var(--font-family);
+      transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
   }
 
   ::selection {
@@ -84,11 +91,23 @@
 
   /* Base Styles */
   body {
-    background-color: #fefce8;
+    background: var(--background);
+    background-image:
+        radial-gradient(circle at 20px 20px, #4ade80 1px, transparent 0),
+        radial-gradient(circle at 60px 60px, #93c5fd 1px, transparent 0);
+    background-size: 80px 80px;
     min-height: 100vh;
-    color: #333;
     display: flex;
     flex-direction: column;
+    animation: backgroundShift 20s linear infinite;
+    color: #333;
+    overflow-y: auto; /* Allow vertical scrolling */
+  }
+
+  @keyframes backgroundShift {
+    0% { background-position: 0 0; }
+    50% { background-position: 40px 40px; }
+    100% { background-position: 80px 80px; }
   }
 
   .container {
@@ -108,6 +127,44 @@
     padding: 1rem;
   }
 
+  .contact-section {
+    text-align: center;
+    margin: 40px 0;
+  }
+
+  .button-group {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin: 20px 0;
+  }
+
+  .neo-button {
+    padding: 15px 30px;
+    font-size: 1.1em;
+    border: 3px solid var(--text);
+    border-radius: 12px;
+    background-color: var(--card);
+    font-weight: bold;
+    color: var(--text);
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    box-shadow: 4px 4px 0 var(--shadow-color);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+
+  .neo-button:hover {
+    transform: translate(2px, 2px);
+    box-shadow: 2px 2px 0 var(--shadow-color);
+  }
+
+  .neo-button i {
+    font-size: 1.5rem;
+  }
+
   @media (min-width: 768px) {
     .header {
       flex-direction: row;
@@ -121,28 +178,17 @@
     height: 120px;
     border: 2px solid #f9f9f9;
     border-radius: 20%;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1); /* Subtle shadow */
     overflow: hidden;
     display: flex;
     align-items: center;
     justify-content: center;
-    transition: transform 0.2s, box-shadow 0.2s;
-  }
-
-  .logo:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
   }
 
   .logo img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    transition: transform 0.2s;
-  }
-
-  .logo:hover img {
-    transform: scale(1.05);
   }
 
   .header-text h1 {
@@ -166,14 +212,8 @@
     margin-bottom: 20px;
     border-radius: 12px;
     background-color: #fff;
-    border: 4px solid #000;
-    box-shadow: 8px 8px 0 rgba(0, 0, 0, 1);
-    transition: all 0.2s ease;
-  }
-
-  .section:hover {
-    transform: translate(3px, 3px);
-    box-shadow: 5px 5px 0 rgba(0, 0, 0, 1);
+    border: 3px solid #000; /* Reduced border size */
+    box-shadow: 4px 4px 0 rgba(0, 0, 0, 0.1); /* Subtle shadow */
   }
 
   h2 {
@@ -192,15 +232,11 @@
 
   .project-card {
     background: #fff;
-    border: 3px solid #000;
+    border: 2px solid #000; /* Reduced border size */
     border-radius: 12px;
     padding: 1.5rem;
-    transition: transform 0.2s;
     height: 100%;
-  }
-
-  .project-card:hover {
-    transform: translateY(-5px);
+    box-shadow: 4px 4px 0 rgba(0, 0, 0, 0.1); /* Subtle shadow */
   }
 
   .project-content {
@@ -310,12 +346,6 @@
     background-color: #0072b1;
     color: #fff;
     text-decoration: none;
-    transition: background-color 0.3s ease, transform 0.3s ease;
-  }
-
-  .cta-button:hover {
-    background-color: #0056b3;
-    transform: scale(1.05);
   }
 
   .cta-button i {
@@ -350,6 +380,7 @@
     background: #f8f8f8;
     border-radius: 8px;
     word-break: break-word;
+    box-shadow: 2px 2px 0 rgba(0, 0, 0, 0.1); /* Subtle shadow */
   }
 
   .contact-item i {
@@ -393,27 +424,22 @@
 
   .neo-button {
     padding: 12px 24px;
-    border: 4px solid #000;
+    border: 2px solid #000; /* Reduced border size */
     border-radius: 12px;
     background-color: #4ade80;
     font-weight: bold;
     cursor: pointer;
-    transition: transform 0.2s ease;
     color: black;
     text-decoration: none;
     display: inline-flex;
     align-items: center;
-  }
-
-  .neo-button:hover {
-    transform: translate(3px, 3px);
-    box-shadow: 2px 2px 0 rgba(0, 0, 0, 1);
+    box-shadow: 2px 2px 0 rgba(0, 0, 0, 0.1); /* Subtle shadow */
   }
 
   /* Footer */
   footer {
     background-color: white;
-    border-top: 4px solid black;
+    border-top: 2px solid black; /* Reduced border size */
     padding: 1.5rem;
     margin-top: auto;
     text-align: center;
@@ -437,13 +463,8 @@
     border-radius: 5px;
     cursor: pointer;
     font-size: 1rem;
-    transition: background-color 0.3s;
     flex: 1 1 auto;
     min-width: 80px;
-  }
-
-  .tab-button:hover {
-    background-color: #7cb9f7;
   }
 
   .tab-button.active {
@@ -510,26 +531,6 @@
     height: auto;
   }
 
-  /* Section Titles */
-  .section-title {
-    position: relative;
-    padding-bottom: 0.5rem;
-    margin-bottom: 1.5rem;
-    font-size: 1.75rem;
-    font-weight: bold;
-  }
-
-  .section-title::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 60px;
-    height: 4px;
-    background: #2563eb;
-    border-radius: 2px;
-  }
-
   /* Fix for long URLs and email addresses */
   a {
     word-wrap: break-word;
@@ -545,6 +546,32 @@
 
   details {
     margin-bottom: 15px;
+  }
+
+  /* Social Links */
+  .social-links {
+    display: flex;
+    gap: 1.25rem;
+    margin-bottom: 2.5rem;
+  }
+
+  .social-link {
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    background: var(--card);
+    color: var(--text);
+    border: 3px solid var(--text);
+    border-radius: 12px;
+    box-shadow: 4px 4px 0 var(--shadow-color);
+    transition: transform 0.2s ease;
+  }
+
+  .social-link:hover {
+    transform: scale(1.1);
   }
   </style>
 </head>
@@ -672,11 +699,9 @@
         <p><strong>Contributions:</strong> Defined data preprocessing steps, Implemented K-means clustering algorithm, Evaluated and visualized distinct customer segments</p>
         <details>
           <summary><strong>Tasks:</strong></summary>
-          <ul>
-            <li>Define data preprocessing steps for clustering analysis.</li>
-            <li>Implement K-means clustering algorithm for segmentation.</li>
-            <li>Evaluate and visualize distinct customer segments.</li>
-          </ul>
+          <li>Define data preprocessing steps for clustering analysis.</li>
+          <li>Implement K-means clustering algorithm for segmentation.</li>
+          <li>Evaluate and visualize distinct customer segments.</li>
         </details>
       </div>
       <!-- Project 3 details go here -->
@@ -686,11 +711,9 @@
         <p><strong>Contributions:</strong> Explored data, Utilized multiple models, Identified the top-performing model</p>
         <details>
           <summary><strong>Tasks:</strong></summary>
-          <ul>
-            <li>Prepare data for training models.</li>
-            <li>Experiment with various machine learning models (e.g., logistic regression, random forest, etc.)</li>
-            <li>Evaluate model performance and select the best-performing model.</li>
-          </ul>
+          <li>Prepare data for training models.</li>
+          <li>Experiment with various machine learning models (e.g., logistic regression, random forest, etc.)</li>
+          <li>Evaluate model performance and select the best-performing model.</li>
         </details>
       </div>
       <!-- Project 4 details go here -->
@@ -700,11 +723,9 @@
         <p><strong>Contributions:</strong> Built collaborative filtering models, Explored various recommendation algorithms</p>
         <details>
           <summary><strong>Tasks:</strong></summary>
-          <ul>
-            <li>Build collaborative filtering models for recommendation.</li>
-            <li>Evaluate and compare the performance of different recommendation algorithms.</li>
-            <li>Integrate the recommendation system into the existing platform.</li>
-          </ul>
+          <li>Build collaborative filtering models for recommendation.</li>
+          <li>Evaluate and compare the performance of different recommendation algorithms.</li>
+          <li>Integrate the recommendation system into the existing platform.</li>
         </details>
       </div>
 
@@ -714,11 +735,9 @@
         <p><strong>Contributions:</strong> Developed sentiment analysis model, Implemented NLP techniques</p>
         <details>
           <summary><strong>Tasks:</strong></summary>
-          <ul>
-            <li>Collect and preprocess customer review data.</li>
-            <li>Train and test sentiment analysis model using machine learning algorithms.</li>
-            <li>Deploy model for real-time sentiment analysis of incoming customer reviews.</li>
-          </ul>
+          <li>Collect and preprocess customer review data.</li>
+          <li>Train and test sentiment analysis model using machine learning algorithms.</li>
+          <li>Deploy model for real-time sentiment analysis of incoming customer reviews.</li>
         </details>
       </div>
 
@@ -729,11 +748,9 @@
         <p><strong>Contributions:</strong> Built predictive maintenance model, Integrated with existing maintenance systems</p>
         <details>
           <summary><strong>Tasks:</strong></summary>
-          <ul>
-            <li>Collect sensor data from industrial equipment.</li>
-            <li>Develop predictive maintenance algorithms using machine learning.</li>
-            <li>Implement real-time monitoring and alerting system for maintenance personnel.</li>
-          </ul>
+          <li>Collect sensor data from industrial equipment.</li>
+          <li>Develop predictive maintenance algorithms using machine learning.</li>
+          <li>Implement real-time monitoring and alerting system for maintenance personnel.</li>
         </details>
       </div>
     </div>
@@ -894,33 +911,29 @@
         <h3 class="cta-subheader">Get in touch!</h3>
       </div>
 
-    <div class="section contact-section">
-      <h2 id="contact" class="section-title">Contact</h2>
-      <p class="text-center">
-        Feel free to reach out if you'd like to connect, discuss a project, or just say hello!
-      </p>
-      <div class="contact-grid">
-        <div class="contact-item">
-          <i class="fas fa-envelope"></i>
-          <a href="mailto:tanmaykalbande@gmail.com">tanmaykalbande@gmail.com</a>
+      <div class="contact-section">
+        <h2 id="contact" class="section-title">Contact</h2>
+        <p class="text-center">
+          Feel free to reach out if you'd like to connect, discuss a project, or just say hello!
+        </p>
+        <div class="button-group">
+          <a href="mailto:tanmaykalbande@gmail.com" class="neo-button" aria-label="Email">
+            <i class="fas fa-envelope"></i> Email Me
+          </a>
+          <a href="https://wa.me/7378381494?text=Hi%20Tanmay,%20I%20came%20across%20your%20portfolio%20and%20I%20" class="neo-button" aria-label="WhatsApp">
+            <i class="fab fa-whatsapp"></i> WhatsApp
+          </a>
+          <a href="https://www.linkedin.com/in/tanmay-kalbande" target="_blank" class="neo-button" aria-label="LinkedIn">
+            <i class="fab fa-linkedin"></i> LinkedIn
+          </a>
+          <a href="https://github.com/tanmay-kalbande" target="_blank" class="neo-button" aria-label="GitHub">
+            <i class="fab fa-github"></i> GitHub
+          </a>
         </div>
-        <div class="contact-item">
-          <i class="fab fa-whatsapp-square"></i>
-          <a href="https://wa.me/7378381494?text=Hi%20Tanmay,%20I%20came%20across%20your%20portfolio%20and%20I%20">WhatsApp: 737-838-1494</a>
-        </div>
-        <div class="contact-item">
-          <i class="fab fa-linkedin"></i>
-          <a href="https://www.linkedin.com/in/tanmay-kalbande" target="_blank">LinkedIn</a>
-        </div>
-        <div class="contact-item">
-          <i class="fab fa-github"></i>
-          <a href="https://github.com/tanmay-kalbande" target="_blank">GitHub</a>
-        </div>
+        <p class="text-center">
+          <a href="#top">Back to top</a>
+        </p>
       </div>
-      <p class="text-center">
-        <a href="#top">Back to top</a>
-      </p>
-    </div>
   </div>
   <footer class="footer">
       <div class="footer-content">
