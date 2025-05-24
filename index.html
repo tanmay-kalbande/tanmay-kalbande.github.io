@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
 <head>
     <!-- Basic Meta Tags for SEO and Responsiveness -->
     <meta charset="UTF-8">
@@ -23,13 +23,37 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;900&display=swap">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
+        /* Theme Variables */
         :root {
+            /* Light Theme (Default) */
             --primary: #2563eb;
             --accent: #22c55e;
             --background: #fafaf9;
             --card: #ffffff;
             --text: #1f2937;
+            --text-muted: #4b5563;
             --shadow-color: rgba(0, 0, 0, 0.1);
+            --bg-pattern-1: #4ade80;
+            --bg-pattern-2: #93c5fd;
+            --footer-bg: rgba(255, 255, 255, 0.85);
+            --toggle-bg: #f3f4f6;
+            --toggle-circle: #1f2937;
+        }
+
+        /* Dark Theme */
+        html[data-theme='dark'] {
+            --primary: #60a5fa;
+            --accent: #4ade80;
+            --background: #121212;
+            --card: #1e1e1e;
+            --text: #f9fafb;
+            --text-muted: #d1d5db;
+            --shadow-color: rgba(0, 0, 0, 0.25);
+            --bg-pattern-1: rgba(74, 222, 128, 0.3);
+            --bg-pattern-2: rgba(96, 165, 250, 0.3);
+            --footer-bg: rgba(17, 24, 39, 0.85);
+            --toggle-bg: #374151;
+            --toggle-circle: #f9fafb;
         }
 
         * {
@@ -40,26 +64,27 @@
             transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
-          ::selection {
-          background-color: #4ade80;
-          color: #000000;
+        ::selection {
+            background-color: var(--accent);
+            color: var(--background);
         }
-          ::-moz-selection {
-          background-color: #4ade80;
-          color: #000000;
+        ::-moz-selection {
+            background-color: var(--accent);
+            color: var(--background);
         }
         
         body {
             background: var(--background);
             background-image:
-                radial-gradient(circle at 20px 20px, #4ade80 1px, transparent 0),
-                radial-gradient(circle at 60px 60px, #93c5fd 1px, transparent 0);
+                radial-gradient(circle at 20px 20px, var(--bg-pattern-1) 1px, transparent 0),
+                radial-gradient(circle at 60px 60px, var(--bg-pattern-2) 1px, transparent 0);
             background-size: 80px 80px;
             height: 100vh;
             display: flex;
             flex-direction: column;
             overflow: hidden;
             animation: backgroundShift 20s linear infinite;
+            color: var(--text);
         }
 
         @keyframes backgroundShift {
@@ -204,7 +229,7 @@
         .stat-icon {
             font-size: 2.5rem;
             color: var(--text);
-            background: rgba(255, 255, 255, 0.9);
+            background: var(--card);
             padding: 1rem;
             border-radius: 12px;
             border: 2px solid var(--text);
@@ -251,7 +276,7 @@
 
         .footer {
             height: 80px;
-            background: rgba(255, 255, 255, 0.85);
+            background: var(--footer-bg);
             border-top: 3px solid var(--text);
             backdrop-filter: blur(12px);
             display: flex;
@@ -275,6 +300,76 @@
             color: var(--text);
             font-weight: 600;
             text-shadow: 0 1px 2px rgba(0, 0, 0, 0.08);
+        }
+        
+        /* Theme Toggle Button */
+        .theme-toggle-container {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 100;
+        }
+        
+        .theme-toggle {
+            width: 60px;
+            height: 30px;
+            background: var(--toggle-bg);
+            border-radius: 30px;
+            padding: 5px;
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+            position: relative;
+            border: 2px solid var(--text);
+            transition: all 0.3s ease;
+        }
+        
+        .theme-toggle-circle {
+            width: 20px;
+            height: 20px;
+            background: var(--toggle-circle);
+            border-radius: 50%;
+            position: absolute;
+            left: 5px;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--toggle-bg);
+            font-size: 12px;
+        }
+        
+        html[data-theme='dark'] .theme-toggle-circle {
+            left: 35px;
+        }
+        
+        .theme-toggle-icon {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .theme-toggle-sun, .theme-toggle-moon {
+            position: absolute;
+            transition: opacity 0.3s ease;
+        }
+        
+        .theme-toggle-sun {
+            opacity: 1;
+        }
+        
+        .theme-toggle-moon {
+            opacity: 0;
+        }
+        
+        html[data-theme='dark'] .theme-toggle-sun {
+            opacity: 0;
+        }
+        
+        html[data-theme='dark'] .theme-toggle-moon {
+            opacity: 1;
         }
 
         @media (max-width: 1024px) {
@@ -331,6 +426,11 @@
                 gap: 0.95rem;
                 text-align: center;
             }
+            
+            .theme-toggle-container {
+                top: 15px;
+                right: 15px;
+            }
         }
 
         @media (max-width: 768px) {
@@ -354,6 +454,18 @@
     </style>
 </head>
 <body>
+    <!-- Theme Toggle Button -->
+    <div class="theme-toggle-container">
+        <div class="theme-toggle" id="theme-toggle" aria-label="Toggle dark/light mode">
+            <div class="theme-toggle-circle">
+                <div class="theme-toggle-icon">
+                    <i class="fas fa-sun theme-toggle-sun"></i>
+                    <i class="fas fa-moon theme-toggle-moon"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <main class="container">
         <section class="hero-section">
             <div class="hero-grid">
@@ -436,6 +548,27 @@
     </footer>
 
     <script>
+        // Theme toggle functionality
+        const themeToggle = document.getElementById('theme-toggle');
+        const htmlElement = document.documentElement;
+        
+        // Check for saved theme preference or use system preference
+        const savedTheme = localStorage.getItem('theme');
+        if (savedTheme) {
+            htmlElement.setAttribute('data-theme', savedTheme);
+        } else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+            htmlElement.setAttribute('data-theme', 'dark');
+        }
+        
+        // Toggle theme on click
+        themeToggle.addEventListener('click', () => {
+            const currentTheme = htmlElement.getAttribute('data-theme');
+            const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+            
+            htmlElement.setAttribute('data-theme', newTheme);
+            localStorage.setItem('theme', newTheme);
+        });
+        
         // Smooth scrolling for anchor links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', (e) => {
