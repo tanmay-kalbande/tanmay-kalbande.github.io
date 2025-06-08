@@ -60,522 +60,661 @@
   <meta http-equiv="Expires" content="0">
 
   <style>
-  /* Updated UI Colors and Styles */
-  :root {
+    /* Dark Theme Variables */
+    :root {
       --primary: #2563eb;
       --accent: #22c55e;
       --background: #fafaf9;
       --card: #ffffff;
       --text: #1f2937;
+      --text-muted: #4b5563;
       --shadow-color: rgba(0, 0, 0, 0.1);
+      --bg-pattern-1: #4ade80;
+      --bg-pattern-2: #93c5fd;
+      --footer-bg: rgba(255, 255, 255, 0.85);
+      --toggle-bg: #f3f4f6;
+      --toggle-circle: #1f2937;
       --font-family: 'Inter', -apple-system, system-ui, sans-serif;
-  }
-
-  /* General Reset */
-  * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: var(--font-family);
-      transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
-  }
-
-  ::selection {
-      background-color: #4ade80;
-      color: #000000;
-  }
-  ::-moz-selection {
-      background-color: #4ade80;
-      color: #000000;
-  }
-
-  /* Base Styles */
-  body {
-    background: var(--background);
-    background-image:
-        radial-gradient(circle at 20px 20px, #4ade80 1px, transparent 0),
-        radial-gradient(circle at 60px 60px, #93c5fd 1px, transparent 0);
-    background-size: 80px 80px;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    animation: backgroundShift 20s linear infinite;
-    color: #333;
-    overflow-y: auto; /* Allow vertical scrolling */
-  }
-
-  @keyframes backgroundShift {
-    0% { background-position: 0 0; }
-    50% { background-position: 40px 40px; }
-    100% { background-position: 80px 80px; }
-  }
-
-  .container {
-    width: 100%;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 1rem;
-  }
-
-  /* Header Section */
-  .header {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    gap: 1rem;
-    padding: 1rem;
-  }
-
-  .contact-section {
-    text-align: center;
-    margin: 40px 0;
-  }
-
-  .button-group {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    flex-wrap: wrap;
-    margin: 20px 0;
-  }
-
-  .neo-button {
-    padding: 15px 30px;
-    font-size: 1.1em;
-    border: 3px solid var(--text);
-    border-radius: 12px;
-    background-color: var(--card);
-    font-weight: bold;
-    color: var(--text);
-    text-decoration: none;
-    display: inline-flex;
-    align-items: center;
-    gap: 10px;
-    box-shadow: 4px 4px 0 var(--shadow-color);
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
-  }
-
-  .neo-button:hover {
-    transform: translate(2px, 2px);
-    box-shadow: 2px 2px 0 var(--shadow-color);
-  }
-
-  .neo-button i {
-    font-size: 1.5rem;
-  }
-
-  @media (min-width: 768px) {
-    .header {
-      flex-direction: row;
-      justify-content: space-between;
-      text-align: left;
     }
-  }
 
-  .logo {
-    width: 120px;
-    height: 120px;
-    border: 2px solid #f9f9f9;
-    border-radius: 20%;
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1); /* Subtle shadow */
-    overflow: hidden;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
+    /* Dark Theme */
+    html[data-theme='dark'] {
+      --primary: #60a5fa;
+      --accent: #4ade80;
+      --background: #121212;
+      --card: #1e1e1e;
+      --text: #f9fafb;
+      --text-muted: #d1d5db;
+      --shadow-color: rgba(0, 0, 0, 0.25);
+      --bg-pattern-1: rgba(74, 222, 128, 0.3);
+      --bg-pattern-2: rgba(96, 165, 250, 0.3);
+      --footer-bg: rgba(17, 24, 39, 0.85);
+      --toggle-bg: #374151;
+      --toggle-circle: #f9fafb;
+    }
 
-  .logo img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
+    /* Theme Toggle Button Styles */
+    .theme-toggle-container {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      z-index: 100;
+    }
 
-  .header-text h1 {
-    font-size: 2.5rem;
-    margin-bottom: 5px;
-    font-weight: 900;
-  }
-
-  .header-text h2 {
-    font-size: 1.25rem;
-    color: #2563eb;
-  }
-
-  .contact-info {
-    text-align: right;
-  }
-
-  /* Section Styling */
-  .section {
-    padding: 20px;
-    margin-bottom: 20px;
-    border-radius: 12px;
-    background-color: #fff;
-    border: 3px solid #000; /* Reduced border size */
-    box-shadow: 4px 4px 0 rgba(0, 0, 0, 0.1); /* Subtle shadow */
-  }
-
-  h2 {
-    font-size: 1.5rem;
-    margin-bottom: 15px;
-    font-weight: bold;
-  }
-
-  /* Project Cards */
-  .projects-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 1.5rem;
-    margin-top: 1.5rem;
-  }
-
-  .project-card {
-    background: #fff;
-    border: 2px solid #000; /* Reduced border size */
-    border-radius: 12px;
-    padding: 1.5rem;
-    height: 100%;
-    box-shadow: 4px 4px 0 rgba(0, 0, 0, 0.1); /* Subtle shadow */
-  }
-
-  .project-content {
-    display: flex;
-    flex-direction: column;
-    height: 100%;
-  }
-
-  .project-links {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.5rem;
-    margin-top: auto;
-    padding-top: 1rem;
-  }
-
-  /* Experience Section */
-  .experience-item {
-    margin-bottom: 2rem;
-    padding-bottom: 1rem;
-    border-bottom: 2px solid #eee;
-  }
-
-  .experience-header {
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
-    margin-bottom: 1rem;
-  }
-
-  @media (min-width: 768px) {
-    .experience-header {
-      flex-direction: row;
-      justify-content: space-between;
+    .theme-toggle {
+      width: 60px;
+      height: 30px;
+      background: var(--toggle-bg);
+      border-radius: 30px;
+      padding: 5px;
+      display: flex;
       align-items: center;
+      cursor: pointer;
+      position: relative;
+      border: 2px solid var(--text);
+      transition: all 0.3s ease;
     }
-  }
 
-  .experience-meta {
-    display: flex;
-    flex-direction: column;
-    gap: 0.25rem;
-    font-size: 0.9rem;
-    color: #666;
-  }
+    .theme-toggle-circle {
+      width: 20px;
+      height: 20px;
+      background: var(--toggle-circle);
+      border-radius: 50%;
+      position: absolute;
+      left: 5px;
+      transition: all 0.3s ease;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--toggle-bg);
+      font-size: 12px;
+    }
 
-  @media (min-width: 768px) {
-    .experience-meta {
-      flex-direction: row;
+    html[data-theme='dark'] .theme-toggle-circle {
+      left: 35px;
+    }
+
+    .theme-toggle-icon {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .theme-toggle-sun, .theme-toggle-moon {
+      position: absolute;
+      transition: opacity 0.3s ease;
+    }
+
+    .theme-toggle-sun {
+      opacity: 1;
+    }
+
+    .theme-toggle-moon {
+      opacity: 0;
+    }
+
+    html[data-theme='dark'] .theme-toggle-sun {
+      opacity: 0;
+    }
+
+    html[data-theme='dark'] .theme-toggle-moon {
+      opacity: 1;
+    }
+
+    /* Updated UI Colors and Styles */
+    :root {
+        --primary: #2563eb;
+        --accent: #22c55e;
+        --background: #fafaf9;
+        --card: #ffffff;
+        --text: #1f2937;
+        --shadow-color: rgba(0, 0, 0, 0.1);
+        --font-family: 'Inter', -apple-system, system-ui, sans-serif;
+    }
+
+    /* General Reset */
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: var(--font-family);
+        transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    ::selection {
+        background-color: #4ade80;
+        color: #000000;
+    }
+    ::-moz-selection {
+        background-color: #4ade80;
+        color: #000000;
+    }
+
+    /* Base Styles */
+    body {
+      background: var(--background);
+      background-image:
+          radial-gradient(circle at 20px 20px, var(--bg-pattern-1) 1px, transparent 0),
+          radial-gradient(circle at 60px 60px, var(--bg-pattern-2) 1px, transparent 0);
+      background-size: 80px 80px;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      animation: backgroundShift 20s linear infinite;
+      color: var(--text);
+      overflow-y: auto; /* Allow vertical scrolling */
+    }
+
+    @keyframes backgroundShift {
+      0% { background-position: 0 0; }
+      50% { background-position: 40px 40px; }
+      100% { background-position: 80px 80px; }
+    }
+
+    .container {
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 1rem;
+    }
+
+    /* Header Section */
+    .header {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
       gap: 1rem;
+      padding: 1rem;
+    }
+
+    .contact-section {
+      text-align: center;
+      margin: 40px 0;
+    }
+
+    .button-group {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+      margin: 20px 0;
+    }
+
+    .neo-button {
+      padding: 15px 30px;
+      font-size: 1.1em;
+      border: 3px solid var(--text);
+      border-radius: 12px;
+      background-color: var(--card);
+      font-weight: bold;
+      color: var(--text);
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      box-shadow: 4px 4px 0 var(--shadow-color);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .neo-button:hover {
+      transform: translate(2px, 2px);
+      box-shadow: 2px 2px 0 var(--shadow-color);
+    }
+
+    .neo-button i {
+      font-size: 1.5rem;
+    }
+
+    @media (min-width: 768px) {
+      .header {
+        flex-direction: row;
+        justify-content: space-between;
+        text-align: left;
+      }
+    }
+
+    .logo {
+      width: 120px;
+      height: 120px;
+      border: 2px solid #f9f9f9;
+      border-radius: 20%;
+      box-shadow: 0 0 5px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .logo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .header-text h1 {
+      font-size: 2.5rem;
+      margin-bottom: 5px;
+      font-weight: 900;
+    }
+
+    .header-text h2 {
+      font-size: 1.25rem;
+      color: #2563eb;
+    }
+
+    .contact-info {
       text-align: right;
     }
-  }
 
-  .experience-details {
-    padding-left: 1.25rem;
-  }
-
-  @media (max-width: 640px) {
-    .experience-details {
-      padding-left: 1rem;
-    }
-
-    .experience-details li {
-      margin-bottom: 0.5rem;
-    }
-  }
-
-  /* CTA Section */
-  .cta-section {
-    background-color: #f9f9f9;
-    padding: 50px 20px;
-    text-align: center;
-    border-radius: 10px;
-    margin: 40px 0;
-  }
-
-  .cta-section h2 {
-    font-size: 2em;
-    margin-bottom: 20px;
-    color: #333;
-  }
-
-  .cta-section h3 {
-    font-size: 1.5em;
-    margin-bottom: 10px;
-    color: #0072b1;
-  }
-
-  .cta-section p {
-    font-size: 1.1em;
-    margin-bottom: 30px;
-    color: #666;
-  }
-
-  .cta-buttons {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    flex-wrap: wrap;
-  }
-
-  .cta-button {
-    padding: 15px 30px;
-    font-size: 1.2em;
-    border-radius: 30px;
-    background-color: #0072b1;
-    color: #fff;
-    text-decoration: none;
-  }
-
-  .cta-button i {
-    margin-right: 10px;
-  }
-
-  /* Contact Grid */
-  .contact-grid {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 1rem;
-    margin: 1.5rem 0;
-  }
-
-  @media (min-width: 640px) {
-    .contact-grid {
-      grid-template-columns: repeat(2, 1fr);
-    }
-  }
-
-  @media (min-width: 1024px) {
-    .contact-grid {
-      grid-template-columns: repeat(4, 1fr);
-    }
-  }
-
-  .contact-item {
-    display: flex;
-    align-items: center;
-    gap: 0.75rem;
-    padding: 1rem;
-    background: #f8f8f8;
-    border-radius: 8px;
-    word-break: break-word;
-    box-shadow: 2px 2px 0 rgba(0, 0, 0, 0.1); /* Subtle shadow */
-  }
-
-  .contact-item i {
-    font-size: 1.5rem;
-    color: #2563eb;
-  }
-
-  @media (max-width: 640px) {
-    .contact-item {
-      flex-direction: row;
-      justify-content: flex-start;
-    }
-
-    .contact-item a {
-      font-size: 0.9rem;
-    }
-  }
-
-  .contact-message {
-    text-align: center;
-    margin-top: 2rem;
-  }
-
-  /* Skill & Interest Badges */
-  .skill-badge,
-  .interest-badge {
-    display: inline-block;
-    margin: 5px;
-    padding: 6px 12px;
-    border-radius: 20px;
-    background-color: #f0f0f0;
-    font-size: 0.9rem;
-  }
-
-  /* Button Group */
-  .button-group {
-    display: flex;
-    gap: 1rem;
-    margin-top: 10px;
-  }
-
-  .neo-button {
-    padding: 12px 24px;
-    border: 2px solid #000; /* Reduced border size */
-    border-radius: 12px;
-    background-color: rgba(0, 0, 0, 0.1);
-    font-weight: bold;
-    cursor: pointer;
-    color: black;
-    text-decoration: none;
-    display: inline-flex;
-    align-items: center;
-    box-shadow: 2px 2px 0 rgba(0, 0, 0, 0.1); /* Subtle shadow */
-  }
-
-  /* Footer */
-  footer {
-    background-color: white;
-    border-top: 2px solid black; /* Reduced border size */
-    padding: 1.5rem;
-    margin-top: auto;
-    text-align: center;
-    font-size: 0.875rem;
-  }
-
-  /* Tabbed Layout */
-  .tabs {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    margin-bottom: 1rem;
-  }
-
-  .tab-button {
-    background-color: rgba(0, 0, 0, 0.1);
-    color: #000;
-    border: none;
-    padding: 6px 12px;
-    margin: 3px;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 1rem;
-    flex: 1 1 auto;
-    min-width: 80px;
-  }
-
-  .tab-button.active {
-    background-color: #93c5fd;
-  }
-
-  .tab-content {
-    display: none;
-  }
-
-  .tab-content.active {
-    display: block;
-  }
-
-  /* Responsive Adjustments */
-  @media (max-width: 640px) {
+    /* Section Styling */
     .section {
-      padding: 1rem;
-      margin-bottom: 1rem;
-    }
-
-    h1 {
-      font-size: 1.75rem;
+      padding: 20px;
+      margin-bottom: 20px;
+      border-radius: 12px;
+      background-color: var(--card);
+      border: 3px solid #000; /* Reduced border size */
+      box-shadow: 4px 4px 0 rgba(0, 0, 0, 0.1); /* Subtle shadow */
+      color: var(--text);
     }
 
     h2 {
       font-size: 1.5rem;
+      margin-bottom: 15px;
+      font-weight: bold;
+      color: var(--text);
     }
 
-    h3 {
-      font-size: 1.25rem;
+    /* Project Cards */
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 1.5rem;
+      margin-top: 1.5rem;
     }
 
-    p {
-      font-size: 0.95rem;
+    .project-card {
+      background: var(--card);
+      border: 2px solid #000; /* Reduced border size */
+      border-radius: 12px;
+      padding: 1.5rem;
+      height: 100%;
+      box-shadow: 4px 4px 0 rgba(0, 0, 0, 0.1); /* Subtle shadow */
+      color: var(--text);
     }
 
-    .project-description {
+    .project-content {
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+    }
+
+    .project-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-top: auto;
+      padding-top: 1rem;
+    }
+
+    /* Experience Section */
+    .experience-item {
+      margin-bottom: 2rem;
+      padding-bottom: 1rem;
+      border-bottom: 2px solid #eee;
+    }
+
+    .experience-header {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+      margin-bottom: 1rem;
+    }
+
+    @media (min-width: 768px) {
+      .experience-header {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+      }
+    }
+
+    .experience-meta {
+      display: flex;
+      flex-direction: column;
+      gap: 0.25rem;
       font-size: 0.9rem;
+      color: var(--text-muted);
     }
 
+    @media (min-width: 768px) {
+      .experience-meta {
+        flex-direction: row;
+        gap: 1rem;
+        text-align: right;
+      }
+    }
+
+    .experience-details {
+      padding-left: 1.25rem;
+    }
+
+    @media (max-width: 640px) {
+      .experience-details {
+        padding-left: 1rem;
+      }
+
+      .experience-details li {
+        margin-bottom: 0.5rem;
+      }
+    }
+
+    /* CTA Section */
+    .cta-section {
+      background-color: var(--card);
+      padding: 50px 20px;
+      text-align: center;
+      border-radius: 10px;
+      margin: 40px 0;
+      color: var(--text);
+    }
+
+    .cta-section h2 {
+      font-size: 2em;
+      margin-bottom: 20px;
+    }
+
+    .cta-section h3 {
+      font-size: 1.5em;
+      margin-bottom: 10px;
+      color: var(--primary);
+    }
+
+    .cta-section p {
+      font-size: 1.1em;
+      margin-bottom: 30px;
+    }
+
+    .cta-buttons {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .cta-button {
+      padding: 15px 30px;
+      font-size: 1.2em;
+      border-radius: 30px;
+      background-color: var(--primary);
+      color: #fff;
+      text-decoration: none;
+    }
+
+    .cta-button i {
+      margin-right: 10px;
+    }
+
+    /* Contact Grid */
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1rem;
+      margin: 1.5rem 0;
+    }
+
+    @media (min-width: 640px) {
+      .contact-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (min-width: 1024px) {
+      .contact-grid {
+        grid-template-columns: repeat(4, 1fr);
+      }
+    }
+
+    .contact-item {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      padding: 1rem;
+      background: var(--card);
+      border-radius: 8px;
+      word-break: break-word;
+      box-shadow: 2px 2px 0 rgba(0, 0, 0, 0.1); /* Subtle shadow */
+      color: var(--text);
+    }
+
+    .contact-item i {
+      font-size: 1.5rem;
+      color: var(--primary);
+    }
+
+    @media (max-width: 640px) {
+      .contact-item {
+        flex-direction: row;
+        justify-content: flex-start;
+      }
+
+      .contact-item a {
+        font-size: 0.9rem;
+      }
+    }
+
+    .contact-message {
+      text-align: center;
+      margin-top: 2rem;
+    }
+
+    /* Skill & Interest Badges */
+    .skill-badge,
+    .interest-badge {
+      display: inline-block;
+      margin: 5px;
+      padding: 6px 12px;
+      border-radius: 20px;
+      background-color: #f0f0f0;
+      font-size: 0.9rem;
+      color: var(--text);
+    }
+
+    /* Dark mode adjustments for badges */
+    html[data-theme='dark'] .skill-badge,
+    html[data-theme='dark'] .interest-badge {
+      background-color: #333333; /* Darker background for better integration */
+      color: #ffffff; /* White text for high contrast */
+    }
+
+
+    /* Button Group */
+    .button-group {
+      display: flex;
+      gap: 1rem;
+      margin-top: 10px;
+    }
+
+    .neo-button {
+      padding: 12px 24px;
+      border: 2px solid #000; /* Reduced border size */
+      border-radius: 12px;
+      background-color: rgba(0, 0, 0, 0.1);
+      font-weight: bold;
+      cursor: pointer;
+      color: var(--text);
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      box-shadow: 2px 2px 0 rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    }
+
+    /* Footer */
+    footer {
+      background-color: var(--footer-bg);
+      border-top: 2px solid #000; /* Reduced border size */
+      padding: 1.5rem;
+      margin-top: auto;
+      text-align: center;
+      font-size: 0.875rem;
+      color: var(--text);
+    }
+
+    /* Tabbed Layout */
     .tabs {
-      flex-direction: row;
-      overflow-x: auto;
-      padding: 0 10px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin-bottom: 1rem;
     }
 
     .tab-button {
-      width: auto;
-      padding: 8px 14px;
-      font-size: 0.9rem;
+      background-color: #f0f0f0; /* Matches badge background in light mode */
+      color: var(--text);
+      border: none;
+      padding: 6px 12px;
       margin: 3px;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 1rem;
+      flex: 1 1 auto;
+      min-width: 80px;
     }
 
-    footer span {
+    .tab-button.active {
+      background-color: #d1d5db; /* Slightly darker for active state in light mode */
+      color: var(--text);
+    }
+
+    html[data-theme='dark'] .tab-button {
+      background-color: #333333; /* Matches badge background in dark mode */
+      color: #ffffff; /* Matches badge text in dark mode */
+    }
+
+    html[data-theme='dark'] .tab-button.active {
+      background-color: #4b5563; /* Slightly lighter for active state in dark mode */
+      color: #ffffff;
+    }
+
+    .tab-content {
+      display: none;
+    }
+
+    .tab-content.active {
       display: block;
-      margin-bottom: 0.5rem;
     }
-  }
 
-  /* Ensure images are responsive */
-  img {
-    max-width: 100%;
-    height: auto;
-  }
+    /* Responsive Adjustments */
+    @media (max-width: 640px) {
+      .section {
+        padding: 1rem;
+        margin-bottom: 1rem;
+      }
 
-  /* Fix for long URLs and email addresses */
-  a {
-    word-wrap: break-word;
-    overflow-wrap: break-word;
-  }
+      h1 {
+        font-size: 1.75rem;
+      }
 
-  /* Additional Details Styling */
-  details ul {
-    padding-left: 20px;
-    margin: 0;
-    list-style-position: inside;
-  }
+      h2 {
+        font-size: 1.5rem;
+      }
 
-  details {
-    margin-bottom: 15px;
-  }
+      h3 {
+        font-size: 1.25rem;
+      }
 
-  /* Social Links */
-  .social-links {
-    display: flex;
-    gap: 1.25rem;
-    margin-bottom: 2.5rem;
-  }
+      p {
+        font-size: 0.95rem;
+      }
 
-  .social-link {
-    width: 60px;
-    height: 60px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 1.5rem;
-    background: var(--card);
-    color: var(--text);
-    border: 3px solid var(--text);
-    border-radius: 12px;
-    box-shadow: 4px 4px 0 var(--shadow-color);
-    transition: transform 0.2s ease;
-  }
+      .project-description {
+        font-size: 0.9rem;
+      }
 
-  .social-link:hover {
-    transform: scale(1.1);
-  }
+      .tabs {
+        flex-direction: row;
+        overflow-x: auto;
+        padding: 0 10px;
+      }
+
+      .tab-button {
+        width: auto;
+        padding: 8px 14px;
+        font-size: 0.9rem;
+        margin: 3px;
+      }
+
+      footer span {
+        display: block;
+        margin-bottom: 0.5rem;
+      }
+    }
+
+    /* Ensure images are responsive */
+    img {
+      max-width: 100%;
+      height: auto;
+    }
+
+    /* Fix for long URLs and email addresses */
+    a {
+      word-wrap: break-word;
+      overflow-wrap: break-word;
+      color: var(--primary);
+    }
+
+    /* Additional Details Styling */
+    details ul {
+      padding-left: 20px;
+      margin: 0;
+      list-style-position: inside;
+    }
+
+    details {
+      margin-bottom: 15px;
+    }
+
+    /* Social Links */
+    .social-links {
+      display: flex;
+      gap: 1.25rem;
+      margin-bottom: 2.5rem;
+    }
+
+    .social-link {
+      width: 60px;
+      height: 60px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5rem;
+      background: var(--card);
+      color: var(--text);
+      border: 3px solid var(--text);
+      border-radius: 12px;
+      box-shadow: 4px 4px 0 var(--shadow-color);
+      transition: transform 0.2s ease;
+    }
+
+    .social-link:hover {
+      transform: scale(1.1);
+    }
   </style>
 </head>
 <body>
+  <div class="theme-toggle-container">
+    <div class="theme-toggle" id="theme-toggle" aria-label="Toggle dark/light mode">
+      <div class="theme-toggle-circle">
+        <div class="theme-toggle-icon">
+          <i class="fas fa-sun theme-toggle-sun"></i>
+          <i class="fas fa-moon theme-toggle-moon"></i>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <div class="container">
     <div class="header">
       <div class="header-content">
@@ -766,6 +905,7 @@
         <button class="tab-button" data-tab="project3">Goal Tracker Web App</button>
         <button class="tab-button" data-tab="project4">The Scam Master Podcast</button>
         <button class="tab-button" data-tab="project5">Incident Tracker</button>
+        <button class="tab-button" data-tab="project6">Bias & Fairness Checker [Ai]</button>
       </div>
 
       <!-- Tab Contents -->
@@ -882,14 +1022,41 @@
           </div>
         </div>
       </div>
+
+      <div class="tab-content" id="project6">
+        <div class="project-card">
+          <h3><i class="fas fa-robot"></i> Bias & Fairness Checker</h3>
+          <p class="project-description">A sleek web tool powered by AI to detect potential biases in text and suggest inclusive language improvements.</p>
+          <h4>Highlights:</h4>
+          <ul>
+            <li>Analyzes text for bias with detailed, structured reports</li>
+            <li>Real-time AI model status updates</li>
+            <li>Responsive, user-friendly interface with Markdown rendering</li>
+            <li>Built with Flask and Google’s Gemma AI model</li>
+          </ul>
+          <div class="project-links">
+            <a href="https://bias-checker.onrender.com/" target="_blank" class="neo-button">
+              <i class="fas fa-desktop"></i> Live Demo
+            </a>
+            <a href="https://github.com/tanmay-kalbande/bias-fairness-checker" target="_blank" class="neo-button">
+              <i class="fab fa-github"></i> GitHub
+            </a>
+          </div>
+        </div>
+      </div>
     </div>
 
     <div class="section">
       <h2>Certifications</h2>
       <ul>
-        <li><strong>Python for Data Science</strong> - Issued by Coursera, 2021</li>
-        <li><strong>The Data Science Course Complete Data Science Bootcamp</strong> - Issued by 365 Data Science, 2022</li>
-        <li><strong>Certified Data Scientist</strong> - Issued by IABAC™, 2023</li>
+        <li><strong>AWS Cloud Technical Essentials</strong> - Amazon Web Services (AWS), Issued Dec 2024</li>
+        <li><strong>Foundations: Data, Data, Everywhere</strong> - Google, Issued Apr 2024</li>
+        <li><strong>Technical Support Fundamentals</strong> - Google, Issued Dec 2023</li>
+        <li><strong>Certified Data Scientist</strong> - IABAC, Issued Sep 2023</li>
+        <li><strong>Data Science Foundation</strong> - IABAC, Issued Aug 2023</li>
+        <li><strong>Certified Data Scientist Certification</strong> - DataMites™, Issued Apr 2023</li>
+        <li><strong>100 Days of Code: The Complete Python Pro Bootcamp</strong> - London App Brewery</li>
+        <li><strong>The Data Science Course Complete Data Science Bootcamp</strong> - 365 Data Science</li>
       </ul>
     </div>
 
@@ -940,26 +1107,47 @@
           <div class="footer-text">© 2024 Tanmay Kalbande. All rights reserved.</div>
       </div>
   </footer>
-<script>
-    document.querySelectorAll('.tab-button').forEach(button => {
-    button.addEventListener('click', () => {
-      // Remove active class from all buttons
-      document.querySelectorAll('.tab-button').forEach(btn => {
-        btn.classList.remove('active');
-      });
-      // Hide all tab contents
-      document.querySelectorAll('.tab-content').forEach(content => {
-        content.classList.remove('active');
-      });
+  <script>
+    // Theme toggle functionality
+    const themeToggle = document.getElementById('theme-toggle');
+    const htmlElement = document.documentElement;
 
-      // Add active class to clicked button
-      button.classList.add('active');
-      // Show the corresponding tab content
-      const tabId = button.getAttribute('data-tab');
-      document.getElementById(tabId).classList.add('active');
+    // Check for saved theme preference or use system preference
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme) {
+        htmlElement.setAttribute('data-theme', savedTheme);
+    } else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        htmlElement.setAttribute('data-theme', 'dark');
+    }
+
+    // Toggle theme on click
+    themeToggle.addEventListener('click', () => {
+        const currentTheme = htmlElement.getAttribute('data-theme');
+        const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+
+        htmlElement.setAttribute('data-theme', newTheme);
+        localStorage.setItem('theme', newTheme);
     });
-  });
-</script>
+
+    document.querySelectorAll('.tab-button').forEach(button => {
+      button.addEventListener('click', () => {
+        // Remove active class from all buttons
+        document.querySelectorAll('.tab-button').forEach(btn => {
+          btn.classList.remove('active');
+        });
+        // Hide all tab contents
+        document.querySelectorAll('.tab-content').forEach(content => {
+          content.classList.remove('active');
+        });
+
+        // Add active class to clicked button
+        button.classList.add('active');
+        // Show the corresponding tab content
+        const tabId = button.getAttribute('data-tab');
+        document.getElementById(tabId).classList.add('active');
+      });
+    });
+  </script>
   <script src="https://kit.fontawesome.com/a076d05399.js"></script>
 </body>
 </html>
