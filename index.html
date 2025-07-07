@@ -25,7 +25,6 @@
     <style>
         /* Theme Variables */
         :root {
-            /* Light Theme (Default) */
             --primary: #2563eb;
             --accent: #22c55e;
             --background: #fafaf9;
@@ -40,7 +39,6 @@
             --toggle-circle: #1f2937;
         }
 
-        /* Dark Theme */
         html[data-theme='dark'] {
             --primary: #60a5fa;
             --accent: #4ade80;
@@ -72,7 +70,7 @@
             background-color: var(--accent);
             color: var(--background);
         }
-        
+
         body {
             background: var(--background);
             background-image:
@@ -149,17 +147,9 @@
         }
 
         @keyframes underlineGrow {
-            0% {
-                transform: scaleX(0);
-                opacity: 0;
-            }
-            50% {
-                opacity: 1;
-            }
-            100% {
-                transform: scaleX(1);
-                opacity: 1;
-            }
+            0% { transform: scaleX(0); opacity: 0; }
+            50% { opacity: 1; }
+            100% { transform: scaleX(1); opacity: 1; }
         }
 
         .subtitle {
@@ -274,6 +264,20 @@
             transform: scale(1.1);
         }
 
+        .chatbot-icon {
+            animation: chatbotGlow 2s ease-in-out infinite alternate;
+        }
+
+        .chatbot-icon:hover {
+            transform: scale(1.1);
+            border-color: var(--accent);
+        }
+
+        @keyframes chatbotGlow {
+            0% { box-shadow: 4px 4px 0 var(--shadow-color), 0 0 8px var(--accent); }
+            100% { box-shadow: 4px 4px 0 var(--shadow-color), 0 0 16px var(--accent); }
+        }
+
         .footer {
             height: 80px;
             background: var(--footer-bg);
@@ -301,15 +305,14 @@
             font-weight: 600;
             text-shadow: 0 1px 2px rgba(0, 0, 0, 0.08);
         }
-        
-        /* Theme Toggle Button */
+
         .theme-toggle-container {
             position: fixed;
             top: 20px;
             right: 20px;
             z-index: 100;
         }
-        
+
         .theme-toggle {
             width: 60px;
             height: 30px;
@@ -323,7 +326,7 @@
             border: 2px solid var(--text);
             transition: all 0.3s ease;
         }
-        
+
         .theme-toggle-circle {
             width: 20px;
             height: 20px;
@@ -338,11 +341,11 @@
             color: var(--toggle-bg);
             font-size: 12px;
         }
-        
+
         html[data-theme='dark'] .theme-toggle-circle {
             left: 35px;
         }
-        
+
         .theme-toggle-icon {
             width: 100%;
             height: 100%;
@@ -350,111 +353,141 @@
             align-items: center;
             justify-content: center;
         }
-        
+
         .theme-toggle-sun, .theme-toggle-moon {
             position: absolute;
             transition: opacity 0.3s ease;
         }
-        
+
         .theme-toggle-sun {
             opacity: 1;
         }
-        
+
         .theme-toggle-moon {
             opacity: 0;
         }
-        
+
         html[data-theme='dark'] .theme-toggle-sun {
             opacity: 0;
         }
-        
+
         html[data-theme='dark'] .theme-toggle-moon {
             opacity: 1;
         }
 
+        .chatbot-window {
+            position: fixed;
+            bottom: 100px;
+            right: 20px;
+            width: 550px;
+            height: 550px;
+            background: var(--card);
+            border: 3px solid var(--text);
+            border-radius: 16px;
+            box-shadow: 8px 8px 0 var(--shadow-color);
+            display: none;
+            z-index: 1000;
+            overflow: hidden;
+            transform: scale(0.8);
+            opacity: 0;
+        }
+
+        .chatbot-window.open {
+            display: block;
+            animation: popUp 0.3s ease-out forwards;
+        }
+
+        .chatbot-window.closing {
+            animation: popDown 0.3s ease-out forwards;
+        }
+
+        @keyframes popUp {
+            from {
+                transform: scale(0.8);
+                opacity: 0;
+            }
+            to {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+
+        @keyframes popDown {
+            from {
+                transform: scale(1);
+                opacity: 1;
+            }
+            to {
+                transform: scale(0.8);
+                opacity: 0;
+            }
+        }
+
+        .chatbot-window iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        .close-chatbot {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--text);
+            cursor: pointer;
+            z-index: 1001;
+        }
+
+        .close-chatbot:hover {
+            color: var(--accent);
+        }
+
         @media (max-width: 1024px) {
-            body {
-                height: auto;
-                overflow: auto;
-            }
+            body { height: auto; overflow: auto; }
+            .container { height: auto; padding: 1.5rem; }
+            .hero-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+            .neo-card { padding: 1.75rem; }
+            .button-group { flex-direction: column; gap: 1rem; }
+            .social-link { width: 50px; height: 50px; font-size: 1.5rem; }
+            .social-links { gap: 0.75rem; }
+            .stats-grid { grid-template-columns: 1fr; }
+            .stat-card { padding: 1.5rem; gap: 1.5rem; }
+            .footer { height: auto; padding: 1.5rem 0; }
+            .footer-content { flex-direction: column; gap: 0.95rem; text-align: center; }
+            .theme-toggle-container { top: 15px; right: 15px; }
+            .chatbot-window { width: 350px; height: 450px; bottom: 80px; right: 15px; }
+        }
 
-            .container {
-                height: auto;
-                padding: 1.5rem;
+        @media (max-width: 768px) {
+            .hidden-mobile { display: none; }
+            .desktop-version { display: none; }
+            .mobile-version { display: block; }
+            .chatbot-window { display: none !important; }
+            .social-links {
+                flex-wrap: wrap;
+                justify-content: center;
             }
-
-            .hero-grid {
-                grid-template-columns: 1fr;
-                gap: 2.5rem;
-            }
-
-            .neo-card {
-                padding: 1.75rem;
-            }
-
-            .button-group {
-                flex-direction: column;
-                gap: 1rem;
-            }
-
-            .social-link {
+            .chatbot-icon {
+                flex: 1 0 100%;
+                display: flex;
+                justify-content: center;
+                margin-top: 1rem;
                 width: 50px;
                 height: 50px;
                 font-size: 1.5rem;
             }
-
-            .social-links {
-                gap: 0.75rem;
-            }
-
-            .stats-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .stat-card {
-                padding: 1.5rem;
-                gap: 1.5rem;
-            }
-
-            .footer {
-                height: auto;
-                padding: 1.5rem 0;
-            }
-
-            .footer-content {
-                flex-direction: column;
-                gap: 0.95rem;
-                text-align: center;
-            }
-            
-            .theme-toggle-container {
-                top: 15px;
-                right: 15px;
-            }
-        }
-
-        @media (max-width: 768px) {
-            .hidden-mobile {
-                display: none;
-            }
-            .desktop-version {
-                display: none;
-            }
-            .mobile-version {
-                display: block;
-            }
         }
 
         @media (prefers-reduced-motion: reduce) {
-            * {
-                animation: none !important;
-                transition: none !important;
-            }
+            * { animation: none !important; transition: none !important; }
+            .chatbot-window.open, .chatbot-window.closing { transform: scale(1); opacity: 1; }
+            .chatbot-icon { box-shadow: 4px 4px 0 var(--shadow-color), 0 0 8px var(--accent); }
         }
     </style>
 </head>
 <body>
-    <!-- Theme Toggle Button -->
     <div class="theme-toggle-container">
         <div class="theme-toggle" id="theme-toggle" aria-label="Toggle dark/light mode">
             <div class="theme-toggle-circle">
@@ -464,6 +497,11 @@
                 </div>
             </div>
         </div>
+    </div>
+
+    <div class="chatbot-window" id="chatbotWindow">
+        <span class="close-chatbot" onclick="toggleChatbot()">×</span>
+        <iframe id="chatbotIframe" src=""></iframe>
     </div>
 
     <main class="container">
@@ -503,6 +541,9 @@
                         <a href="https://medium.com/@tanmaykalbande" class="social-link" aria-label="Medium Blog">
                             <i class="fab fa-medium"></i>
                         </a>
+                        <a class="social-link chatbot-icon" onclick="toggleChatbot()" aria-label="Open AI Assistant">
+                            <i class="fas fa-robot"></i>
+                        </a>
                     </div>
                 </div>
 
@@ -534,7 +575,6 @@
             </div>
         </section>
 
-        <!-- Added anchor sections -->
         <section id="portfolio" class="section-spacer"></section>
         <section id="resume" class="section-spacer"></section>
     </main>
@@ -551,42 +591,60 @@
         // Theme toggle functionality
         const themeToggle = document.getElementById('theme-toggle');
         const htmlElement = document.documentElement;
-        
-        // Check for saved theme preference or use system preference
+
         const savedTheme = localStorage.getItem('theme');
         if (savedTheme) {
             htmlElement.setAttribute('data-theme', savedTheme);
-        } else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
             htmlElement.setAttribute('data-theme', 'dark');
         }
-        
-        // Toggle theme on click
+
         themeToggle.addEventListener('click', () => {
             const currentTheme = htmlElement.getAttribute('data-theme');
             const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
-            
             htmlElement.setAttribute('data-theme', newTheme);
             localStorage.setItem('theme', newTheme);
         });
-        
-        // Smooth scrolling for anchor links
+
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', (e) => {
                 e.preventDefault();
                 const target = document.querySelector(anchor.getAttribute('href'));
-                target.scrollIntoView({
-                    behavior: 'smooth',
-                    block: 'start'
-                });
+                target.scrollIntoView({ behavior: 'smooth', block: 'start' });
             });
         });
 
-        // Update copyright year automatically
         document.querySelectorAll('.footer-text').forEach(element => {
             if (element.textContent.includes('©')) {
                 element.textContent = `© ${new Date().getFullYear()} Tanmay Kalbande. All rights reserved.`;
             }
         });
+
+        // Chatbot toggle functionality
+        function toggleChatbot() {
+            const chatbotWindow = document.getElementById('chatbotWindow');
+            const chatbotIframe = document.getElementById('chatbotIframe');
+            const isMobile = window.innerWidth <= 768;
+
+            if (isMobile) {
+                window.open('https://tanmay-ai-assistant.vercel.app', '_blank');
+            } else {
+                const isOpen = chatbotWindow.style.display === 'block';
+                if (isOpen) {
+                    chatbotWindow.classList.remove('open');
+                    chatbotWindow.classList.add('closing');
+                    setTimeout(() => {
+                        chatbotWindow.style.display = 'none';
+                        chatbotWindow.classList.remove('closing');
+                        chatbotIframe.src = '';
+                    }, 300); // Match animation duration
+                } else {
+                    chatbotWindow.style.display = 'block';
+                    chatbotWindow.classList.add('open');
+                    chatbotIframe.src = 'https://tanmay-ai-assistant.vercel.app';
+                }
+            }
+        }
     </script>
 </body>
 </html>
