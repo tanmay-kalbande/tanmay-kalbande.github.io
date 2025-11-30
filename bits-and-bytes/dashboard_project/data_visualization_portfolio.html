@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Tanmay - Power BI & Tableau Dashboards</title>
+  <meta name="description" content="Explore Power BI and Tableau dashboards created by Tanmay Kalbande for data visualization projects.">
+  <meta name="keywords" content="Power BI, Tableau, data visualization, dashboards, portfolio">
+  <meta name="author" content="Tanmay Kalbande">
+  <link rel="icon" href="image/favicon.png" type="image/x-icon" alt="Website Favicon">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <style>
+    /* Reset some default styles */
+    body, h1, h2, h3, p {
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Roboto Mono', monospace;
+      color: #333;
+      background-color: #f5f5f5;
+      scroll-behavior: smooth;
+    }
+
+    ::selection {
+      background-color: #ffd700;
+      color: #333;
+    }
+
+    ::-moz-selection {
+      background-color: #ffd700;
+      color: #333;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 20px;
+      box-sizing: border-box;
+    }
+
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 20px;
+    }
+
+    .logo {
+      width: 120px;
+      height: 120px;
+      border: 2px solid #F9F9F9;
+      border-radius: 20%;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+    }
+
+    .logo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .contact-info {
+      text-align: right;
+      margin-top: auto;
+    }
+
+    .section {
+      padding: 20px;
+      margin-bottom: 20px;
+      border-radius: 5px;
+      background-color: #fff;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    }
+
+    .section-divider {
+      margin-top: 40px;
+      margin-bottom: 20px;
+      border-top: 2px dashed #555555;
+      text-align: center;
+    }
+
+    h1 {
+      font-size: 36px;
+      margin-bottom: 20px;
+      font-weight: 700;
+      color: #454545;
+    }
+
+    h2 {
+      font-size: 24px;
+      margin-bottom: 10px;
+      font-weight: 700;
+      color: #191919;
+    }
+
+    p {
+      margin-bottom: 10px;
+      font-size: 16px;
+      line-height: 1.6;
+    }
+
+    ul {
+      list-style-type: disc;
+      padding-left: 20px;
+      margin-top: 5px;
+      margin-bottom: 10px;
+    }
+
+    li {
+      margin-bottom: 5px;
+      font-size: 16px;
+      line-height: 1.6;
+    }
+
+    a {
+      color: #333;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+
+    a:hover {
+      color: #ffd700;
+    }
+
+    .project-title summary {
+      cursor: pointer;
+      font-size: 18px;
+    }
+
+    .project-description {
+      margin-bottom: 10px;
+    }
+
+    .project-screenshot {
+      max-width: 100%;
+      height: auto;
+      border-radius: 5px;
+      margin-bottom: 10px;
+      border: 4px ridge #555555;
+      transition: opacity 0.5s ease-in-out;
+    }
+
+    .project-link {
+      margin-top: 10px;
+    }
+
+    .download-button {
+      padding: 8px 16px;
+      background-color: #333;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 4px;
+      font-weight: 700;
+      transition: background-color 0.3s ease;
+    }
+
+    .download-button:hover {
+      background-color: #ffd700;
+      color: #333;
+    }
+
+    footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      text-align: center;
+      margin: 15px 20px 0;
+      font-size: 14px;
+      color: #333;
+      font-weight: 600;
+      margin-top: auto;
+    }
+
+    .hidden-mobile {
+      display: inline;
+    }
+
+    .footer a {
+      color: #0F0F0F;
+      text-decoration: none;
+    }
+
+    .footer a:hover {
+      text-decoration: underline;
+    }
+
+    @media only screen and (max-width: 600px) {
+      .container {
+        padding: 10px;
+      }
+
+      .header {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .section {
+        padding: 10px;
+        margin-top: auto;
+        margin-bottom: auto;
+      }
+
+      .contact-info {
+        text-align: left;
+        margin-top: 20px;
+      }
+
+      h1 {
+        font-size: 28px;
+      }
+
+      h2 {
+        font-size: 20px;
+      }
+
+      p, li {
+        font-size: 14px;
+      }
+
+      .project-title summary {
+        font-size: 16px;
+      }
+
+      .project-description {
+        font-size: 14px;
+      }
+
+      footer {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        margin-bottom: 15px;
+      }
+
+      .hidden-mobile {
+        display: none;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <div class="logo">
+        <img src="image/profile_picture.jpg" alt="Logo">
+      </div>
+      <div class="contact-info">
+        <p>Email: <a href="mailto:kalbandetanmay@gmail.com">kalbandetanmay@gmail.com</a><br>Phone: 737-838-1494</p>
+      </div>
+    </div>
+    <div class="section">
+      <h2>Power BI & Tableau Dashboards</h2>
+      <div class="project">
+        <i class="fa fa-bar-chart"></i> <details class="project-title">
+          <summary><strong>Power BI Dashboard: Data Wave Metrics in India</strong>
+          <p class="project-description">Explore key wireless data usage and ARPU (Average Revenue Per User) metrics in India over different quarters, gaining insights into quarterly revenue, data consumption trends, and tariff variations.</p></summary>
+          <ul>
+            <li>Analyze wireless data usage and ARPU metrics across different quarters.</li>
+            <li>Gain insights into quarterly revenue and data consumption trends.</li>
+            <li>Understand tariff variations and their impact.</li>
+          </ul>
+          <p><strong>Screenshot Title: Quarterly Metrics Overview</strong></p>
+          <img src="dashboard_screenshot/power_bi_screenshot_1.png" alt="Power BI Screenshot" class="project-screenshot">
+          <p class="project-link"><a href="dashboard/Data Wave Metrics in India.pbix" target="_blank" class="download-button">Download Power BI Dashboard</a></p>
+        </details>
+      </div>
+    </div>
+
+    <div class="section-divider">
+      <p><strong>Interested?</strong></p>
+      <h3>Get in touch!</h3>
+    </div>
+
+    <div class="section">
+      <h2 id="contact">Contact</h2>
+      <p class="text-center">Feel free to reach out if you'd like to connect, discuss a project, or just say hello!</p>
+      <p class="text-center">
+        <i class="fab fa-linkedin"></i> <a href="https://www.linkedin.com/in/tanmay-kalbande" target="_blank">LinkedIn</a><br>
+        <i class="fab fa-github"></i> <a href="https://github.com/tanmay-kalbande" target="_blank">GitHub</a>
+      </p>
+      <p class="text-center"><a href="#top">Back to top</a></p>
+    </div>
+
+  </div>
+  <footer>
+    <span>
+      <i class="fas fa-copyright"></i> 2024 Tanmay Kalbande. All rights reserved.
+    </span>
+    <span class="hidden-mobile">
+      Crafted with ❤️ and <i class="fas fa-coffee" style="color: #704214;"></i>
+    </span>
+  </footer>
+</body>
+</html>

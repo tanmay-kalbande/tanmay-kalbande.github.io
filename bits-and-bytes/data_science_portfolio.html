@@ -1,0 +1,1261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Primary Meta Tags -->
+  <title>Tanmay Kalbande - Crafting Insights from Data</title>
+  <meta name="title" content="Tanmay Kalbande - Crafting Insights from Data">
+  <meta name="description" content="Data science enthusiast with a solid foundation in statistical analysis, machine learning, and data visualization. Ready to contribute to meaningful insights and data-driven decision-making.">
+  <meta name="keywords" content="data science, machine learning, statistics, data visualization, Python, SQL, AI, Big Data, NLP, ethical AI, deep learning, TinyML, portfolio, Tanmay Kalbande">
+  <meta name="author" content="Tanmay Kalbande">
+  <link rel="icon" href="bits-and-bytes/resources/favicon.png" type="image/x-icon">
+  <!-- Robot and Content Tags -->
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+  <meta name="theme-color" content="#fefce8">
+  <meta name="color-scheme" content="light">
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://tanmay-kalbande.github.io/">
+  <meta property="og:title" content="Tanmay Kalbande - Data Science Portfolio">
+  <meta property="og:description" content="Data science enthusiast with a solid foundation in statistical analysis, machine learning, and data visualization. Ready to contribute to meaningful insights and data-driven decision-making.">
+  <meta property="og:image" content="https://tanmay-kalbande.github.io/resources/portfolio.png">
+  <meta property="og:image:alt" content="Tanmay Kalbande's Portfolio Preview">
+  <meta property="og:site_name" content="Tanmay Kalbande Portfolio">
+  <meta property="og:locale" content="en_US">
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:url" content="https://tanmay-kalbande.github.io/">
+  <meta name="twitter:title" content="Tanmay Kalbande - Data Science Portfolio">
+  <meta name="twitter:description" content="Data science enthusiast with a solid foundation in statistical analysis, machine learning, and data visualization. Ready to contribute to meaningful insights and data-driven decision-making.">
+  <meta name="twitter:image" content="https://tanmay-kalbande.github.io/resources/portfolio.png">
+  <meta name="twitter:image:alt" content="Tanmay Kalbande's Portfolio Preview">
+
+  <!-- PWA Support -->
+  <link rel="manifest" href="resources/site.webmanifest">
+  <meta name="msapplication-TileColor" content="#fefce8">
+  <meta name="msapplication-config" content="resources/browserconfig.xml">
+
+  <!-- Preload Critical Resources -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+
+  <!-- Stylesheets -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;900&display=swap" rel="stylesheet">
+
+  <!-- Security Headers -->
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self' https:; script-src 'self' 'unsafe-inline' https:; style-src 'self' 'unsafe-inline' https:; img-src 'self' data: https:;">
+  <meta http-equiv="X-Content-Type-Options" content="nosniff">
+  <meta http-equiv="X-Frame-Options" content="SAMEORIGIN">
+  <meta http-equiv="Permissions-Policy" content="camera=(), microphone=(), geolocation=()">
+
+  <!-- Cache Control -->
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+  <meta http-equiv="Pragma" content="no-cache">
+  <meta http-equiv="Expires" content="0">
+
+  <style>
+    /* Dark Theme Variables */
+    :root {
+      --primary: #2563eb;
+      --accent: #22c55e;
+      --background: #fafaf9;
+      --card: #ffffff;
+      --text: #1f2937;
+      --text-muted: #4b5563;
+      --shadow-color: rgba(0, 0, 0, 0.1);
+      --bg-pattern-1: #4ade80;
+      --bg-pattern-2: #93c5fd;
+      --footer-bg: rgba(255, 255, 255, 0.85);
+      --toggle-bg: #f3f4f6;
+      --toggle-circle: #1f2937;
+      --font-family: 'Inter', -apple-system, system-ui, sans-serif;
+    }
+
+    /* Dark Theme */
+    html[data-theme='dark'] {
+      --primary: #60a5fa;
+      --accent: #4ade80;
+      --background: #121212;
+      --card: #1e1e1e;
+      --text: #f9fafb;
+      --text-muted: #d1d5db;
+      --shadow-color: rgba(0, 0, 0, 0.25);
+      --bg-pattern-1: rgba(74, 222, 128, 0.3);
+      --bg-pattern-2: rgba(96, 165, 250, 0.3);
+      --footer-bg: rgba(17, 24, 39, 0.85);
+      --toggle-bg: #374151;
+      --toggle-circle: #f9fafb;
+    }
+
+    /* Theme Toggle Button Styles */
+    .theme-toggle-container {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      z-index: 100;
+    }
+
+    .theme-toggle {
+      width: 60px;
+      height: 30px;
+      background: var(--toggle-bg);
+      border-radius: 30px;
+      padding: 5px;
+      display: flex;
+      align-items: center;
+      cursor: pointer;
+      position: relative;
+      border: 2px solid var(--text);
+      transition: all 0.3s ease;
+    }
+
+    .theme-toggle-circle {
+      width: 20px;
+      height: 20px;
+      background: var(--toggle-circle);
+      border-radius: 50%;
+      position: absolute;
+      left: 5px;
+      transition: all 0.3s ease;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--toggle-bg);
+      font-size: 12px;
+    }
+
+    html[data-theme='dark'] .theme-toggle-circle {
+      left: 35px;
+    }
+
+    .theme-toggle-icon {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .theme-toggle-sun, .theme-toggle-moon {
+      position: absolute;
+      transition: opacity 0.3s ease;
+    }
+
+    .theme-toggle-sun {
+      opacity: 1;
+    }
+
+    .theme-toggle-moon {
+      opacity: 0;
+    }
+
+    html[data-theme='dark'] .theme-toggle-sun {
+      opacity: 0;
+    }
+
+    html[data-theme='dark'] .theme-toggle-moon {
+      opacity: 1;
+    }
+
+    /* Updated UI Colors and Styles */
+    :root {
+        --primary: #2563eb;
+        --accent: #22c55e;
+        --background: #fafaf9;
+        --card: #ffffff;
+        --text: #1f2937;
+        --shadow-color: rgba(0, 0, 0, 0.1);
+        --font-family: 'Inter', -apple-system, system-ui, sans-serif;
+    }
+
+    /* General Reset */
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: var(--font-family);
+        transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    ::selection {
+        background-color: #4ade80;
+        color: #000000;
+    }
+    ::-moz-selection {
+        background-color: #4ade80;
+        color: #000000;
+    }
+
+    /* Base Styles */
+    body {
+      background: var(--background);
+      background-image:
+          radial-gradient(circle at 20px 20px, var(--bg-pattern-1) 1px, transparent 0),
+          radial-gradient(circle at 60px 60px, var(--bg-pattern-2) 1px, transparent 0);
+      background-size: 80px 80px;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      animation: backgroundShift 20s linear infinite;
+      color: var(--text);
+      overflow-y: auto; /* Allow vertical scrolling */
+    }
+
+    @keyframes backgroundShift {
+      0% { background-position: 0 0; }
+      50% { background-position: 40px 40px; }
+      100% { background-position: 80px 80px; }
+    }
+
+    .container {
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 1rem;
+    }
+
+    /* Header Section */
+    .header {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      gap: 1rem;
+      padding: 1rem;
+    }
+
+    .contact-section {
+      text-align: center;
+      margin: 40px 0;
+    }
+
+    .button-group {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+      margin: 20px 0;
+    }
+
+    .neo-button {
+      padding: 15px 30px;
+      font-size: 1.1em;
+      border: 3px solid var(--text);
+      border-radius: 12px;
+      background-color: var(--card);
+      font-weight: bold;
+      color: var(--text);
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      box-shadow: 4px 4px 0 var(--shadow-color);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .neo-button:hover {
+      transform: translate(2px, 2px);
+      box-shadow: 2px 2px 0 var(--shadow-color);
+    }
+
+    .neo-button i {
+      font-size: 1.5rem;
+    }
+
+    @media (min-width: 768px) {
+      .header {
+        flex-direction: row;
+        justify-content: space-between;
+        text-align: left;
+      }
+    }
+
+    .logo {
+      width: 120px;
+      height: 120px;
+      border: 2px solid #f9f9f9;
+      border-radius: 20%;
+      box-shadow: 0 0 5px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .logo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .header-text h1 {
+      font-size: 2.5rem;
+      margin-bottom: 5px;
+      font-weight: 900;
+    }
+
+    .header-text h2 {
+      font-size: 1.25rem;
+      color: #2563eb;
+    }
+
+    .contact-info {
+      text-align: right;
+    }
+
+    /* Section Styling */
+    .section {
+      padding: 20px;
+      margin-bottom: 20px;
+      border-radius: 12px;
+      background-color: var(--card);
+      border: 3px solid #000; /* Reduced border size */
+      box-shadow: 4px 4px 0 rgba(0, 0, 0, 0.1); /* Subtle shadow */
+      color: var(--text);
+    }
+
+    h2 {
+      font-size: 1.5rem;
+      margin-bottom: 15px;
+      font-weight: bold;
+      color: var(--text);
+    }
+
+    /* Project Cards */
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 1.5rem;
+      margin-top: 1.5rem;
+    }
+
+    .project-card {
+      background: var(--card);
+      border: 2px solid #000; /* Reduced border size */
+      border-radius: 12px;
+      padding: 1.5rem;
+      height: 100%;
+      box-shadow: 4px 4px 0 rgba(0, 0, 0, 0.1); /* Subtle shadow */
+      color: var(--text);
+    }
+
+    .project-content {
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+    }
+
+    .project-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-top: auto;
+      padding-top: 1rem;
+    }
+
+    /* Experience Section */
+    .experience-item {
+      margin-bottom: 2rem;
+      padding-bottom: 1rem;
+      border-bottom: 2px solid #eee;
+    }
+
+    .experience-header {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+      margin-bottom: 1rem;
+    }
+
+    @media (min-width: 768px) {
+      .experience-header {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+      }
+    }
+
+    .experience-meta {
+      display: flex;
+      flex-direction: column;
+      gap: 0.25rem;
+      font-size: 0.9rem;
+      color: var(--text-muted);
+    }
+
+    @media (min-width: 768px) {
+      .experience-meta {
+        flex-direction: row;
+        gap: 1rem;
+        text-align: right;
+      }
+    }
+
+    .experience-details {
+      padding-left: 1.25rem;
+    }
+
+    @media (max-width: 640px) {
+      .experience-details {
+        padding-left: 1rem;
+      }
+
+      .experience-details li {
+        margin-bottom: 0.5rem;
+      }
+    }
+
+    /* CTA Section */
+    .cta-section {
+      background-color: var(--card);
+      padding: 50px 20px;
+      text-align: center;
+      border-radius: 10px;
+      margin: 40px 0;
+      color: var(--text);
+    }
+
+    .cta-section h2 {
+      font-size: 2em;
+      margin-bottom: 20px;
+    }
+
+    .cta-section h3 {
+      font-size: 1.5em;
+      margin-bottom: 10px;
+      color: var(--primary);
+    }
+
+    .cta-section p {
+      font-size: 1.1em;
+      margin-bottom: 30px;
+    }
+
+    .cta-buttons {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .cta-button {
+      padding: 15px 30px;
+      font-size: 1.2em;
+      border-radius: 30px;
+      background-color: var(--primary);
+      color: #fff;
+      text-decoration: none;
+    }
+
+    .cta-button i {
+      margin-right: 10px;
+    }
+
+    /* Contact Grid */
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1rem;
+      margin: 1.5rem 0;
+    }
+
+    @media (min-width: 640px) {
+      .contact-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (min-width: 1024px) {
+      .contact-grid {
+        grid-template-columns: repeat(4, 1fr);
+      }
+    }
+
+    .contact-item {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      padding: 1rem;
+      background: var(--card);
+      border-radius: 8px;
+      word-break: break-word;
+      box-shadow: 2px 2px 0 rgba(0, 0, 0, 0.1); /* Subtle shadow */
+      color: var(--text);
+    }
+
+    .contact-item i {
+      font-size: 1.5rem;
+      color: var(--primary);
+    }
+
+    @media (max-width: 640px) {
+      .contact-item {
+        flex-direction: row;
+        justify-content: flex-start;
+      }
+
+      .contact-item a {
+        font-size: 0.9rem;
+      }
+    }
+
+    .contact-message {
+      text-align: center;
+      margin-top: 2rem;
+    }
+
+    /* Skill & Interest Badges */
+    .skill-badge,
+    .interest-badge {
+      display: inline-block;
+      margin: 5px;
+      padding: 6px 12px;
+      border-radius: 20px;
+      background-color: #f0f0f0;
+      font-size: 0.9rem;
+      color: var(--text);
+    }
+
+    /* Dark mode adjustments for badges */
+    html[data-theme='dark'] .skill-badge,
+    html[data-theme='dark'] .interest-badge {
+      background-color: #333333; /* Darker background for better integration */
+      color: #ffffff; /* White text for high contrast */
+    }
+
+
+    /* Button Group */
+    .button-group {
+      display: flex;
+      gap: 1rem;
+      margin-top: 10px;
+    }
+
+    .neo-button {
+      padding: 12px 24px;
+      border: 2px solid #000; /* Reduced border size */
+      border-radius: 12px;
+      background-color: rgba(0, 0, 0, 0.1);
+      font-weight: bold;
+      cursor: pointer;
+      color: var(--text);
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      box-shadow: 2px 2px 0 rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    }
+
+    /* Footer */
+    footer {
+      background-color: var(--footer-bg);
+      border-top: 2px solid #000; /* Reduced border size */
+      padding: 1.5rem;
+      margin-top: auto;
+      text-align: center;
+      font-size: 0.875rem;
+      color: var(--text);
+    }
+
+    /* Tabbed Layout */
+    .tabs {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin-bottom: 1rem;
+    }
+
+    .tab-button {
+      background-color: #f0f0f0; /* Matches badge background in light mode */
+      color: var(--text);
+      border: none;
+      padding: 6px 12px;
+      margin: 3px;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 1rem;
+      flex: 1 1 auto;
+      min-width: 80px;
+    }
+
+    .tab-button.active {
+      background-color: #d1d5db; /* Slightly darker for active state in light mode */
+      color: var(--text);
+    }
+
+    html[data-theme='dark'] .tab-button {
+      background-color: #333333; /* Matches badge background in dark mode */
+      color: #ffffff; /* Matches badge text in dark mode */
+    }
+
+    html[data-theme='dark'] .tab-button.active {
+      background-color: #4b5563; /* Slightly lighter for active state in dark mode */
+      color: #ffffff;
+    }
+
+    .tab-content {
+      display: none;
+    }
+
+    .tab-content.active {
+      display: block;
+    }
+
+    /* Responsive Adjustments */
+    @media (max-width: 640px) {
+      .section {
+        padding: 1rem;
+        margin-bottom: 1rem;
+      }
+
+      h1 {
+        font-size: 1.75rem;
+      }
+
+      h2 {
+        font-size: 1.5rem;
+      }
+
+      h3 {
+        font-size: 1.25rem;
+      }
+
+      p {
+        font-size: 0.95rem;
+      }
+
+      .project-description {
+        font-size: 0.9rem;
+      }
+
+      .tabs {
+        flex-direction: row;
+        overflow-x: auto;
+        padding: 0 10px;
+      }
+
+      .tab-button {
+        width: auto;
+        padding: 8px 14px;
+        font-size: 0.9rem;
+        margin: 3px;
+      }
+
+      footer span {
+        display: block;
+        margin-bottom: 0.5rem;
+      }
+    }
+
+    /* Ensure images are responsive */
+    img {
+      max-width: 100%;
+      height: auto;
+    }
+
+    /* Fix for long URLs and email addresses */
+    a {
+      word-wrap: break-word;
+      overflow-wrap: break-word;
+      color: var(--primary);
+    }
+
+    /* Additional Details Styling */
+    details ul {
+      padding-left: 20px;
+      margin: 0;
+      list-style-position: inside;
+    }
+
+    details {
+      margin-bottom: 15px;
+    }
+
+    /* Social Links */
+    .social-links {
+      display: flex;
+      gap: 1.25rem;
+      margin-bottom: 2.5rem;
+    }
+
+    .social-link {
+      width: 60px;
+      height: 60px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5rem;
+      background: var(--card);
+      color: var(--text);
+      border: 3px solid var(--text);
+      border-radius: 12px;
+      box-shadow: 4px 4px 0 var(--shadow-color);
+      transition: transform 0.2s ease;
+    }
+
+    .social-link:hover {
+      transform: scale(1.1);
+    }
+  </style>
+</head>
+<body>
+  <div class="theme-toggle-container">
+    <div class="theme-toggle" id="theme-toggle" aria-label="Toggle dark/light mode">
+      <div class="theme-toggle-circle">
+        <div class="theme-toggle-icon">
+          <i class="fas fa-sun theme-toggle-sun"></i>
+          <i class="fas fa-moon theme-toggle-moon"></i>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="header">
+      <div class="header-content">
+        <div class="logo">
+          <img src="resources/profile_picture.jpg" alt="Tanmay Kalbande Profile Picture" id="theme-toggle-img">
+        </div>
+        <div class="header-text">
+          <h1>Tanmay Kalbande</h1>
+          <h2>Data Science Enthusiast</h2>
+        </div>
+      </div>
+      <div class="contact-info">
+        <p>Email: <a href="mailto:kalbandetanmay@gmail.com">kalbandetanmay@gmail.com</a><br>Phone: <a href="tel:7378381494">737-838-1494</a></p>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2>About Me</h2>
+      <p>I'm a data science enthusiast skilled in statistical analysis, machine learning, and data visualization. Passionate about uncovering insights from complex datasets to drive informed decision-making. My goal is to contribute to impactful projects, constantly staying updated with the latest advancements in data science.</p>
+    </div>
+
+    <div class="section">
+      <h2>Technical Summary</h2>
+      <ul>
+        <li><strong>Experience:</strong> Hands-on experience in data science, encompassing the end-to-end development of predictive modeling solutions.</li>
+        <li><strong>Programming:</strong> Proficient in Python, specializing in data analysis and AI frameworks (NumPy, Pandas, Scikit-learn, Jupyter).</li>
+        <li><strong>SQL:</strong> Comfortable working with SQL Server and some exposure to Spark.</li>
+        <li><strong>Analytics:</strong> Familiarity with a range of machine learning techniques (supervised/unsupervised), deep learning, neural networks, and Natural Language Processing (NLP).</li>
+        <li><strong>Problem Solving:</strong> Skilled in troubleshooting and analytical thinking.</li>
+        <li><strong>Data Visualization:</strong> Proficient in creating insightful visualizations using tools such as Matplotlib and Seaborn.</li>
+        <li><strong>Statistical Analysis:</strong> Good foundation in statistical concepts and their application in data analysis.</li>
+        <li><strong>Big Data:</strong> Exposure to big data technologies, including Hadoop and Spark.</li>
+        <li><strong>Ethical AI:</strong> Understanding of ethical considerations in AI development and deployment.</li>
+      </ul>
+    </div>
+
+    <div class="section">
+      <h2>Tools</h2>
+      <ul>
+        <li><strong>Languages:</strong> SQL, R, C, Python 🐍</li>
+        <li><strong>Databases:</strong> SQL Server, Spark 💽</li>
+        <li><strong>IDE:</strong> PyCharm, Vs, Atom, Jupyter Notebooks 💻</li>
+        <li><strong>BI Tool:</strong> Excel, Tableau, PowerBI 📊</li>
+      </ul>
+    </div>
+
+    <div class="section">
+      <h2 class="section-title">Experience</h2>
+
+      <div class="experience-item">
+        <div class="experience-header">
+          <h3>Analyst</h3>
+          <div class="experience-meta">
+            <span class="company">Capgemini</span>
+            <span class="duration">March 2024 - Present</span>
+          </div>
+        </div>
+        <ul class="experience-details">
+          <li>Utilized advanced analytical techniques to derive actionable insights from complex datasets</li>
+          <li>Collaborated with cross-functional teams to translate data findings into business strategies</li>
+          <li>Designed and implemented interactive dashboards for visualizing key metrics</li>
+        </ul>
+      </div>
+
+      <div class="experience-item">
+        <div class="experience-header">
+          <h3>Data Analyst Trainee</h3>
+          <div class="experience-meta">
+            <span class="company">Rubixe</span>
+            <span class="duration">Nov 2022 - Dec 2023</span>
+          </div>
+        </div>
+        <ul class="experience-details">
+          <li>Worked with teams to gather, clean, and organize data from various sources</li>
+          <li>Explored data patterns and trends to shape practical strategies</li>
+          <li>Created clear reports and interactive visualizations</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2>Skills</h2>
+      <span class="skill-badge">Python</span>
+      <span class="skill-badge">R</span>
+      <span class="skill-badge">SQL</span>
+      <span class="skill-badge">Machine Learning</span>
+      <span class="skill-badge">Statistical Analysis</span>
+      <span class="skill-badge">Data Visualization</span>
+    </div>
+
+    <div class="section">
+      <h2>Interests</h2>
+      <span class="interest-badge">Artificial Intelligence</span>
+      <span class="interest-badge">Big Data</span>
+      <span class="interest-badge">Natural Language Processing</span>
+      <span class="interest-badge">Ethical AI</span>
+      <span class="interest-badge">Deep Learning</span>
+      <span class="interest-badge">TinyML</span>
+    </div>
+
+    <div class="section">
+      <h2 id="projects">Projects</h2>
+      <!-- Project 1 details go here -->
+      <div class="project">
+       <h3 class="project-title"><i class="fas fa-chart-line"></i> Web Traffic Analysis for Conversion Rate Improvement - Zoompare</h3>
+        <p class="project-description">Analyzed website traffic data to identify patterns and optimize conversion rates using Python and Google Analytics.</p>
+        <p><strong>Contributions:</strong> Performed web traffic analysis, Implemented A/B testing, Aligned findings with engineering teams</p>
+        <details>
+          <summary><strong>Tasks:</strong></summary>
+          <ul>
+            <li>Extracted data from Google Analytics API</li>
+            <li>Designed funnel analysis</li>
+            <li>Proposed page optimizations</li>
+          </ul>
+        </details>
+      </div>
+      <!-- Project 2 details go here -->
+      <div class="project">
+        <h3 class="project-title"><i class="fas fa-users"></i> Customer Segmentation using Clustering Analysis - Rubixe</h3>
+        <p class="project-description">Applied clustering analysis to customer data and visualized resulting segments using Python.</p>
+        <p><strong>Contributions:</strong> Defined data preprocessing steps, Implemented K-means clustering algorithm, Evaluated and visualized distinct customer segments</p>
+        <details>
+          <summary><strong>Tasks:</strong></summary>
+          <li>Define data preprocessing steps for clustering analysis.</li>
+          <li>Implement K-means clustering algorithm for segmentation.</li>
+          <li>Evaluate and visualize distinct customer segments.</li>
+        </details>
+      </div>
+      <!-- Project 3 details go here -->
+      <div class="project">
+        <h3 class="project-title"><i class="fas fa-bullseye"></i> Lead Quality Prediction - Rubixe</h3>
+        <p class="project-description">Explored data and utilized multiple models to predict lead quality for sales prioritization.</p>
+        <p><strong>Contributions:</strong> Explored data, Utilized multiple models, Identified the top-performing model</p>
+        <details>
+          <summary><strong>Tasks:</strong></summary>
+          <li>Prepare data for training models.</li>
+          <li>Experiment with various machine learning models (e.g., logistic regression, random forest, etc.)</li>
+          <li>Evaluate model performance and select the best-performing model.</li>
+        </details>
+      </div>
+      <!-- Project 4 details go here -->
+      <div class="project">
+        <h3 class="project-title"><i class="fas fa-film"></i> Movie Recommendation System - Rubixe</h3>
+        <p class="project-description">Developed a collaborative filtering-based recommendation system for personalized movie suggestions.</p>
+        <p><strong>Contributions:</strong> Built collaborative filtering models, Explored various recommendation algorithms</p>
+        <details>
+          <summary><strong>Tasks:</strong></summary>
+          <li>Build collaborative filtering models for recommendation.</li>
+          <li>Evaluate and compare the performance of different recommendation algorithms.</li>
+          <li>Integrate the recommendation system into the existing platform.</li>
+        </details>
+      </div>
+
+      <div class="project">
+        <h3 class="project-title"><i class="fas fa-comment"></i> Sentiment Analysis of Customer Reviews - Sentix</h3>
+        <p class="project-description">Analyzed sentiment in customer reviews using natural language processing techniques.</p>
+        <p><strong>Contributions:</strong> Developed sentiment analysis model, Implemented NLP techniques</p>
+        <details>
+          <summary><strong>Tasks:</strong></summary>
+          <li>Collect and preprocess customer review data.</li>
+          <li>Train and test sentiment analysis model using machine learning algorithms.</li>
+          <li>Deploy model for real-time sentiment analysis of incoming customer reviews.</li>
+        </details>
+      </div>
+
+      <!-- Project 6 details go here -->
+      <div class="project">
+        <h3 class="project-title"><i class="fas fa-tools"></i> Predictive Maintenance System - TechCorp</h3>
+        <p class="project-description">Developed a predictive maintenance system to anticipate equipment failures and enable proactive maintenance.</p>
+        <p><strong>Contributions:</strong> Built predictive maintenance model, Integrated with existing maintenance systems</p>
+        <details>
+          <summary><strong>Tasks:</strong></summary>
+          <li>Collect sensor data from industrial equipment.</li>
+          <li>Develop predictive maintenance algorithms using machine learning.</li>
+          <li>Implement real-time monitoring and alerting system for maintenance personnel.</li>
+        </details>
+      </div>
+    </div>
+
+    <!-- Updated Personal Projects Section -->
+<div class="section">
+  <h2 class="section-title">Fun Projects</h2>
+
+  <!-- Tabs -->
+  <div class="tabs">
+    <button class="tab-button active" data-tab="project1">Expense Tracker</button>
+    <button class="tab-button" data-tab="project2">Table Extractor</button>
+    <button class="tab-button" data-tab="project3">Goal Tracker</button>
+    <button class="tab-button" data-tab="project4">The Scam Master Podcast</button>
+    <button class="tab-button" data-tab="project5">Incident Tracker</button>
+    <button class="tab-button" data-tab="project6">Bias & Fairness Checker [AI]</button>
+    <button class="tab-button" data-tab="project7">AI Data Structurer [AI]</button>
+    <button class="tab-button" data-tab="project8">Enhanced macOS Notes</button>
+    <button class="tab-button" data-tab="project9">Life Loops - Game Edition</button>
+    <button class="tab-button" data-tab="project10">Jawala Vyapar</button>
+    <button class="tab-button" data-tab="project11">Mindfulness App</button>
+    <button class="tab-button" data-tab="project12">Report Generator [AI]</button>
+  </div>
+
+  <!-- Tab Contents -->
+  <div class="tab-content active" id="project1">
+    <div class="project-card">
+      <h3><i class="fas fa-money-bill-wave"></i> Expense Tracker</h3>
+      <p class="project-description">A web application for tracking personal expenses with data visualization and CSV import/export functionality.</p>
+      <h4>Features:</h4>
+      <ul>
+        <li>Expense Management</li>
+        <li>Data Visualization</li>
+        <li>CSV Import/Export</li>
+        <li>User-friendly Interface</li>
+      </ul>
+      <div class="project-links">
+        <a href="https://expense-tail.vercel.app/" target="_blank" class="neo-button">
+          <i class="fas fa-desktop"></i> Live Demo
+        </a>
+        <a href="https://github.com/tanmay-kalbande/Expense-Tracker" target="_blank" class="neo-button">
+          <i class="fab fa-github"></i> GitHub
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <div class="tab-content" id="project2">
+    <div class="project-card">
+      <h3><i class="fas fa-table"></i> Table Extractor</h3>
+      <p class="project-description">A Flask web app for extracting tables from web pages, using BeautifulSoup and DataTables.</p>
+      <h4>Features:</h4>
+      <ul>
+        <li>Table Extraction</li>
+        <li>Dynamic Table Rendering</li>
+        <li>CSV Download</li>
+        <li>Responsive Design</li>
+      </ul>
+      <div class="project-links">
+        <a href="https://table-extractor.onrender.com/" target="_blank" class="neo-button">
+          <i class="fas fa-desktop"></i> Live Demo
+        </a>
+        <a href="https://github.com/tanmay-kalbande/table-extractor-app" target="_blank" class="neo-button">
+          <i class="fab fa-github"></i> GitHub
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <div class="tab-content" id="project3">
+    <div class="project-card">
+      <h3><i class="fas fa-bullseye"></i> Goal Tracker</h3>
+      <p class="project-description">Goal Tracker helps you achieve your goals one day at a time!</p>
+      <h4>Features:</h4>
+      <ul>
+        <li>Daily Goal Tracking</li>
+        <li>Custom Goals</li>
+        <li>Visualize Progress</li>
+        <li>Share with Friends</li>
+      </ul>
+      <div class="project-links">
+        <a href="https://tanmay-kalbande.github.io/Goal-Tracker/" target="_blank" class="neo-button">
+          <i class="fas fa-desktop"></i> Live Demo
+        </a>
+        <a href="https://github.com/tanmay-kalbande/Goal-Tracker" target="_blank" class="neo-button">
+          <i class="fab fa-github"></i> GitHub
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <div class="tab-content" id="project4">
+    <div class="project-card">
+      <h3><i class="fas fa-microphone-alt"></i> The Scam Master Podcast</h3>
+      <p class="project-description">The Scam Master podcast website, exposing fraudsters and providing guidance to outwit them.</p>
+      <h4>Features:</h4>
+      <ul>
+        <li>Engaging Hero Section</li>
+        <li>Platform Accessibility</li>
+        <li>Latest Episodes Showcase</li>
+        <li>Social Media Integration</li>
+      </ul>
+      <div class="project-links">
+        <a href="https://the-scam-master.vercel.app/" target="_blank" class="neo-button">
+          <i class="fas fa-globe"></i> Website
+        </a>
+        <a href="https://www.instagram.com/the_scam_master/" target="_blank" class="neo-button">
+          <i class="fab fa-instagram"></i> Instagram
+        </a>
+        <a href="https://github.com/the-scam-master/podcast_webpage" target="_blank" class="neo-button">
+          <i class="fab fa-github"></i> GitHub
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <div class="tab-content" id="project5">
+    <div class="project-card">
+      <h3><i class="fas fa-exclamation-triangle"></i> Incident Tracker</h3>
+      <p class="project-description">A tool to record, track, and manage incidents efficiently within a company.</p>
+      <h4>Features:</h4>
+      <ul>
+        <li>Add incidents with details like INC Number, Caller Number, Status, Date, and Summary</li>
+        <li>Search and filter incidents</li>
+        <li>Pagination through incident history</li>
+        <li>CSV export and import</li>
+        <li>Professional interface</li>
+      </ul>
+      <div class="project-links">
+        <a href="https://tanmay-kalbande.github.io/Incident-Tracker/" target="_blank" class="neo-button">
+          <i class="fas fa-desktop"></i> Live Demo
+        </a>
+        <a href="https://github.com/tanmay-kalbande/Incident-Tracker" target="_blank" class="neo-button">
+          <i class="fab fa-github"></i> GitHub
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <div class="tab-content" id="project6">
+    <div class="project-card">
+      <h3><i class="fas fa-robot"></i> Bias & Fairness Checker [AI]</h3>
+      <p class="project-description">A sleek web tool powered by AI to detect potential biases in text and suggest inclusive language improvements.</p>
+      <h4>Features:</h4>
+      <ul>
+        <li>Analyzes text for bias with detailed, structured reports</li>
+        <li>Real-time AI model status updates</li>
+        <li>Responsive, user-friendly interface with Markdown rendering</li>
+        <li>Built with Flask and Google’s Gemma AI model</li>
+      </ul>
+      <div class="project-links">
+        <a href="https://bias-checker.onrender.com/" target="_blank" class="neo-button">
+          <i class="fas fa-desktop"></i> Live Demo
+        </a>
+        <a href="https://github.com/tanmay-kalbande/bias-fairness-checker" target="_blank" class="neo-button">
+          <i class="fab fa-github"></i> GitHub
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <div class="tab-content" id="project7">
+    <div class="project-card">
+      <h3><i class="fas fa-database"></i> AI Data Structurer [AI]</h3>
+      <p class="project-description">An AI-powered web app that transforms unstructured data into organized formats using Flask and Gemma.</p>
+      <h4>Features:</h4>
+      <ul>
+        <li>Automated data organization</li>
+        <li>Copy-to-clipboard functionality</li>
+        <li>Responsive design for desktop and mobile</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="tab-content" id="project8">
+    <div class="project-card">
+      <h3><i class="fas fa-sticky-note"></i> Enhanced macOS Notes</h3>
+      <p class="project-description">A web-based note-taking app mimicking macOS aesthetics, with dark mode, rich text formatting, and PWA support.</p>
+      <h4>Features:</h4>
+      <ul>
+        <li>Dark mode and rich text formatting</li>
+        <li>Local storage and search functionality</li>
+        <li>PWA for mobile and offline use</li>
+      </ul>
+      <div class="project-links">
+        <a href="https://enhanced-mac-os-notes.vercel.app/" target="_blank" class="neo-button">
+          <i class="fas fa-desktop"></i> Live Demo
+        </a>
+        <a href="https://github.com/tanmay-kalbande/Enhanced-macOS-Notes" target="_blank" class="neo-button">
+          <i class="fab fa-github"></i> GitHub
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <div class="tab-content" id="project9">
+    <div class="project-card">
+      <h3><i class="fas fa-gamepad"></i> Life Loops - Game Edition</h3>
+      <p class="project-description">A gamified habit-tracking web app with a retro-styled point system to encourage positive habits.</p>
+      <h4>Features:</h4>
+      <ul>
+        <li>Gamified habit tracking</li>
+        <li>Retro-styled UI</li>
+        <li>Responsive design</li>
+      </ul>
+      <div class="project-links">
+        <a href="https://life-loops-game-edition.vercel.app/" target="_blank" class="neo-button">
+          <i class="fas fa-desktop"></i> Live Demo
+        </a>
+        <a href="https://github.com/tanmay-kalbande/Life-Loops---Game-Edition" target="_blank" class="neo-button">
+          <i class="fab fa-github"></i> GitHub
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <div class="tab-content" id="project10">
+    <div class="project-card">
+      <h3><i class="fas fa-address-book"></i> Jawala Vyapar</h3>
+      <p class="project-description">An online phone directory for local businesses in [Village Name], with category filtering, search, and multi-language support.</p>
+      <h4>Features:</h4>
+      <ul>
+        <li>Category filtering and search</li>
+        <li>Mobile-first, responsive design</li>
+        <li>Multi-language support</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="tab-content" id="project11">
+    <div class="project-card">
+      <h3><i class="fas fa-brain"></i> Mindfulness App</h3>
+      <p class="project-description">A simple mindfulness web app with yoga and meditation guides, featuring a soothing, minimalist design and PWA support.</p>
+      <h4>Features:</h4>
+      <ul>
+        <li>Yoga and meditation tips</li>
+        <li>Minimalist, soothing UI</li>
+        <li>PWA for offline access</li>
+      </ul>
+      <div class="project-links">
+        <a href="https://breathewell.vercel.app/" target="_blank" class="neo-button">
+          <i class="fas fa-desktop"></i> Live Demo
+        </a>
+        <a href="https://github.com/tanmay-kalbande/Mindfulness-App" target="_blank" class="neo-button">
+          <i class="fab fa-github"></i> GitHub
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <div class="tab-content" id="project12">
+    <div class="project-card">
+      <h3><i class="fas fa-file-alt"></i> Report Generator [AI]</h3>
+      <p class="project-description">An AI-powered tool to capture data and generate insights for business decisions using Python.</p>
+      <h4>Features:</h4>
+      <ul>
+        <li>Data capture and analysis</li>
+        <li>Automated insight generation</li>
+        <li>Business decision support</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+    <div class="section">
+      <h2>Certifications</h2>
+      <ul>
+        <li><strong>AWS Cloud Technical Essentials</strong> - Amazon Web Services (AWS), Issued Dec 2024</li>
+        <li><strong>Foundations: Data, Data, Everywhere</strong> - Google, Issued Apr 2024</li>
+        <li><strong>Technical Support Fundamentals</strong> - Google, Issued Dec 2023</li>
+        <li><strong>Certified Data Scientist</strong> - IABAC, Issued Sep 2023</li>
+        <li><strong>Data Science Foundation</strong> - IABAC, Issued Aug 2023</li>
+        <li><strong>Certified Data Scientist Certification</strong> - DataMites™, Issued Apr 2023</li>
+        <li><strong>100 Days of Code: The Complete Python Pro Bootcamp</strong> - London App Brewery</li>
+        <li><strong>The Data Science Course Complete Data Science Bootcamp</strong> - 365 Data Science</li>
+      </ul>
+    </div>
+
+    <div class="section cta-section">
+      <h2 class="section-header">Want to see more?</h2>
+      <div class="cta-content">
+        <h3>Explore My BI Dashboards</h3>
+        <p>Discover my collection of interactive Business Intelligence dashboards showcasing data visualization skills.</p>
+        <div class="cta-buttons">
+          <a href="dashboard_project/data_visualization_portfolio" class="neo-button">
+            <i class="fas fa-chart-bar"></i> View Dashboards
+          </a>
+        </div>
+      </div>
+    </div>
+
+      <div class="section-divider">
+        <p class="cta-header">Interested in working together?</p>
+        <h3 class="cta-subheader">Get in touch!</h3>
+      </div>
+
+      <div class="contact-section">
+        <h2 id="contact" class="section-title">Contact</h2>
+        <p class="text-center">
+          Feel free to reach out if you'd like to connect, discuss a project, or just say hello!
+        </p>
+        <div class="button-group">
+          <a href="mailto:tanmaykalbande@gmail.com" class="neo-button" aria-label="Email">
+            <i class="fas fa-envelope"></i> Email Me
+          </a>
+          <a href="https://wa.me/7378381494?text=Hi%20Tanmay,%20I%20came%20across%20your%20portfolio%20and%20I%20" class="neo-button" aria-label="WhatsApp">
+            <i class="fab fa-whatsapp"></i> WhatsApp
+          </a>
+          <a href="https://www.linkedin.com/in/tanmay-kalbande" target="_blank" class="neo-button" aria-label="LinkedIn">
+            <i class="fab fa-linkedin"></i> LinkedIn
+          </a>
+          <a href="https://github.com/tanmay-kalbande" target="_blank" class="neo-button" aria-label="GitHub">
+            <i class="fab fa-github"></i> GitHub
+          </a>
+        </div>
+        <p class="text-center">
+          <a href="#top">Back to top</a>
+        </p>
+      </div>
+  </div>
+  <footer class="footer">
+      <div class="footer-content">
+          <div class="footer-text">© 2024 Tanmay Kalbande. All rights reserved.</div>
+      </div>
+  </footer>
+  <script>
+    // Theme toggle functionality
+    const themeToggle = document.getElementById('theme-toggle');
+    const htmlElement = document.documentElement;
+
+    // Check for saved theme preference or use system preference
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme) {
+        htmlElement.setAttribute('data-theme', savedTheme);
+    } else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        htmlElement.setAttribute('data-theme', 'dark');
+    }
+
+    // Toggle theme on click
+    themeToggle.addEventListener('click', () => {
+        const currentTheme = htmlElement.getAttribute('data-theme');
+        const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+
+        htmlElement.setAttribute('data-theme', newTheme);
+        localStorage.setItem('theme', newTheme);
+    });
+
+    document.querySelectorAll('.tab-button').forEach(button => {
+      button.addEventListener('click', () => {
+        // Remove active class from all buttons
+        document.querySelectorAll('.tab-button').forEach(btn => {
+          btn.classList.remove('active');
+        });
+        // Hide all tab contents
+        document.querySelectorAll('.tab-content').forEach(content => {
+          content.classList.remove('active');
+        });
+
+        // Add active class to clicked button
+        button.classList.add('active');
+        // Show the corresponding tab content
+        const tabId = button.getAttribute('data-tab');
+        document.getElementById(tabId).classList.add('active');
+      });
+    });
+  </script>
+  <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+</body>
+</html>
