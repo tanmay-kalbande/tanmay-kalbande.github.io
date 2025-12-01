@@ -1,18 +1,22 @@
 <!DOCTYPE html>
 <html lang="en" data-theme="light">
+
 <head>
     <!-- Basic Meta Tags for SEO and Responsiveness -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tanmay Kalbande - Crafting Insights from Data</title>
-    <meta name="description" content="Tanmay Kalbande is a data science enthusiast with a solid foundation in statistical analysis, machine learning, and data visualization. Ready to contribute to meaningful insights and data-driven decision-making.">
-    <meta name="keywords" content="Tanmay Kalbande, data science, machine learning, statistics, data visualization, Python, SQL, AI, Big Data, NLP, ethical AI, deep learning, TinyML">
+    <meta name="description"
+        content="Tanmay Kalbande is a data science enthusiast with a solid foundation in statistical analysis, machine learning, and data visualization. Ready to contribute to meaningful insights and data-driven decision-making.">
+    <meta name="keywords"
+        content="Tanmay Kalbande, data science, machine learning, statistics, data visualization, Python, SQL, AI, Big Data, NLP, ethical AI, deep learning, TinyML">
     <meta name="author" content="Tanmay Kalbande">
     <meta name="robots" content="index, follow">
 
-    <!-- Open Graph Meta Tags with improved image handling -->
+    <!-- Open Graph Meta Tags -->
     <meta property="og:title" content="Tanmay Kalbande - Data Science Portfolio">
-    <meta property="og:description" content="Tanmay Kalbande is a data science enthusiast with a solid foundation in statistical analysis, machine learning, and data visualization. Ready to contribute to meaningful insights and data-driven decision-making.">
+    <meta property="og:description"
+        content="Tanmay Kalbande is a data science enthusiast with a solid foundation in statistical analysis, machine learning, and data visualization.">
     <meta property="og:image" content="bits-and-bytes/resources/portfolio.png">
     <meta property="og:image:alt" content="Tanmay Kalbande's Data Science Portfolio Banner">
     <meta property="og:url" content="https://tanmay-kalbande.github.io/">
@@ -25,16 +29,15 @@
     <style>
         /* Theme Variables */
         :root {
-            --primary: #2563eb;
+            --primary: #0284c7; /* Sky Blue Darker */
             --accent: #22c55e;
-            --background: #fafaf9;
-            --card: #ffffff;
-            --text: #1f2937;
-            --text-muted: #4b5563;
+            --background: #f0f9ff; /* CHANGED: Pale Sky Blue base */
+            --card: rgba(255, 255, 255, 0.65); /* More transparent for sky effect */
+            --text: #1e293b;
+            --text-muted: #475569;
             --shadow-color: rgba(0, 0, 0, 0.1);
             --bg-pattern-1: #4ade80;
             --bg-pattern-2: #93c5fd;
-            --footer-bg: rgba(255, 255, 255, 0.85);
             --toggle-bg: #f3f4f6;
             --toggle-circle: #1f2937;
         }
@@ -42,16 +45,72 @@
         html[data-theme='dark'] {
             --primary: #60a5fa;
             --accent: #4ade80;
-            --background: #121212;
-            --card: #1e1e1e;
+            --background: #050505;
+            --card: rgba(20, 20, 20, 0.6);
             --text: #f9fafb;
             --text-muted: #d1d5db;
-            --shadow-color: rgba(0, 0, 0, 0.25);
+            --shadow-color: rgba(0, 0, 0, 0.3);
             --bg-pattern-1: rgba(74, 222, 128, 0.3);
             --bg-pattern-2: rgba(96, 165, 250, 0.3);
-            --footer-bg: rgba(17, 24, 39, 0.85);
             --toggle-bg: #374151;
             --toggle-circle: #f9fafb;
+        }
+
+        /* Starfield Background - Base Layer (Dark Theme Only) */
+        html[data-theme='dark']::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            pointer-events: none;
+            background-color: #050505;
+            background-image:
+                radial-gradient(2px 2px at 20% 30%, white, transparent),
+                radial-gradient(2px 2px at 60% 70%, white, transparent),
+                radial-gradient(1px 1px at 50% 50%, white, transparent),
+                radial-gradient(1px 1px at 80% 10%, white, transparent),
+                radial-gradient(2px 2px at 90% 60%, white, transparent),
+                radial-gradient(1px 1px at 33% 80%, white, transparent),
+                radial-gradient(2px 2px at 15% 90%, white, transparent),
+                radial-gradient(1px 1px at 25% 15%, white, transparent),
+                radial-gradient(2px 2px at 75% 40%, white, transparent),
+                radial-gradient(1px 1px at 45% 65%, white, transparent);
+            background-size: 200% 200%;
+            background-position: 0% 0%, 40% 60%, 50% 50%, 80% 10%, 90% 60%, 33% 80%, 15% 90%, 25% 15%, 75% 40%, 45% 65%;
+            background-repeat: repeat;
+            opacity: 0.9;
+        }
+
+        /* Starfield Background - Depth Layer (Dark Theme Only) */
+        html[data-theme='dark']::after {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            pointer-events: none;
+            background-image:
+                radial-gradient(1px 1px at 10% 20%, white, transparent),
+                radial-gradient(1px 1px at 40% 40%, white, transparent),
+                radial-gradient(1px 1px at 70% 30%, white, transparent),
+                radial-gradient(1px 1px at 25% 60%, white, transparent),
+                radial-gradient(1px 1px at 85% 80%, white, transparent),
+                radial-gradient(1px 1px at 45% 90%, white, transparent),
+                radial-gradient(1px 1px at 65% 15%, white, transparent),
+                radial-gradient(1px 1px at 5% 75%, white, transparent),
+                radial-gradient(1px 1px at 55% 25%, white, transparent),
+                radial-gradient(1px 1px at 35% 55%, white, transparent),
+                radial-gradient(1px 1px at 95% 35%, white, transparent),
+                radial-gradient(1px 1px at 15% 45%, white, transparent);
+            background-size: 250% 250%;
+            background-position: 10% 20%, 40% 40%, 70% 30%, 25% 60%, 85% 80%, 45% 90%, 65% 15%, 5% 75%, 55% 25%, 35% 55%, 95% 35%, 15% 45%;
+            background-repeat: repeat;
+            opacity: 0.5;
         }
 
         * {
@@ -66,36 +125,86 @@
             background-color: var(--accent);
             color: var(--background);
         }
-        ::-moz-selection {
-            background-color: var(--accent);
-            color: var(--background);
+
+        html,
+        body {
+            height: 100%;
+            overflow-x: hidden;
         }
 
         body {
             background: var(--background);
-            background-image:
-                radial-gradient(circle at 20px 20px, var(--bg-pattern-1) 1px, transparent 0),
-                radial-gradient(circle at 60px 60px, var(--bg-pattern-2) 1px, transparent 0);
-            background-size: 80px 80px;
-            height: 100vh;
+            min-height: 100vh;
             display: flex;
             flex-direction: column;
-            overflow: hidden;
-            animation: backgroundShift 20s linear infinite;
             color: var(--text);
+            position: relative;
+            overflow-x: hidden;
         }
 
-        @keyframes backgroundShift {
-            0% { background-position: 0 0; }
-            50% { background-position: 40px 40px; }
-            100% { background-position: 80px 80px; }
+        /* --- NEW SUN & SKY BACKGROUND (Light Theme) --- */
+        body::before {
+            content: '';
+            position: fixed;
+            top: -60%;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 150%;
+            height: 150%;
+            /* Realistic Sun: White Center -> Yellow Glow -> Transparent Sky */
+            background: radial-gradient(circle at center,
+                    rgba(255, 255, 255, 1) 0%,
+                    rgba(255, 250, 200, 0.8) 12%,
+                    rgba(255, 220, 100, 0.3) 25%,
+                    rgba(255, 255, 255, 0) 60%);
+            z-index: -2;
+            pointer-events: none;
+            animation: sunPulse 10s ease-in-out infinite alternate;
+        }
+
+        @keyframes sunPulse {
+            0% { opacity: 0.8; transform: translateX(-50%) scale(1); }
+            100% { opacity: 1; transform: translateX(-50%) scale(1.1); }
+        }
+
+        /* --- NEW FLUFFY CLOUDS (Light Theme) --- */
+        body::after {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            /* Pure White Clouds with transparency */
+            background-image:
+                radial-gradient(circle 400px at 10% 20%, rgba(255, 255, 255, 0.9), transparent 60%),
+                radial-gradient(circle 600px at 90% 60%, rgba(255, 255, 255, 0.8), transparent 60%),
+                radial-gradient(circle 500px at 50% 10%, rgba(255, 255, 255, 0.8), transparent 60%),
+                radial-gradient(circle 450px at 30% 90%, rgba(255, 255, 255, 0.7), transparent 60%),
+                radial-gradient(circle 350px at 70% 30%, rgba(255, 255, 255, 0.6), transparent 60%);
+            /* Heavy blur makes them look like gas/clouds */
+            filter: blur(50px);
+            z-index: -1;
+            pointer-events: none;
+            animation: cloudFloat 60s linear infinite alternate;
+        }
+
+        @keyframes cloudFloat {
+            0% { transform: translateY(0) scale(1); }
+            100% { transform: translateY(-20px) scale(1.05); }
+        }
+
+        /* Hide sun and clouds in dark mode */
+        html[data-theme='dark'] body::before,
+        html[data-theme='dark'] body::after {
+            display: none;
         }
 
         .container {
             max-width: 1400px;
             margin: 0 auto;
             padding: 2rem;
-            height: calc(100vh - 80px);
+            flex: 1;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -116,6 +225,8 @@
 
         .neo-card {
             background: var(--card);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
             border: 3px solid var(--text);
             border-radius: 16px;
             padding: 2.5rem;
@@ -193,11 +304,18 @@
             gap: 0.75rem;
             box-shadow: 4px 4px 0 var(--shadow-color);
             transition: transform 0.2s ease, box-shadow 0.2s ease;
+            background: var(--card);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
         }
 
         .neo-button:hover {
             transform: translate(2px, 2px);
             box-shadow: 2px 2px 0 var(--shadow-color);
+        }
+
+        .neo-button:hover i {
+            transform: translateX(4px);
         }
 
         .stats-grid {
@@ -211,6 +329,8 @@
             gap: 1.75rem;
             padding: 1.75rem;
             background: var(--card);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
             border: 3px solid var(--text);
             border-radius: 16px;
             will-change: transform;
@@ -220,6 +340,8 @@
             font-size: 2.5rem;
             color: var(--text);
             background: var(--card);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
             padding: 1rem;
             border-radius: 12px;
             border: 2px solid var(--text);
@@ -253,6 +375,8 @@
             justify-content: center;
             font-size: 1.5rem;
             background: var(--card);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
             color: var(--text);
             border: 3px solid var(--text);
             border-radius: 12px;
@@ -264,13 +388,21 @@
             transform: scale(1.1);
         }
 
+        .social-link[href*="linkedin"]:hover { background-color: #0077b5; border-color: #0077b5; color: white; }
+        .social-link[href*="github"]:hover { background-color: #6e5494; border-color: #6e5494; color: white; }
+        .social-link[href*="medium"]:hover { background-color: #00ab6c; border-color: #00ab6c; color: white; }
+        .social-link[href*="mailto"]:hover { background-color: #ea4335; border-color: #ea4335; color: white; }
+
         .chatbot-icon {
+            position: relative;
             animation: chatbotGlow 2s ease-in-out infinite alternate;
         }
 
         .chatbot-icon:hover {
             transform: scale(1.1);
             border-color: var(--accent);
+            background-color: var(--accent);
+            color: var(--card);
         }
 
         @keyframes chatbotGlow {
@@ -279,13 +411,10 @@
         }
 
         .footer {
-            height: 80px;
-            background: var(--footer-bg);
-            border-top: 3px solid var(--text);
-            backdrop-filter: blur(12px);
+            padding: 1.5rem 0;
+            background: transparent;
             display: flex;
             align-items: center;
-            box-shadow: 0 -4px 12px rgba(0, 0, 0, 0.08);
             position: relative;
             z-index: 2;
         }
@@ -303,7 +432,7 @@
         .footer-text {
             color: var(--text);
             font-weight: 600;
-            text-shadow: 0 1px 2px rgba(0, 0, 0, 0.08);
+            text-shadow: 0 1px 2px rgba(255,255,255,0.5);
         }
 
         .theme-toggle-container {
@@ -314,66 +443,41 @@
         }
 
         .theme-toggle {
-            width: 60px;
-            height: 30px;
-            background: var(--toggle-bg);
+            width: 50px;
+            height: 26px;
+            background: var(--card);
+            backdrop-filter: blur(12px);
             border-radius: 30px;
-            padding: 5px;
+            padding: 3px;
             display: flex;
             align-items: center;
             cursor: pointer;
-            position: relative;
             border: 2px solid var(--text);
-            transition: all 0.3s ease;
+            box-shadow: 2px 2px 0 var(--shadow-color);
         }
 
         .theme-toggle-circle {
-            width: 20px;
-            height: 20px;
+            width: 18px;
+            height: 18px;
             background: var(--toggle-circle);
             border-radius: 50%;
             position: absolute;
-            left: 5px;
+            left: 3px;
             transition: all 0.3s ease;
             display: flex;
             align-items: center;
             justify-content: center;
             color: var(--toggle-bg);
-            font-size: 12px;
+            font-size: 10px;
         }
 
-        html[data-theme='dark'] .theme-toggle-circle {
-            left: 35px;
-        }
+        html[data-theme='dark'] .theme-toggle-circle { left: 27px; }
 
-        .theme-toggle-icon {
-            width: 100%;
-            height: 100%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .theme-toggle-sun, .theme-toggle-moon {
-            position: absolute;
-            transition: opacity 0.3s ease;
-        }
-
-        .theme-toggle-sun {
-            opacity: 1;
-        }
-
-        .theme-toggle-moon {
-            opacity: 0;
-        }
-
-        html[data-theme='dark'] .theme-toggle-sun {
-            opacity: 0;
-        }
-
-        html[data-theme='dark'] .theme-toggle-moon {
-            opacity: 1;
-        }
+        .theme-toggle-icon { width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; }
+        .theme-toggle-sun { opacity: 1; position: absolute; }
+        .theme-toggle-moon { opacity: 0; position: absolute; }
+        html[data-theme='dark'] .theme-toggle-sun { opacity: 0; }
+        html[data-theme='dark'] .theme-toggle-moon { opacity: 1; }
 
         .chatbot-window {
             position: fixed;
@@ -382,6 +486,7 @@
             width: 550px;
             height: 550px;
             background: var(--card);
+            backdrop-filter: blur(12px);
             border: 3px solid var(--text);
             border-radius: 16px;
             box-shadow: 8px 8px 0 var(--shadow-color);
@@ -392,43 +497,19 @@
             opacity: 0;
         }
 
-        .chatbot-window.open {
-            display: block;
-            animation: popUp 0.3s ease-out forwards;
-        }
-
-        .chatbot-window.closing {
-            animation: popDown 0.3s ease-out forwards;
-        }
+        .chatbot-window.open { display: block; animation: popUp 0.3s ease-out forwards; }
+        .chatbot-window.closing { animation: popDown 0.3s ease-out forwards; }
 
         @keyframes popUp {
-            from {
-                transform: scale(0.8);
-                opacity: 0;
-            }
-            to {
-                transform: scale(1);
-                opacity: 1;
-            }
+            from { transform: scale(0.8); opacity: 0; }
+            to { transform: scale(1); opacity: 1; }
         }
-
         @keyframes popDown {
-            from {
-                transform: scale(1);
-                opacity: 1;
-            }
-            to {
-                transform: scale(0.8);
-                opacity: 0;
-            }
+            from { transform: scale(1); opacity: 1; }
+            to { transform: scale(0.8); opacity: 0; }
         }
 
-        .chatbot-window iframe {
-            width: 100%;
-            height: 100%;
-            border: none;
-        }
-
+        .chatbot-window iframe { width: 100%; height: 100%; border: none; }
         .close-chatbot {
             position: absolute;
             top: 10px;
@@ -440,23 +521,42 @@
             z-index: 1001;
         }
 
-        .close-chatbot:hover {
-            color: var(--accent);
+        /* Shooting Stars (Dark Mode) */
+        @keyframes shoot {
+            0% { transform: rotate(315deg) translateX(0); opacity: 1; width: 0; }
+            70% { opacity: 1; }
+            100% { transform: rotate(315deg) translateX(1000px); opacity: 0; width: 100px; }
+        }
+        .shooting-star {
+            position: fixed;
+            height: 2px;
+            background: linear-gradient(-45deg, rgba(255, 255, 255, 1), rgba(0, 0, 255, 0));
+            border-radius: 999px;
+            filter: drop-shadow(0 0 6px rgba(105, 155, 255, 1));
+            animation: shoot 3s linear forwards;
+            z-index: -1;
+            pointer-events: none;
+        }
+        .shooting-star::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            right: 0;
+            height: 4px;
+            width: 4px;
+            background: #fff;
+            border-radius: 50%;
+            box-shadow: 0 0 10px #fff, 0 0 20px #fff;
         }
 
         @media (max-width: 1024px) {
-            body { height: auto; overflow: auto; }
-            .container { height: auto; padding: 1.5rem; }
+            body { overflow: auto; }
+            .container { padding: 1.5rem; }
             .hero-grid { grid-template-columns: 1fr; gap: 2.5rem; }
             .neo-card { padding: 1.75rem; }
             .button-group { flex-direction: column; gap: 1rem; }
-            .social-link { width: 50px; height: 50px; font-size: 1.5rem; }
-            .social-links { gap: 0.75rem; }
             .stats-grid { grid-template-columns: 1fr; }
-            .stat-card { padding: 1.5rem; gap: 1.5rem; }
-            .footer { height: auto; padding: 1.5rem 0; }
-            .footer-content { flex-direction: column; gap: 0.95rem; text-align: center; }
-            .theme-toggle-container { top: 15px; right: 15px; }
             .chatbot-window { width: 350px; height: 450px; bottom: 80px; right: 15px; }
         }
 
@@ -465,28 +565,12 @@
             .desktop-version { display: none; }
             .mobile-version { display: block; }
             .chatbot-window { display: none !important; }
-            .social-links {
-                flex-wrap: wrap;
-                justify-content: center;
-            }
-            .chatbot-icon {
-                flex: 1 0 100%;
-                display: flex;
-                justify-content: center;
-                margin-top: 1rem;
-                width: 50px;
-                height: 50px;
-                font-size: 1.5rem;
-            }
-        }
-
-        @media (prefers-reduced-motion: reduce) {
-            * { animation: none !important; transition: none !important; }
-            .chatbot-window.open, .chatbot-window.closing { transform: scale(1); opacity: 1; }
-            .chatbot-icon { box-shadow: 4px 4px 0 var(--shadow-color), 0 0 8px var(--accent); }
+            .social-links { flex-wrap: wrap; justify-content: center; }
+            .chatbot-icon { flex: 1 0 100%; display: flex; justify-content: center; margin-top: 1rem; }
         }
     </style>
 </head>
+
 <body>
     <div class="theme-toggle-container">
         <div class="theme-toggle" id="theme-toggle" aria-label="Toggle dark/light mode">
@@ -518,13 +602,16 @@
                         <strong>Machine Learning</strong>, <strong>AI</strong>, and <strong>Python</strong>.
                     </p>
                     <p class="description mobile-version">
-                        Data Science Pro 🔥 | I turn data into insights using <strong>ML</strong>, <strong>AI</strong>, and <strong>Python</strong>.
+                        Data Science Pro 🔥 | I turn data into insights using <strong>ML</strong>, <strong>AI</strong>,
+                        and <strong>Python</strong>.
                     </p>
                     <div class="button-group">
-                        <a href="bits-and-bytes/data_science_portfolio" class="neo-button portfolio-btn" aria-label="View Portfolio Projects">
+                        <a href="bits-and-bytes/data_science_portfolio" class="neo-button portfolio-btn"
+                            aria-label="View Portfolio Projects">
                             View Portfolio <i class="fas fa-chevron-right"></i>
                         </a>
-                        <a href="bits-and-bytes/resources/tanmay-resume.pdf" class="neo-button resume-btn" aria-label="Download Resume PDF">
+                        <a href="bits-and-bytes/resources/tanmay-resume.pdf" class="neo-button resume-btn"
+                            aria-label="Download Resume PDF">
                             Download Resume <i class="fas fa-download"></i>
                         </a>
                     </div>
@@ -532,7 +619,8 @@
                         <a href="mailto:kalbandetanmay@gmail.com" class="social-link" aria-label="Email">
                             <i class="fas fa-envelope"></i>
                         </a>
-                        <a href="https://linkedin.com/in/tanmay-kalbande" class="social-link" aria-label="LinkedIn Profile">
+                        <a href="https://linkedin.com/in/tanmay-kalbande" class="social-link"
+                            aria-label="LinkedIn Profile">
                             <i class="fab fa-linkedin-in"></i>
                         </a>
                         <a href="https://github.com/tanmay-kalbande" class="social-link" aria-label="GitHub Profile">
@@ -551,7 +639,7 @@
                     <div class="neo-card stat-card">
                         <i class="fas fa-database stat-icon"></i>
                         <div>
-                            <div class="stat-value">1.10</div>
+                            <div class="stat-value">1.8+</div>
                             <div class="stat-label">Years Experience</div>
                         </div>
                     </div>
@@ -574,9 +662,6 @@
                 </div>
             </div>
         </section>
-
-        <section id="portfolio" class="section-spacer"></section>
-        <section id="resume" class="section-spacer"></section>
     </main>
 
     <footer class="footer">
@@ -588,7 +673,6 @@
     </footer>
 
     <script>
-        // Theme toggle functionality
         const themeToggle = document.getElementById('theme-toggle');
         const htmlElement = document.documentElement;
 
@@ -606,45 +690,49 @@
             localStorage.setItem('theme', newTheme);
         });
 
+        const chatbotWindow = document.getElementById('chatbotWindow');
+        const chatbotIframe = document.getElementById('chatbotIframe');
+        let isChatbotOpen = false;
+
+        function toggleChatbot() {
+            if (isChatbotOpen) {
+                chatbotWindow.classList.add('closing');
+                chatbotWindow.addEventListener('animationend', () => {
+                    chatbotWindow.classList.remove('open', 'closing');
+                    chatbotIframe.src = "";
+                }, { once: true });
+            } else {
+                chatbotIframe.src = "https://www.kommunicate.io/livechat?appId=242d54e5651c6c51887e451b664d4122d&botIds=tanmay-kalbande-o3f91";
+                chatbotWindow.classList.add('open');
+                chatbotWindow.classList.remove('closing');
+            }
+            isChatbotOpen = !isChatbotOpen;
+        }
+
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', (e) => {
                 e.preventDefault();
                 const target = document.querySelector(anchor.getAttribute('href'));
-                target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
             });
         });
 
-        document.querySelectorAll('.footer-text').forEach(element => {
-            if (element.textContent.includes('©')) {
-                element.textContent = `© ${new Date().getFullYear()} Tanmay Kalbande. All rights reserved.`;
-            }
-        });
+        function createShootingStar() {
+            const currentTheme = htmlElement.getAttribute('data-theme');
+            if (currentTheme !== 'dark') return;
 
-        // Chatbot toggle functionality
-        function toggleChatbot() {
-            const chatbotWindow = document.getElementById('chatbotWindow');
-            const chatbotIframe = document.getElementById('chatbotIframe');
-            const isMobile = window.innerWidth <= 768;
-
-            if (isMobile) {
-                window.open('https://tanmay-ai-assistant.vercel.app', '_blank');
-            } else {
-                const isOpen = chatbotWindow.style.display === 'block';
-                if (isOpen) {
-                    chatbotWindow.classList.remove('open');
-                    chatbotWindow.classList.add('closing');
-                    setTimeout(() => {
-                        chatbotWindow.style.display = 'none';
-                        chatbotWindow.classList.remove('closing');
-                        chatbotIframe.src = '';
-                    }, 300); // Match animation duration
-                } else {
-                    chatbotWindow.style.display = 'block';
-                    chatbotWindow.classList.add('open');
-                    chatbotIframe.src = 'https://tanmay-ai-assistant.vercel.app';
-                }
-            }
+            const star = document.createElement('div');
+            star.className = 'shooting-star';
+            const x = Math.random() * window.innerWidth;
+            const y = Math.random() * (window.innerHeight * 0.5);
+            star.style.left = x + 'px';
+            star.style.top = y + 'px';
+            document.body.appendChild(star);
+            setTimeout(() => { star.remove(); }, 3000);
         }
+
+        setInterval(() => { if (Math.random() > 0.7) createShootingStar(); }, 2000);
+        setTimeout(createShootingStar, 1000);
     </script>
 </body>
 </html>
