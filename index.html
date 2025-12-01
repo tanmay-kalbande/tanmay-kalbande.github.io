@@ -31,7 +31,7 @@
         :root {
             --primary: #0284c7; /* Sky Blue Darker */
             --accent: #22c55e;
-            --background: #f0f9ff; /* CHANGED: Pale Sky Blue base */
+            --background: #f0f9ff; /* Pale Sky Blue base */
             --card: rgba(255, 255, 255, 0.65); /* More transparent for sky effect */
             --text: #1e293b;
             --text-muted: #475569;
@@ -417,6 +417,8 @@
             align-items: center;
             position: relative;
             z-index: 2;
+            /* ADDED: Divider line from main body */
+            border-top: 2px solid var(--text-muted);
         }
 
         .footer-content {
@@ -558,6 +560,12 @@
             .button-group { flex-direction: column; gap: 1rem; }
             .stats-grid { grid-template-columns: 1fr; }
             .chatbot-window { width: 350px; height: 450px; bottom: 80px; right: 15px; }
+
+            /* Mobile Button Size Adjustment (Main Buttons) */
+            .neo-button {
+                padding: 0.75rem 1.5rem;
+                font-size: 1rem;
+            }
         }
 
         @media (max-width: 768px) {
@@ -567,6 +575,68 @@
             .chatbot-window { display: none !important; }
             .social-links { flex-wrap: wrap; justify-content: center; }
             .chatbot-icon { flex: 1 0 100%; display: flex; justify-content: center; margin-top: 1rem; }
+
+            /* Mobile Button Size Adjustment (Main Buttons) */
+            .neo-button {
+                padding: 0.6rem 1.2rem;
+                font-size: 0.95rem;
+            }
+            
+            /* UPDATED: Social Link Size Adjustment */
+            .social-link {
+                width: 45px;
+                height: 45px;
+                font-size: 1.2rem;
+                border-width: 2px;
+                border-radius: 8px;
+            }
+            /* Ensure the AI chatbot link doesn't take full width on its own */
+            .chatbot-icon {
+                flex: 0 0 auto; 
+                margin-top: 0; 
+            }
+
+            /* Footer arrangement fix: Stack vertically and center text */
+            .footer-content {
+                flex-direction: column;
+                gap: 0.75rem;
+                text-align: center;
+            }
+
+            /* Theme Toggle as a simpler, circular button for mobile */
+            .theme-toggle-container {
+                top: 15px;
+                right: 15px;
+            }
+            .theme-toggle {
+                width: 40px;
+                height: 40px;
+                border-radius: 50%; /* Make it a circle button */
+                padding: 0;
+                box-shadow: none;
+                background: transparent; /* Make it subtle */
+                border: none;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+            .theme-toggle-circle {
+                position: static;
+                transform: none !important;
+                width: 30px;
+                height: 30px;
+                background: var(--text); /* The icon itself is the visible part */
+                color: var(--card);
+                border-radius: 50%;
+                left: unset; /* Override fixed positioning */
+                box-shadow: 2px 2px 0 var(--shadow-color);
+            }
+            html[data-theme='dark'] .theme-toggle-circle { left: unset; }
+
+            /* Ensure icons are visible inside the circle */
+            .theme-toggle-sun, .theme-toggle-moon {
+                font-size: 1rem;
+            }
         }
     </style>
 </head>
@@ -702,6 +772,7 @@
                     chatbotIframe.src = "";
                 }, { once: true });
             } else {
+                // Only load the iframe source when opening to improve performance
                 chatbotIframe.src = "https://www.kommunicate.io/livechat?appId=242d54e5651c6c51887e451b664d4122d&botIds=tanmay-kalbande-o3f91";
                 chatbotWindow.classList.add('open');
                 chatbotWindow.classList.remove('closing');
@@ -731,6 +802,7 @@
             setTimeout(() => { star.remove(); }, 3000);
         }
 
+        // Randomly create a shooting star for the 'space' theme effect
         setInterval(() => { if (Math.random() > 0.7) createShootingStar(); }, 2000);
         setTimeout(createShootingStar, 1000);
     </script>
