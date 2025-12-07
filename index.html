@@ -22,17 +22,20 @@
     <meta property="og:url" content="https://tanmay-kalbande.github.io/">
     <meta property="og:type" content="website">
 
-    <link rel="icon" href="bits-and-bytes/resources/favicon.png" type="image/x-icon">
+    <link rel="icon" href="bits-and-bytes/resources/favicon.png" type="image/png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;900&display=swap">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
         /* Theme Variables */
         :root {
-            --primary: #0284c7; /* Sky Blue Darker */
+            --primary: #0284c7;
+            /* Sky Blue Darker */
             --accent: #22c55e;
-            --background: #f0f9ff; /* Pale Sky Blue base */
-            --card: rgba(255, 255, 255, 0.65); /* More transparent for sky effect */
+            --background: #f0f9ff;
+            /* Pale Sky Blue base */
+            --card: rgba(255, 255, 255, 0.65);
+            /* More transparent for sky effect */
             --text: #1e293b;
             --text-muted: #475569;
             --shadow-color: rgba(0, 0, 0, 0.1);
@@ -118,7 +121,20 @@
             padding: 0;
             box-sizing: border-box;
             font-family: 'Inter', -apple-system, system-ui, sans-serif;
-            transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        /* Fast theme transitions */
+        html,
+        body,
+        .neo-card,
+        .neo-button,
+        .social-link,
+        .stat-card,
+        .footer,
+        .theme-toggle,
+        .theme-toggle-circle {
+            transition: background-color 0.15s ease, color 0.15s ease,
+                border-color 0.15s ease, box-shadow 0.15s ease;
         }
 
         ::selection {
@@ -163,8 +179,15 @@
         }
 
         @keyframes sunPulse {
-            0% { opacity: 0.8; transform: translateX(-50%) scale(1); }
-            100% { opacity: 1; transform: translateX(-50%) scale(1.1); }
+            0% {
+                opacity: 0.8;
+                transform: translateX(-50%) scale(1);
+            }
+
+            100% {
+                opacity: 1;
+                transform: translateX(-50%) scale(1.1);
+            }
         }
 
         /* --- NEW FLUFFY CLOUDS (Light Theme) --- */
@@ -190,8 +213,13 @@
         }
 
         @keyframes cloudFloat {
-            0% { transform: translateY(0) scale(1); }
-            100% { transform: translateY(-20px) scale(1.05); }
+            0% {
+                transform: translateY(0) scale(1);
+            }
+
+            100% {
+                transform: translateY(-20px) scale(1.05);
+            }
         }
 
         /* Hide sun and clouds in dark mode */
@@ -258,9 +286,19 @@
         }
 
         @keyframes underlineGrow {
-            0% { transform: scaleX(0); opacity: 0; }
-            50% { opacity: 1; }
-            100% { transform: scaleX(1); opacity: 1; }
+            0% {
+                transform: scaleX(0);
+                opacity: 0;
+            }
+
+            50% {
+                opacity: 1;
+            }
+
+            100% {
+                transform: scaleX(1);
+                opacity: 1;
+            }
         }
 
         .subtitle {
@@ -274,6 +312,7 @@
 
         .description {
             font-size: 1.1rem;
+            font-weight: 500;
             color: var(--text);
             margin-bottom: 2.5rem;
             max-width: 600px;
@@ -303,7 +342,7 @@
             align-items: center;
             gap: 0.75rem;
             box-shadow: 4px 4px 0 var(--shadow-color);
-            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            transition: transform 0.15s ease, box-shadow 0.15s ease;
             background: var(--card);
             backdrop-filter: blur(12px);
             -webkit-backdrop-filter: blur(12px);
@@ -312,6 +351,14 @@
         .neo-button:hover {
             transform: translate(2px, 2px);
             box-shadow: 2px 2px 0 var(--shadow-color);
+            border-color: var(--primary);
+            background: rgba(2, 132, 199, 0.1);
+            /* Subtle sky blue tint */
+        }
+
+        html[data-theme='dark'] .neo-button:hover {
+            background: rgba(96, 165, 250, 0.15);
+            /* Subtle blue glow for dark mode */
         }
 
         .neo-button:hover i {
@@ -388,10 +435,29 @@
             transform: scale(1.1);
         }
 
-        .social-link[href*="linkedin"]:hover { background-color: #0077b5; border-color: #0077b5; color: white; }
-        .social-link[href*="github"]:hover { background-color: #6e5494; border-color: #6e5494; color: white; }
-        .social-link[href*="medium"]:hover { background-color: #00ab6c; border-color: #00ab6c; color: white; }
-        .social-link[href*="mailto"]:hover { background-color: #ea4335; border-color: #ea4335; color: white; }
+        .social-link[href*="linkedin"]:hover {
+            background-color: #0077b5;
+            border-color: #0077b5;
+            color: white;
+        }
+
+        .social-link[href*="github"]:hover {
+            background-color: #6e5494;
+            border-color: #6e5494;
+            color: white;
+        }
+
+        .social-link[href*="medium"]:hover {
+            background-color: #00ab6c;
+            border-color: #00ab6c;
+            color: white;
+        }
+
+        .social-link[href*="mailto"]:hover {
+            background-color: #ea4335;
+            border-color: #ea4335;
+            color: white;
+        }
 
         .chatbot-icon {
             position: relative;
@@ -406,8 +472,13 @@
         }
 
         @keyframes chatbotGlow {
-            0% { box-shadow: 4px 4px 0 var(--shadow-color), 0 0 8px var(--accent); }
-            100% { box-shadow: 4px 4px 0 var(--shadow-color), 0 0 16px var(--accent); }
+            0% {
+                box-shadow: 4px 4px 0 var(--shadow-color), 0 0 8px var(--accent);
+            }
+
+            100% {
+                box-shadow: 4px 4px 0 var(--shadow-color), 0 0 16px var(--accent);
+            }
         }
 
         .footer {
@@ -434,7 +505,7 @@
         .footer-text {
             color: var(--text);
             font-weight: 600;
-            text-shadow: 0 1px 2px rgba(255,255,255,0.5);
+            text-shadow: 0 1px 2px rgba(255, 255, 255, 0.5);
         }
 
         .theme-toggle-container {
@@ -473,13 +544,35 @@
             font-size: 10px;
         }
 
-        html[data-theme='dark'] .theme-toggle-circle { left: 27px; }
+        html[data-theme='dark'] .theme-toggle-circle {
+            left: 27px;
+        }
 
-        .theme-toggle-icon { width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; }
-        .theme-toggle-sun { opacity: 1; position: absolute; }
-        .theme-toggle-moon { opacity: 0; position: absolute; }
-        html[data-theme='dark'] .theme-toggle-sun { opacity: 0; }
-        html[data-theme='dark'] .theme-toggle-moon { opacity: 1; }
+        .theme-toggle-icon {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .theme-toggle-sun {
+            opacity: 1;
+            position: absolute;
+        }
+
+        .theme-toggle-moon {
+            opacity: 0;
+            position: absolute;
+        }
+
+        html[data-theme='dark'] .theme-toggle-sun {
+            opacity: 0;
+        }
+
+        html[data-theme='dark'] .theme-toggle-moon {
+            opacity: 1;
+        }
 
         .chatbot-window {
             position: fixed;
@@ -499,19 +592,45 @@
             opacity: 0;
         }
 
-        .chatbot-window.open { display: block; animation: popUp 0.3s ease-out forwards; }
-        .chatbot-window.closing { animation: popDown 0.3s ease-out forwards; }
+        .chatbot-window.open {
+            display: block;
+            animation: popUp 0.3s ease-out forwards;
+        }
+
+        .chatbot-window.closing {
+            animation: popDown 0.3s ease-out forwards;
+        }
 
         @keyframes popUp {
-            from { transform: scale(0.8); opacity: 0; }
-            to { transform: scale(1); opacity: 1; }
-        }
-        @keyframes popDown {
-            from { transform: scale(1); opacity: 1; }
-            to { transform: scale(0.8); opacity: 0; }
+            from {
+                transform: scale(0.8);
+                opacity: 0;
+            }
+
+            to {
+                transform: scale(1);
+                opacity: 1;
+            }
         }
 
-        .chatbot-window iframe { width: 100%; height: 100%; border: none; }
+        @keyframes popDown {
+            from {
+                transform: scale(1);
+                opacity: 1;
+            }
+
+            to {
+                transform: scale(0.8);
+                opacity: 0;
+            }
+        }
+
+        .chatbot-window iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
         .close-chatbot {
             position: absolute;
             top: 10px;
@@ -525,10 +644,23 @@
 
         /* Shooting Stars (Dark Mode) */
         @keyframes shoot {
-            0% { transform: rotate(315deg) translateX(0); opacity: 1; width: 0; }
-            70% { opacity: 1; }
-            100% { transform: rotate(315deg) translateX(1000px); opacity: 0; width: 100px; }
+            0% {
+                transform: rotate(315deg) translateX(0);
+                opacity: 1;
+                width: 0;
+            }
+
+            70% {
+                opacity: 1;
+            }
+
+            100% {
+                transform: rotate(315deg) translateX(1000px);
+                opacity: 0;
+                width: 100px;
+            }
         }
+
         .shooting-star {
             position: fixed;
             height: 2px;
@@ -539,6 +671,7 @@
             z-index: -1;
             pointer-events: none;
         }
+
         .shooting-star::before {
             content: '';
             position: absolute;
@@ -553,13 +686,38 @@
         }
 
         @media (max-width: 1024px) {
-            body { overflow: auto; }
-            .container { padding: 1.5rem; }
-            .hero-grid { grid-template-columns: 1fr; gap: 2.5rem; }
-            .neo-card { padding: 1.75rem; }
-            .button-group { flex-direction: column; gap: 1rem; }
-            .stats-grid { grid-template-columns: 1fr; }
-            .chatbot-window { width: 350px; height: 450px; bottom: 80px; right: 15px; }
+            body {
+                overflow: auto;
+            }
+
+            .container {
+                padding: 1.5rem;
+            }
+
+            .hero-grid {
+                grid-template-columns: 1fr;
+                gap: 2.5rem;
+            }
+
+            .neo-card {
+                padding: 1.75rem;
+            }
+
+            .button-group {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .stats-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .chatbot-window {
+                width: 350px;
+                height: 450px;
+                bottom: 80px;
+                right: 15px;
+            }
 
             /* Mobile Button Size Adjustment (Main Buttons) */
             .neo-button {
@@ -569,19 +727,43 @@
         }
 
         @media (max-width: 768px) {
-            .hidden-mobile { display: none; }
-            .desktop-version { display: none; }
-            .mobile-version { display: block; }
-            .chatbot-window { display: none !important; }
-            .social-links { flex-wrap: wrap; justify-content: center; }
-            .chatbot-icon { flex: 1 0 100%; display: flex; justify-content: center; margin-top: 1rem; }
+            .hidden-mobile {
+                display: none;
+            }
+
+            .desktop-version {
+                display: none;
+            }
+
+            .mobile-version {
+                display: block;
+            }
+
+            .chatbot-window {
+                display: none !important;
+            }
+
+            .social-links {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .chatbot-icon {
+                flex: 1 0 100%;
+                display: flex;
+                justify-content: center;
+                margin-top: 1rem;
+            }
 
             /* Mobile Button Size Adjustment (Main Buttons) */
             .neo-button {
                 padding: 0.6rem 1.2rem;
                 font-size: 0.95rem;
+                width: 100%;
+                justify-content: center;
+                text-align: center;
             }
-            
+
             /* UPDATED: Social Link Size Adjustment */
             .social-link {
                 width: 45px;
@@ -590,10 +772,22 @@
                 border-width: 2px;
                 border-radius: 8px;
             }
-            /* Ensure the AI chatbot link doesn't take full width on its own */
+
+            /* Chatbot icon - rectangular and nice on mobile */
             .chatbot-icon {
-                flex: 0 0 auto; 
-                margin-top: 0; 
+                flex: 1 0 100%;
+                width: 100%;
+                height: auto;
+                padding: 0.75rem 1.5rem;
+                margin-top: 0.75rem;
+                border-radius: 10px;
+                gap: 0.5rem;
+            }
+
+            .chatbot-icon::after {
+                content: 'Chat with AI Assistant';
+                font-weight: 600;
+                font-size: 0.9rem;
             }
 
             /* Footer arrangement fix: Stack vertically and center text */
@@ -608,33 +802,40 @@
                 top: 15px;
                 right: 15px;
             }
+
             .theme-toggle {
-                width: 40px;
-                height: 40px;
-                border-radius: 50%; /* Make it a circle button */
+                width: 44px;
+                height: 44px;
+                border-radius: 50%;
                 padding: 0;
-                box-shadow: none;
-                background: transparent; /* Make it subtle */
-                border: none;
+                box-shadow: 2px 2px 0 var(--shadow-color);
+                background: var(--card);
+                border: 2px solid var(--text);
                 display: flex;
                 align-items: center;
                 justify-content: center;
             }
+
             .theme-toggle-circle {
                 position: static;
                 transform: none !important;
-                width: 30px;
-                height: 30px;
-                background: var(--text); /* The icon itself is the visible part */
+                width: 32px;
+                height: 32px;
+                background: var(--text);
                 color: var(--card);
                 border-radius: 50%;
-                left: unset; /* Override fixed positioning */
-                box-shadow: 2px 2px 0 var(--shadow-color);
+                left: unset;
+                box-shadow: none;
             }
-            html[data-theme='dark'] .theme-toggle-circle { left: unset; }
+
+
+            html[data-theme='dark'] .theme-toggle-circle {
+                left: unset;
+            }
 
             /* Ensure icons are visible inside the circle */
-            .theme-toggle-sun, .theme-toggle-moon {
+            .theme-toggle-sun,
+            .theme-toggle-moon {
                 font-size: 1rem;
             }
         }
@@ -665,15 +866,14 @@
                     <h1 class="title">TANMAY KALBANDE</h1>
                     <h2 class="subtitle">
                         <span>Data Science Wizard</span>
-                        <span role="img" aria-label="wizard">🧙‍♂️</span>
+                        <span class="hidden-mobile" role="img" aria-label="wizard">🧙‍♂️</span>
                     </h2>
                     <p class="description desktop-version">
-                        Data Science Specialist 🚀 | Transforming raw data into actionable insights with
-                        <strong>Machine Learning</strong>, <strong>AI</strong>, and <strong>Python</strong>.
+                        From Data Analyst Trainee to building <strong>multi-agent AI systems</strong> in 1.8 years.
+                        Turning messy data into <strong>insights</strong> & creating tools that make work easier.
                     </p>
                     <p class="description mobile-version">
-                        Data Science Pro 🔥 | I turn data into insights using <strong>ML</strong>, <strong>AI</strong>,
-                        and <strong>Python</strong>.
+                        Building multi-agent AI systems & turning messy data into insights ✨
                     </p>
                     <div class="button-group">
                         <a href="bits-and-bytes/data_science_portfolio" class="neo-button portfolio-btn"
@@ -736,13 +936,16 @@
 
     <footer class="footer">
         <div class="footer-content">
-            <div class="footer-text">© 2024 Tanmay Kalbande. All rights reserved.</div>
-            <div class="footer-text">Last Updated: January 25, 2025</div>
+            <div class="footer-text">© <span id="copyright-year">2025</span> Tanmay Kalbande. All rights reserved.</div>
+            <div class="footer-text">Last Updated: December 01, 2025</div>
             <div class="footer-text hidden-mobile">Crafted with <span aria-label="love">❤️</span> using HTML & CSS</div>
         </div>
     </footer>
 
     <script>
+        // Auto-update copyright year
+        document.getElementById('copyright-year').textContent = new Date().getFullYear();
+
         const themeToggle = document.getElementById('theme-toggle');
         const htmlElement = document.documentElement;
 
@@ -807,4 +1010,5 @@
         setTimeout(createShootingStar, 1000);
     </script>
 </body>
+
 </html>
