@@ -146,6 +146,7 @@
         body {
             height: 100%;
             overflow-x: hidden;
+            max-width: 100vw;
         }
 
         body {
@@ -156,23 +157,27 @@
             color: var(--text);
             position: relative;
             overflow-x: hidden;
+            width: 100%;
+            max-width: 100vw;
         }
 
         /* --- NEW SUN & SKY BACKGROUND (Light Theme) --- */
         body::before {
             content: '';
             position: fixed;
-            top: -60%;
+            top: -40%;
             left: 50%;
             transform: translateX(-50%);
-            width: 150%;
-            height: 150%;
-            /* Realistic Sun: White Center -> Yellow Glow -> Transparent Sky */
-            background: radial-gradient(circle at center,
+            width: 200%;
+            height: 200%;
+            /* Realistic Sun: White Center -> Yellow Glow -> Smooth fade to sky */
+            background: radial-gradient(ellipse 80% 60% at 50% 20%,
                     rgba(255, 255, 255, 1) 0%,
-                    rgba(255, 250, 200, 0.8) 12%,
-                    rgba(255, 220, 100, 0.3) 25%,
-                    rgba(255, 255, 255, 0) 60%);
+                    rgba(255, 253, 230, 0.9) 8%,
+                    rgba(255, 245, 180, 0.65) 18%,
+                    rgba(255, 230, 140, 0.35) 30%,
+                    rgba(255, 220, 120, 0.15) 45%,
+                    rgba(255, 255, 255, 0) 70%);
             z-index: -2;
             pointer-events: none;
             animation: sunPulse 10s ease-in-out infinite alternate;
@@ -230,12 +235,14 @@
 
         .container {
             max-width: 1400px;
+            width: 100%;
             margin: 0 auto;
             padding: 2rem;
             flex: 1;
             display: flex;
             align-items: center;
             justify-content: center;
+            box-sizing: border-box;
         }
 
         .hero-grid {
@@ -244,7 +251,9 @@
             gap: 3rem;
             align-items: start;
             width: 100%;
+            max-width: 100%;
             margin: 0 auto;
+            box-sizing: border-box;
         }
 
         .hero-content {
@@ -686,17 +695,24 @@
         }
 
         @media (max-width: 1024px) {
+
+            html,
             body {
-                overflow: auto;
+                overflow-x: hidden;
+                overflow-y: auto;
+                max-width: 100vw;
             }
 
             .container {
                 padding: 1.5rem;
+                max-width: 100%;
+                box-sizing: border-box;
             }
 
             .hero-grid {
                 grid-template-columns: 1fr;
                 gap: 2.5rem;
+                max-width: 100%;
             }
 
             .neo-card {
@@ -856,7 +872,7 @@
 
     <div class="chatbot-window" id="chatbotWindow">
         <span class="close-chatbot" onclick="toggleChatbot()">×</span>
-        <iframe id="chatbotIframe" src=""></iframe>
+        <iframe id="chatbotIframe" src="" allow="microphone"></iframe>
     </div>
 
     <main class="container">
@@ -963,11 +979,19 @@
             localStorage.setItem('theme', newTheme);
         });
 
+        // Custom AI Assistant - Iframe Integration
         const chatbotWindow = document.getElementById('chatbotWindow');
         const chatbotIframe = document.getElementById('chatbotIframe');
         let isChatbotOpen = false;
 
         function toggleChatbot() {
+            // On mobile, redirect to the AI assistant site
+            if (window.innerWidth <= 768) {
+                window.open('https://tanmay-ai-assistant.vercel.app/', '_blank');
+                return;
+            }
+
+            // On desktop, use the popup iframe
             if (isChatbotOpen) {
                 chatbotWindow.classList.add('closing');
                 chatbotWindow.addEventListener('animationend', () => {
@@ -975,8 +999,8 @@
                     chatbotIframe.src = "";
                 }, { once: true });
             } else {
-                // Only load the iframe source when opening to improve performance
-                chatbotIframe.src = "https://www.kommunicate.io/livechat?appId=242d54e5651c6c51887e451b664d4122d&botIds=tanmay-kalbande-o3f91";
+                // Load the custom AI assistant site
+                chatbotIframe.src = "https://tanmay-ai-assistant.vercel.app/";
                 chatbotWindow.classList.add('open');
                 chatbotWindow.classList.remove('closing');
             }
